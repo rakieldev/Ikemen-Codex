@@ -1,0 +1,175 @@
+{
+	"name": "ZSS",
+	"scopeName": "source.zss",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#sections"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#call"
+		},
+		{
+			"include": "#let"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#keys"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#modifiers"
+		},
+		{
+			"include": "#sctrls"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#operators"
+		}
+	],
+	"repository": {
+		"comments": {
+			"name": "comment.line.number-sign.zss",
+			"match": "#.*$"
+		},
+		"sections": {
+			"name": "entity.name.section.zss",
+			"begin": "^\\s*\\[",
+			"end": "\\]|^\\s*$",
+			"patterns": [
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#function_declaration"
+				},
+				{
+					"include": "#keys"
+				}
+			]
+		},
+		"function_declaration": {
+			"begin": "([A-Za-z_][\\w.]*)\\s*(\\()",
+			"end": "\\)|$",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.function.zss"
+				}
+			},
+			"patterns": [
+				{
+					"match": "[A-Za-z_][\\w.]*",
+					"name": "variable.parameter.zss"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.zss",
+			"begin": "\"",
+			"end": "\"|$"
+		},
+		"let": {
+			"match": "(?i)\\b(let)\\s+([A-Za-z_]\\w*)",
+			"captures": {
+				"1": {
+					"name": "keyword.control.zss"
+				},
+				"2": {
+					"name": "variable.name.zss"
+				}
+			}
+		},
+		"call": {
+			"match": "(?i)\\b(call)\\s+([A-Za-z_]\\w*)",
+			"captures": {
+				"1": {
+					"name": "keyword.control.zss"
+				},
+				"2": {
+					"name": "entity.name.function.zss"
+				}
+			}
+		},
+		"variables": {
+			"match": "\\$[A-Za-z_][\\w.]*",
+			"name": "variable.name.zss"
+		},
+		"keywords": {
+			"name": "keyword.control.zss",
+			"match": "(?i)\\b(?:if|else|for|while|let|call|switch|case|default|break|continue)\\b"
+		},
+		"keys": {
+			"match": "\\b([A-Za-z_][\\w.]*)\\s*:(?!=)",
+			"captures": {
+				"1": {
+					"name": "keyword.zss"
+				}
+			}
+		},
+		"numbers": {
+			"name": "constant.numeric.zss",
+			"match": "(?<![\\w$])(?:\\d+\\.\\d*|\\.\\d+|\\d+)(?!\\w)"
+		},
+		"modifiers": {
+			"name": "meta.preprocessor.string",
+			"match": "(?i)\\b(?:ignorehitpause|persistent)\\b"
+		},
+		"sctrls": {
+			"match": "(?i)(?:^|(?<=[;{}]))\\s*(?!(?:if|else|for|while|switch|case|call|ignorehitpause|persistent)\\b)([A-Za-z_]\\w*)(?=\\s*\\{)",
+			"captures": {
+				"1": {
+					"name": "support.class.sctrl.zss"
+				}
+			}
+		},
+		"functions": {
+			"patterns": [
+				{
+					"match": "(?i)\\b(const|const240p|const480p|const720p|stagevar|stageconst|gethitvar|animframe|clsnoverlap|clsnvar|explodvar|fightscreenvar|hitdefvar|inputtime|map|projvar|gamevar|isasserted|drawpal)\\s*(\\()([^()\\n]*)(\\))",
+					"captures": {
+						"1": {
+							"name": "support.function.zss"
+						},
+						"3": {
+							"name": "string.unquoted.zss"
+						}
+					}
+				},
+				{
+					"match": "\\b([A-Za-z_][\\w.]*)\\s*(?=\\()",
+					"captures": {
+						"1": {
+							"name": "support.function.zss"
+						}
+					}
+				},
+				{
+					"match": "[A-Za-z_][\\w.]*",
+					"name": "support.function.zss"
+				}
+			]
+		},
+		"operators": {
+			"name": "keyword.operator.zss",
+			"match": "\\|\\||&&|\\^\\^|:=|!=|<=|>=|\\*\\*|[=<>+\\-*/%!~&|^]"
+		}
+	}
+}

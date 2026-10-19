@@ -1,0 +1,4898 @@
+{
+	"generatedAt": "2026-10-21T20:48:16.444Z",
+	"source": "https://raw.githubusercontent.com/potsmugen/ikemen-merged-docs/main/docs/",
+	"count": 268,
+	"triggers": [
+		{
+			"key": "abs",
+			"name": "Abs",
+			"signature": "Abs (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Computes the absolute value of its argument.",
+			"format": "abs(exprn)",
+			"args": "**exprn** Expression to compute the absolute value of.",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "acos",
+			"name": "Acos",
+			"signature": "Acos (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Computes the arccosine (in radians) of the specified argument.",
+			"format": "acos(exprn)",
+			"args": "**exprn** Expression to compute the arccosine of (float).",
+			"returns": "",
+			"details": "",
+			"example": "value = acos(1)  \n; Sets value to the arccosine of 1, which is approximately 0.0 (possibly with some rounding error.)",
+			"changeNotes": []
+		},
+		{
+			"key": "ailevel",
+			"name": "AILevel",
+			"signature": "AILevel",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the difficulty level of the player's AI.",
+			"format": "AILevel",
+			"args": "none",
+			"returns": "",
+			"details": "If AI is enabled on the player, the value ranges from 1 (easiest) to 8 (most difficult). If AI is not enabled on the player, the return value is 0.",
+			"example": "trigger1 = Random < AILevel * 10  \n; Triggers with 10% probability at AILevel 1, 20% at AILevel 2, etc.",
+			"changeNotes": []
+		},
+		{
+			"key": "ailevelf",
+			"name": "AiLevelF",
+			"signature": "AiLevelF",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the difficulty level of the player's AI as a float value (unlike the *AILevel* trigger, which is still floored for compatibility). If AI is enabled on the player, the value ranges from 1 (easiest) to 8 (most difficult). If AI is not enabled, the return value is 0. The floating-point AI difficulty comes from the AI Ramping system; see the `select.def` distributed with the engine for more information.",
+			"format": "AiLevelF",
+			"args": "None",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Random < (500 * (AILevelF ** 2 / 64.0))",
+			"changeNotes": []
+		},
+		{
+			"key": "airjumpcount",
+			"name": "AirJumpCount",
+			"signature": "AirJumpCount",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the number of (conventional) air jumps the P1 has performed.",
+			"format": "AirJumpCount",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "alive",
+			"name": "Alive",
+			"signature": "Alive",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the player is still able to fight, 0 if the player has been KOed.",
+			"format": "alive",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Alive = 0  \n; Triggers if the player has been KOed.",
+			"changeNotes": []
+		},
+		{
+			"key": "alpha",
+			"name": "Alpha",
+			"signature": "Alpha",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of the player's source/dest alpha applied with Trans sctrl.",
+			"format": "Alpha argument",
+			"args": "source, dest",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Alpha source >= 128 && Alpha dest >= 128",
+			"changeNotes": []
+		},
+		{
+			"key": "analog",
+			"name": "Analog",
+			"signature": "Analog",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of the player's respective analog axis. Values are normalized from [-1,1] with the exception of analog triggers (`RightTrigger` and `LeftTrigger`) which are normalized to [0.0,1.0].\n\nNote: internally, 256 distinct analog steps exist per axis with the exception of the analog triggers which are halved (128 distinct steps).",
+			"format": "Axis argument",
+			"args": "LeftX, LeftY, RightX, RightY, LeftTrigger, RightTrigger",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Analog(LeftX) >= 0.5 && Analog(RightTrigger) > 0.75",
+			"changeNotes": []
+		},
+		{
+			"key": "angle",
+			"name": "Angle",
+			"signature": "Angle",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of the player's angle applied with AngleDraw/AngleSet/AngleAdd/AngleMul sctrl.",
+			"format": "Angle",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Angle >= 90",
+			"changeNotes": []
+		},
+		{
+			"key": "anim",
+			"name": "Anim",
+			"signature": "Anim",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the current animation action number of the player.",
+			"format": "Anim",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Anim = 200  \n; Triggers if the player is currently in action 200.",
+			"changeNotes": []
+		},
+		{
+			"key": "animelem",
+			"name": "AnimElem",
+			"signature": "AnimElem",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Gets the animation-time elapsed since the start of a specified element of the current animation action. Useful for synchronizing events to elements of an animation action. (Reminder: first element of an action is element 1, not 0) `AnimElemTime` has similar functionality to `AnimElem`, but can take expressions as its argument.",
+			"format": "- AnimElem = value1\n- AnimElem = value1, [oper] value2",
+			"args": "*[oper]* =, !=, <, >, <=, >=",
+			"returns": "",
+			"details": "Trigger in Format 1 is true if the player's animation is at the start of the element number specified by value1. In other words, if value1 is equal to n, it is true on the first game-tick of the nth element of the animation. Trigger in Format 2 compares the player's animation-time to t+value2, where t is time of the start of the element number specified by value1.",
+			"example": "trigger1 = AnimElem = 2  \n; True on the first game-tick that the player's animation is on element 2.\n; Is equivalent to saying: trigger1 = AnimElem = 2, = 0  \n  \ntrigger1 = AnimElem = 2, = 4  \n; True 4 game-ticks after the start of the player's second animation element.  \n  \ntrigger1 = AnimElem = 2, >= 0  \ntrigger1 = AnimElem = 3, < 0  \n; True for the whole of the second element of the player's animation, assuming there is a third element.\n; If a third element does not exist, the second line should read, trigger1 = AnimTime <= 0",
+			"changeNotes": []
+		},
+		{
+			"key": "animelemno",
+			"name": "AnimElemNo",
+			"signature": "AnimElemNo",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the number of the animation element in the current action that would be displayed at the specified time. The argument to `AnimElemNo` represents the time to check, expressed in game ticks, relative to the present.",
+			"format": "AnimElemNo(exprn)",
+			"args": "**exprn** Expression that evaluates to the time offset (int).",
+			"returns": "",
+			"details": "If the action is currently within its looping portion, then it is assumed to have been looping forever. That is, no matter how far into the past you check, AnimElemNo will always return an element number that lies within the looping portion of the action.",
+			"example": "trigger1 = AnimElemNo(0) = 2  \n; True when the animation element to be displayed 0 ticks in the future (i.e., now) is element 2.\n; This is equivalent to:  \n; trigger1 = AnimElem = 2, >= 0  \n; trigger1 = AnimElem = 3, < 0  \n  \ntrigger1 = AnimElemNo(2) = 4  \n; True when the animation element that will be displayed two ticks from now is element 4.\n; This is equivalent to:  \n; trigger1 = AnimElem = 4, >= -2  \n; trigger1 = AnimElem = 5, < -2",
+			"changeNotes": []
+		},
+		{
+			"key": "animelemtime",
+			"name": "AnimElemTime",
+			"signature": "AnimElemTime",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Gets the animation-time elapsed since the start of a specified element of the current animation action. Useful for synchronizing events to elements of an animation action. (Reminder: first element of an action is element 1, not 0)",
+			"format": "AnimElemTime(exprn)",
+			"args": "**exprn** Expression that evaluates to the element number to check (int).",
+			"returns": "",
+			"details": "AnimElemTime will not trigger on the first game-tick of the second or later loop of an animation with a finite looptime. For example, AnimElemTime(1) = 0 will trigger the first tick a player changes to an animation, but will not trigger on the tick that it loops. You may get it to trigger each time using AnimElemTime(1) = 0 || AnimTime = 0.",
+			"example": "trigger1 = AnimElemTime(2) = 0  \n; True on the first game-tick that the player's animation is on element 2.  \n; Is equivalent to saying: trigger1 = AnimElem = 2  \n  \ntrigger1 = AnimElemTime(2) = 4  \n; True 4 game-ticks after the start of the player's second animation element.  \n  \ntrigger1 = AnimElemTime(2) >= 0  \ntrigger1 = AnimElemTime(3) < 0  \n; True for the whole of the second element of the player's animation, assuming there is a third element.  \n; If a  third element does not exist, the second line will evaluate to bottom and hence trigger1 will never trigger.  \n; In this case, the second line should read: trigger1 = AnimTime <= 0",
+			"changeNotes": []
+		},
+		{
+			"key": "animelemvar",
+			"name": "AnimElemVar",
+			"signature": "AnimElemVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns information about the player's current animation frame as defined in the AIR file. Refer to the AIR file documentation for what each parameter means. Note: This trigger was also called `AnimFrame` at one point during development.",
+			"format": "AnimElemVar(param_name)",
+			"args": "param_name The name of the parameter to check. Valid values are: AlphaDest, AlphaSource, Angle, Group, HFlip, Image, NumClsn1, NumClsn2, Time, VFlip, XOffset, XScale, YOffset, YScale",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = AnimElemVar(Group) = 200\ntrigger1 = AnimElemVar(NumClsn1) > 0",
+			"changeNotes": []
+		},
+		{
+			"key": "animexist",
+			"name": "AnimExist",
+			"signature": "AnimExist",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the specified animation action exists for the player. The result of this trigger is undefined if the player has been placed in a custom state by a successful hit. In this situation, use SelfAnimExist.",
+			"format": "AnimExist(exprn)",
+			"args": "**exprn** An expression evaluating to an animation number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = !AnimExist(200)  \n; Triggers if the player is missing action 200.",
+			"changeNotes": []
+		},
+		{
+			"key": "animlength",
+			"name": "AnimLength",
+			"signature": "AnimLength",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns total length of the P1 current animation.",
+			"format": "AnimLength",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Time = AnimTime - AnimLength\ntrigger1 = Time = GetHitVar(hittime) - AnimLength",
+			"changeNotes": []
+		},
+		{
+			"key": "animloopcount",
+			"name": "AnimLoopCount",
+			"signature": "AnimLoopCount",
+			"tags": [
+				"new"
+			],
+			"nightly": true,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the number of times the current animation has looped. It can increment either by reaching the end on the animation normally, or by returning to a `LoopStart` point.",
+			"format": "AnimLoopCount",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = AnimLoopCount > 3",
+			"changeNotes": []
+		},
+		{
+			"key": "animplayerno",
+			"name": "AnimPlayerNo",
+			"signature": "AnimPlayerNo",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player number of the owner of the player's current animation. Normally returns the same number as the player's player number, but when for instance `ChangeAnim2` is used in a custom state, it will return the number of who owns that animation.",
+			"format": "AnimPlayerNo",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Player(AnimPlayerNo), SelfAnimExist(1234)",
+			"changeNotes": []
+		},
+		{
+			"key": "animprefix",
+			"name": "AnimPrefix",
+			"signature": "AnimPrefix",
+			"tags": [
+				"new"
+			],
+			"nightly": true,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the prefix used to retrieve the current animation, e.g. `F` for lifebar common FX. Returns `S` if no common FX is being used.",
+			"format": "AnimPrefix",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "# Any common FX animation\nif animPrefix != \"S\" {",
+			"changeNotes": []
+		},
+		{
+			"key": "animtime",
+			"name": "AnimTime",
+			"signature": "AnimTime",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Gives the difference between the looptime of the current animation action and the player's animation-time. Useful for knowing when the end of the animation has been reached. (Animation-time is the time in game-ticks that the player has spent within the current animation action.) The name may be confusing. Try to think of it as \"time from the end of the animation\". During the animation, `AnimTime` will always return a non-positive number.",
+			"format": "AnimTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = AnimTime = 0  \n; Triggers when the animation-time is equal to the animation  \n  action's looptime, ie. the end of the action has been  \n  reached.",
+			"changeNotes": []
+		},
+		{
+			"key": "asin",
+			"name": "Asin",
+			"signature": "Asin (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Computes the arcsine (in radians) of the specified argument.",
+			"format": "asin(exprn)",
+			"args": "**exprn** Expression to compute the arcsine of (float).",
+			"returns": "",
+			"details": "",
+			"example": "value = asin(1)  \n  Sets value to the arcsine of 1, which is approximately pi/2  \n  (possibly with some rounding error.)",
+			"changeNotes": []
+		},
+		{
+			"key": "atan",
+			"name": "Atan",
+			"signature": "Atan (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Computes the arctangent (in radians) of the specified argument.",
+			"format": "atan(exprn)",
+			"args": "**exprn** Expression to compute the arctangent of (float).",
+			"returns": "",
+			"details": "",
+			"example": "value = atan(1)  \n  Sets value to the arccosine of 1, which is approximately pi/4  \n  (possibly with some rounding error.)",
+			"changeNotes": []
+		},
+		{
+			"key": "atan2",
+			"name": "Atan2",
+			"signature": "Atan2 (Math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Takes two arguments, and returns the arc tangent of the two specified arguments.",
+			"format": "Atan2(exp1,exp2)",
+			"args": "exp1 Expression 1 exp2 Expression 2",
+			"returns": "",
+			"details": "",
+			"example": "fvar(10) = Atan2(enemy,pos y-pos y, enemy,pos x-pos x)",
+			"changeNotes": []
+		},
+		{
+			"key": "attack",
+			"name": "Attack",
+			"signature": "Attack",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns P1 current attack value.",
+			"format": "Attack",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Attack = 100",
+			"changeNotes": []
+		},
+		{
+			"key": "attackmul",
+			"name": "AttackMul",
+			"signature": "AttackMul",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's current attackmul value.",
+			"format": "AttackMul",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = AttackMul > 1.0",
+			"changeNotes": []
+		},
+		{
+			"key": "authorname",
+			"name": "AuthorName",
+			"signature": "AuthorName",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": true,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's author's name (specified in the .DEF file). This may also be useful for telling apart characters with the same name but different authors.",
+			"format": "AuthorName [oper] \"name\"",
+			"args": "**[oper]** =, != (other operators not valid) **\"name\" (string)** Name to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Authorname = \"Suika\"  \n; Returns true if the character's author is named Suika.",
+			"changeNotes": [
+				"`AuthorName` can now return a string directly instead of requiring a comparison."
+			]
+		},
+		{
+			"key": "backedge",
+			"name": "BackEdge",
+			"signature": "BackEdge",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "BackEdge returns the x position of the edge of the screen that is behind the player, in absolute stage coordinates.",
+			"format": "BackEdge",
+			"args": "none",
+			"returns": "",
+			"details": "This trigger is equivalent to the expression ifelse(facing = 1, LeftEdge, RightEdge).",
+			"example": "trigger1 = Pos X + CameraPos X < BackEdge  \n; Triggers if the player is to the left of the back edge of the screen.",
+			"changeNotes": []
+		},
+		{
+			"key": "backedgebodydist",
+			"name": "BackEdgeBodyDist",
+			"signature": "BackEdgeBodyDist",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "BackEdgeBodyDist gives the distance from the back of the player, as determined by the end of his width bar, to the back edge of the screen.",
+			"format": "BackEdgeBodyDist",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = BackEdgeBodyDist < 30  \n; Triggers if the back of the player’s width bar is within 30 pixels  \n  of the edge of the screen in back of him.",
+			"changeNotes": []
+		},
+		{
+			"key": "backedgedist",
+			"name": "BackEdgeDist",
+			"signature": "BackEdgeDist",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "BackEdgeDist gives the distance between the x-axis of the player and the edge of the screen behind of the player.",
+			"format": "BackEdgeDist",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = BackEdgeDist < 30  \n; Triggers if the x-axis of the player is within 30 pixels of the edge of the screen in back of him.",
+			"changeNotes": []
+		},
+		{
+			"key": "bgmvar",
+			"name": "BgmVar",
+			"signature": "BgmVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Allows checking the filename, freqmul, length, loop, loopcount, loopend, loopstart, position, startposition, and volume of the currently playing BGM.\n\n**Warning: The results of this trigger are NOT network-safe due to user settings such as `Sound.BGMRAMSwap` causing variability in the asynchronicity of BGM operations. Usage of this trigger in production environments is discouraged.**",
+			"format": "BGMVar",
+			"args": "param_name The name of the variable to check. Valid values are: filename, freqmul, length, loop, loopcount, loopend, loopstart, position, samplerate (nightly build only), startposition, volume.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = BGMVar(position) = 32768\ntrigger2 = BGMVar(startPosition) = 0\ntrigger3 = BGMVar(loopstart) = 1741\ntrigger4 = BGMVar(loopend) = 65536\ntrigger5 = BGMVar(volume) = 98\ntrigger6 = BGMVar(filename) = \"sound/test.mp3\"\ntrigger7 = BGMVar(length) = 65536",
+			"changeNotes": []
+		},
+		{
+			"key": "botboundbodydist",
+			"name": "BotBoundBodyDist",
+			"signature": "BotBoundBodyDist",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Like `BotBoundDist`, except this trigger accounts for the player's bottom `edge` parameter, as defined by the `Depth` state controller.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "botbounddist",
+			"name": "BotBoundDist",
+			"signature": "BotBoundDist",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "BotBoundDist gives the distance between the player's z-axis and the `botbound` limit of the stage.",
+			"format": "BotBoundDist",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = BotBoundDist < 40",
+			"changeNotes": []
+		},
+		{
+			"key": "bottomedge",
+			"name": "BottomEdge",
+			"signature": "BottomEdge",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "BottomEdge returns the y position of the bottom edge of the screen, in absolute stage coordinates.",
+			"format": "BottomEdge",
+			"args": "none",
+			"returns": "",
+			"details": "This trigger is equivalent to the expression Pos Y - ScreenPos Y + GameHeight.",
+			"example": "trigger1 = Pos Y < BottomEdge  \n; Triggers if the player is above the bottom edge of the screen.",
+			"changeNotes": []
+		},
+		{
+			"key": "camerapos",
+			"name": "CameraPos",
+			"signature": "CameraPos",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Gets the value of the camera's position relative to the stage.",
+			"format": "CameraPos [component]",
+			"args": "**[component]** X, Y",
+			"returns": "",
+			"details": "The home position of the camera is 0, 0. The value of CameraPos X increases as the camera moves to the right. The value of CameraPos Y decreases as the camera moves upwards. The units of the position returned is in the coordspace of the player.",
+			"example": "trigger1 = CameraPos X >= 0 \n; True when the camera is to the left of the center of the stage.",
+			"changeNotes": []
+		},
+		{
+			"key": "camerazoom",
+			"name": "CameraZoom",
+			"signature": "CameraZoom",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Gets the value of the camera's zoom factor.",
+			"format": "CameraZoom",
+			"args": "none",
+			"returns": "",
+			"details": "Only accounts for the camera zoom that occurs naturally in the stage camera. Custom zoom effects are ignored.",
+			"example": "fvar(1) = CameraZoom * ScreenWidth\n; Sets fvar(1) to the distance between the left and right edges of the screen.\n; The expression \"CameraZoom * ScreenWidth\" is equivalent to the GameWidth trigger.",
+			"changeNotes": []
+		},
+		{
+			"key": "canrecover",
+			"name": "CanRecover",
+			"signature": "CanRecover",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "If the player is currently in a falling state, returns 1 if he is currently able to recover, and 0 if he is not currently able to recover. If the player is not currently falling, the output of this trigger is undefined.",
+			"format": "CanRecover",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "ceil",
+			"name": "Ceil",
+			"signature": "Ceil (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Implements the \"ceiling\" function. Returns the least integer which is greater than or equal to the specified argument.",
+			"format": "ceil(exprn)",
+			"args": "**exprn** Expression to compute the ceil of.",
+			"returns": "",
+			"details": "",
+			"example": "value = ceil(5.5)  \n; Sets value to 6.  \n  \nvalue = ceil(-2)  \n; Sets value to -2.",
+			"changeNotes": []
+		},
+		{
+			"key": "clamp",
+			"name": "Clamp",
+			"signature": "Clamp (Math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Takes three arguments, returns a value clamped to an inclusive range of two specified arguments.",
+			"format": "Clamp(value,min,max)",
+			"args": "value Expression 1 min Expression 2 max Expression 3",
+			"returns": "",
+			"details": "",
+			"example": "fvar(10) = Clamp(fvar(10),10 100)",
+			"changeNotes": []
+		},
+		{
+			"key": "clsnoverlap",
+			"name": "ClsnOverlap",
+			"signature": "ClsnOverlap",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the player's specified collision box type is overlapping another player's collision boxes. This trigger uses Ikemen's internal collision detection, so it will work even with angled and rescaled boxes.",
+			"format": "ClsnOverlap(box_type_1, playerID, box_type_2)",
+			"args": "box_type_1 The player's collision box type. Valid values are Clsn1, Clsn2, Size and Dummy (nightly build only) playerID The ID of the player against which to check the overlap box_type_2 The target's collision box type. Valid values are Clsn1, Clsn2, Size and Dummy (nightly build only)",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ClsnOverlap(clsn1, p2,ID, clsn2)",
+			"changeNotes": []
+		},
+		{
+			"key": "clsnvar",
+			"name": "ClsnVar",
+			"signature": "ClsnVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the specified CLSN coordinate from the specified CLSN index. Back always returns the back coordinate, and front always returns the front coordinate, even if they are reversed in the .AIR file. All coordinates are in the same coordinate space as .AIR.",
+			"format": "ClsnVar(value_type,index,elem)",
+			"args": "value_type Valid Values are Clsn1, Clsn2, Size and Dummy (nightly build only) index Expression elem Valid values are back, front, top, and bottom",
+			"returns": "",
+			"details": "",
+			"example": "fvar(0) = ClsnVar(Clsn2, 0, Back)",
+			"changeNotes": []
+		},
+		{
+			"key": "combocount",
+			"name": "ComboCount",
+			"signature": "ComboCount",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the total number of hits done by the player's side in the currently ongoing combo. This value is valid as long as the opposite team combo count stays above 0, otherwise it returns 0 too. Returned value always matches current combo counter tracked by lifebar.",
+			"format": "ComboCount",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ComboCount > 8",
+			"changeNotes": []
+		},
+		{
+			"key": "command",
+			"name": "Command",
+			"signature": "Command",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Triggers if the user has input the specified command.",
+			"format": "Command [oper] \"command_name\"",
+			"args": "**[oper]** =, != (other operators not valid) **\"command_name\" (string)** Name of the command. Commands are defined in the player's CMD file, and are case-sensitive. If the CMD has multiple commands with the same name, then any one of those commands will work. Command names must appear within double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Command = \"fireball motion\"  \n; True if the user inputs the command corresponding to the command name \"fireball motion\".",
+			"changeNotes": [
+				"If a character has `ikemenversion`, when the `Command` trigger is redirected to another player, the engine will first check if the other player is performing its own command with the same name. If not, it'll check if it's performing the command from our own command list. Otherwise it will work like Mugen.\n\nThe trigger can now use any string expression, not only string literals."
+			]
+		},
+		{
+			"key": "cond",
+			"name": "Cond",
+			"signature": "Cond (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes three arguments. The first argument is a condition argument. If the condition is true (i.e., nonzero), Cond evaluates and returns the second argument. If the condition is false, Cond evaluates and returns the third argument. If the condition is bottom, then Cond returns bottom without evaluating the second or third arguments. In all cases, any unused argument(s) are not evaluated. Therefore, Cond can be used instead of IfElse to avoid any side effects that would be caused by evaluating the unused argument (e.g., variable assignment, or performing a computation that would cause bottom to be generated).",
+			"format": "Cond(exp_cond,exp_true,exp_false)",
+			"args": "**exp_cond** Expression to test. **exp_true** Expression specifying value to return if exp_cond is nonzero. **exp_false** Expression specifying value to return if exp_cond is zero.",
+			"returns": "",
+			"details": "",
+			"example": "value = Cond(var(3),1,2)  \n; Sets value to 1 if var(3) is not zero, and sets value to 2 if var(3) is 0.",
+			"changeNotes": []
+		},
+		{
+			"key": "consecutivewins",
+			"name": "ConsecutiveWins",
+			"signature": "ConsecutiveWins",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns number of matches won consecutively by this team side. The counter increases for the winning team at the same time MatchOver trigger starts returning 1. Losing a round resets the counter to 0 and prevents increment for this match.",
+			"format": "ConsecutiveWins",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ConsecutiveWins > 0",
+			"changeNotes": []
+		},
+		{
+			"key": "const",
+			"name": "Const",
+			"signature": "Const",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of one of the player's constants.",
+			"format": "Const(param_name)",
+			"args": "**param_name** The name of the constant to check. Valid values are listed under Details.",
+			"returns": "",
+			"details": "The following values of *param_name* return values specified in the [Data] group in the player's constants.\n- data.life: Returns value of the \"life\" parameter. (int)\n- data.power: Returns value of the \"power\" parameter. (int)\n- data.attack: Returns value of the \"attack\" parameter. (int)\n- data.defence: Returns value of the \"defence\" parameter. (int)\n- data.fall.defence_mul: Returns value of the defence multiplier, calculated as 100/(f+100), where f is the \"fall.defence_up\" parameter. (float)\n- data.liedown.time: Returns value of the \"liedown.time\" parameter. (int)\n- data.airjuggle: Returns value of the \"airjuggle\" parameter. (int)\n- data.sparkno: Returns value of the \"sparkno\" parameter.…",
+			"example": "trigger1 = Const(velocity.walk.fwd.x) > 4  \n; Triggers if the forward walking velocity is greater than 4.",
+			"changeNotes": [
+				"The `Const` trigger can now also read Ikemen GO's [new constants](https://github.com/ikemen-engine/Ikemen-GO/wiki/Character-features#cns_constants).\n\nReturns the value of one of the player's custom constants from the [[Constants]](Character-features/#cns_constants) section."
+			]
+		},
+		{
+			"key": "const1080p",
+			"name": "Const1080p",
+			"signature": "Const1080p",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Converts a value from the 1080p coordinate space to the player's coordinate space. The conversion ratio between coordinate spaces is the ratio of their widths.",
+			"format": "Const1080p(exprn)",
+			"args": "exprn Expression containing the value to convert. (float)",
+			"returns": "",
+			"details": "",
+			"example": "value = Const1080p(12)\n; Sets value 2 if the player has a coordinate space of 320x240 (240p).\n; Sets value 4 if the player has a coordinate space of 640x480 (480p).\n; Sets value 8 if the player has a coordinate space of 1280x720 (720p).\n; Sets value 12 if the player has a coordinate space of 1920x1080 (1080p).",
+			"changeNotes": []
+		},
+		{
+			"key": "const240p",
+			"name": "Const240p",
+			"signature": "Const240p",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Converts a value from the 240p coordinate space to the player's coordinate space. The conversion ratio between coordinate spaces is the ratio of their widths.",
+			"format": "Const240p(exprn)",
+			"args": "*exprn* Expression containing the value to convert. (float)",
+			"returns": "",
+			"details": "Non-zero position and velocity offset values in common1.cns should use one of the Const triggers to maintain consistency with characters from a different coordinate space.",
+			"example": "value = Const240p(3)  \n; Sets value 3 if the player has a coordinate space of 320x240 (240p).  \n; Sets value 6 if the player has a coordinate space of 640x480 (480p).  \n; Sets value 12 if the player has a coordinate space of 1280x720 (720p).",
+			"changeNotes": []
+		},
+		{
+			"key": "const480p",
+			"name": "Const480p",
+			"signature": "Const480p",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Converts a value from the 480p coordinate space to the player's coordinate space. The conversion ratio between coordinate spaces is the ratio of their widths.",
+			"format": "Const480p(exprn)",
+			"args": "**exprn** Expression containing the value to convert. (float)",
+			"returns": "",
+			"details": "Non-zero position and velocity offset values in common1.cns should use one of the Const triggers to maintain consistency with characters from a different coordinate space.",
+			"example": "value = Const480p(6)  \n; Sets value 3 if the player has a coordinate space of 320x240 (240p).  \n; Sets value 6 if the player has a coordinate space of 640x480 (480p).  \n; Sets value 12 if the player has a coordinate space of 1280x720 (720p).",
+			"changeNotes": []
+		},
+		{
+			"key": "const720p",
+			"name": "Const720p",
+			"signature": "Const720p",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Converts a value from the 720p coordinate space to the player's coordinate space. The conversion ratio between coordinate spaces is the ratio of their widths.",
+			"format": "Const720p(exprn)",
+			"args": "**exprn** Expression containing the value to convert. (float)",
+			"returns": "",
+			"details": "Non-zero position and velocity offset values in common1.cns should use one of the Const triggers to maintain consistency with characters from a different coordinate space.",
+			"example": "value = Const720p(12)  \n; Sets value 3 if the player has a coordinate space of 320x240 (240p).  \n; Sets value 6 if the player has a coordinate space of 640x480 (480p).  \n; Sets value 12 if the player has a coordinate space of 1280x720 (720p).",
+			"changeNotes": []
+		},
+		{
+			"key": "cos",
+			"name": "Cos",
+			"signature": "Cos (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Computes the cosine of the specified argument (in radians.)",
+			"format": "cos(exprn)",
+			"args": "**exprn** Expression to compute the cosine of. (float)",
+			"returns": "",
+			"details": "",
+			"example": "value = cos(0)  \n; Sets value to the cosine of 0, which is approximately 1.0 (possibly with some rounding error.)",
+			"changeNotes": []
+		},
+		{
+			"key": "ctrl",
+			"name": "Ctrl",
+			"signature": "Ctrl",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the control flag of p1.",
+			"format": "Ctrl",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Ctrl  \n; Triggers if the player has control.",
+			"changeNotes": []
+		},
+		{
+			"key": "debugmode",
+			"name": "DebugMode",
+			"signature": "DebugMode",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns information related to the debug mode.",
+			"format": "DebugMode(param_name)",
+			"args": "param_name The name of the parameter to check. Valid values are: accel, clsndisplay, debugdisplay, lifebarhide, wireframedisplay, roundrestarted",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = DebugMode(accel) != 0\ntrigger1 = DebugMode(clsndisplay)",
+			"changeNotes": []
+		},
+		{
+			"key": "decisiveround",
+			"name": "DecisiveRound",
+			"signature": "DecisiveRound",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the match will conclude if the player's team wins.",
+			"format": "DecisiveRound",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = DecisiveRound",
+			"changeNotes": []
+		},
+		{
+			"key": "defence",
+			"name": "Defence",
+			"signature": "Defence",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's current defence value. This value accounts for all defence multipliers.",
+			"format": "Defence",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Defence = 100",
+			"changeNotes": []
+		},
+		{
+			"key": "defencemul",
+			"name": "DefenceMul",
+			"signature": "DefenceMul",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's current defencemul value.",
+			"format": "DefenceMul",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = DefenceMul > 1.0",
+			"changeNotes": []
+		},
+		{
+			"key": "deg",
+			"name": "Deg",
+			"signature": "Deg (Math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Converts an argument value from radians to degrees.",
+			"format": "Deg(exp)",
+			"args": "exp Expression",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Deg(pi/2) = 90",
+			"changeNotes": []
+		},
+		{
+			"key": "displayname",
+			"name": "DisplayName",
+			"signature": "DisplayName",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's displayed name. Note that the lifebar name is not necessarily the same.",
+			"format": "DisplayName [oper] \"name\"",
+			"args": "[oper] =, != (other operators not valid) \"name\" (string) Name to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = EnemyNear, DisplayName = \"Gopher\"",
+			"changeNotes": []
+		},
+		{
+			"key": "dizzy",
+			"name": "Dizzy",
+			"signature": "Dizzy",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if character is under [dizzy effect](https://github.com/ikemen-engine/Ikemen-GO/wiki/Miscellaneous-Info#dizzy) (assigned by [DizzySet](sctrl#new_dizzyset) sctrl).",
+			"format": "Dizzy",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = !Dizzy",
+			"changeNotes": []
+		},
+		{
+			"key": "dizzypoints",
+			"name": "DizzyPoints",
+			"signature": "DizzyPoints",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the amount of [dizzy points](https://github.com/ikemen-engine/Ikemen-GO/wiki/Character-features#dizzypoints) the player has.",
+			"format": "DizzyPoints",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = DizzyPoints = 0",
+			"changeNotes": []
+		},
+		{
+			"key": "dizzypointsmax",
+			"name": "DizzyPointsMax",
+			"signature": "DizzyPointsMax",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the maximum amount of [dizzy points](https://github.com/ikemen-engine/Ikemen-GO/wiki/Character-features#dizzypoints) the player can have. This is normally the same value as LifeMax (adjustable in character's CNS `[Data]` section).",
+			"format": "DizzyPointsMax",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = DizzyPoints < DizzyPointsMax / 2",
+			"changeNotes": []
+		},
+		{
+			"key": "drawgame",
+			"name": "DrawGame",
+			"signature": "DrawGame",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the player (or the player's team, in team mode) has ended the round in a draw, 0 otherwise.",
+			"format": "Draw",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = DrawGame  \n; Triggers if the player (or team) ended round in a draw.",
+			"changeNotes": []
+		},
+		{
+			"key": "drawpal",
+			"name": "DrawPal",
+			"signature": "DrawPal",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "returns the value of the group and index of the palette being used to draw the sprites at the moment, unlike PalNo, which returns the palette selected in the character select screen.",
+			"format": "DrawPal(argument)",
+			"args": "group, index",
+			"returns": "",
+			"details": "",
+			"example": "[State -2, PowerAdd]\ntype = PowerAdd\ntrigger1 = DrawPal(group) = 1 && DrawPal(index) = 12\nvalue = 30",
+			"changeNotes": []
+		},
+		{
+			"key": "e",
+			"name": "E",
+			"signature": "E (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of e (2.718281828...)",
+			"format": "e",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "envshakevar",
+			"name": "EnvShakeVar",
+			"signature": "EnvShakeVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Allows checking the (remaining) time, frequency and amplitude of the current EnvShake.",
+			"format": "EnvShakeVar",
+			"args": "param_name The name of the constant to check. Valid values are: time, freq, ampl",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = EnvShakeVar(time) = 1\ntrigger2 = EnvShakeVar(freq) = 60\ntrigger3 = EnvShakeVar(ampl) = -4",
+			"changeNotes": []
+		},
+		{
+			"key": "exp",
+			"name": "Exp",
+			"signature": "Exp (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Computes the exponential of the argument (e raised to the power of the argument). This produces slightly more accurate results than the equivalent expression e**(argument).",
+			"format": "exp(exprn)",
+			"args": "**exprn** Expression to compute the exponential of (float).",
+			"returns": "",
+			"details": "",
+			"example": "value = exp(4-var(0))  \n; Sets value to e raised to the quantity 4-var(0).",
+			"changeNotes": []
+		},
+		{
+			"key": "explodvar",
+			"name": "ExplodVar",
+			"signature": "ExplodVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the specified explod parameter. Use -1 for ID to iterate over all explods.",
+			"format": "ExplodVar(id, index, param)",
+			"args": "id Expression 1 index Expression 2 param Valid values are accel x, accel y, angle, angle x, angle y, anim, animelem, animelemtime, animloopcount (nightly build only), animprefix (nightly build only), bindid, bindtime, facing, drawpal.group, drawpal.index, ID, layerno, pausemovetime, pos x, pos y, removetime, scale x, scale y, shader, sprpriority, time, vel x, vel y",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "facing",
+			"name": "Facing",
+			"signature": "Facing",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the player is facing to the right, and -1 if the player is facing to the left.",
+			"format": "Facing",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "Trigger = Facing = -1  \n; Triggers if the player is facing toward the left of the screen.",
+			"changeNotes": []
+		},
+		{
+			"key": "fightscreenstate",
+			"name": "FightScreenState",
+			"signature": "FightScreenState",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Allows checking if the fight screen is displaying specific screens.",
+			"format": "FightScreenState(param)",
+			"args": "param The parameter to check. See details",
+			"returns": "",
+			"details": "* fightdisplay: Returns true if the fight call is being displayed. (bool)\n* kodisplay: Returns true if the KO screen is being displayed. (bool)\n* rounddisplay: Returns true if the round number screen is being displayed. (bool)\n* windisplay: Returns true if the winner announcement screen is being displayed. (bool)",
+			"example": "trigger1 = FightScreenState(rounddisplay) = 1\ntrigger2 = FightScreenState(fightdisplay) = 1",
+			"changeNotes": []
+		},
+		{
+			"key": "fightscreenvar",
+			"name": "FightScreenVar",
+			"signature": "FightScreenVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns information about the fight screen (commonly referred to as \"lifebars\").",
+			"format": "FightScreenVar(param_name)",
+			"args": "param_name The name of the parameter to check. Valid values are: info.author, info.localcoord.x, info.localcoord.y, info.name, round.ctrl.time, round.over.hittime, round.over.time, round.over.waittime, round.over.wintime, round.slow.time, round.start.waittime, round.callfight.time, time.framespercount Refer to lifebar documentation and examples for the function of each argument.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = FightScreenVar(Info.Name) = \"Some lifebar\"\ntrigger1 = FightScreenVar(Info.LocalCoord.X) = 1280\ntrigger1 = Time > FightScreenVar(Round.Ctrl.Time)",
+			"changeNotes": []
+		},
+		{
+			"key": "fighttime",
+			"name": "FightTime",
+			"signature": "FightTime",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the amount of ticks since the start of the actual fight.",
+			"format": "FightTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = FightTime > 600",
+			"changeNotes": []
+		},
+		{
+			"key": "firstattack",
+			"name": "FirstAttack",
+			"signature": "FirstAttack",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if this character has landed the first attack (before any of the opponents or team partners) in the current round. Otherwise returns 0.",
+			"format": "FirstAttack",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = FirstAttack",
+			"changeNotes": []
+		},
+		{
+			"key": "float",
+			"name": "Float",
+			"signature": "Float (math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Converts argument evaluating to int type into float type.",
+			"format": "Float(exp)",
+			"args": "exp Expression",
+			"returns": "",
+			"details": "",
+			"example": "fvar(10) = Float(Life) / LifeMax",
+			"changeNotes": []
+		},
+		{
+			"key": "floor",
+			"name": "Floor",
+			"signature": "Floor (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Implements the floor function. Returns the greatest integer less than or equal to its argument.",
+			"format": "floor(exprn)",
+			"args": "**exprn** Expression to compute the floor of.",
+			"returns": "",
+			"details": "",
+			"example": "value=floor(5.5)  \n; Sets value to 5.  \n\nvalue=floor(-2)  \n; Sets value to -2.",
+			"changeNotes": []
+		},
+		{
+			"key": "frontedge",
+			"name": "FrontEdge",
+			"signature": "FrontEdge",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "FrontEdge returns the x position of the edge of the screen that is in front the player, in absolute stage coordinates.",
+			"format": "FrontEdge",
+			"args": "none",
+			"returns": "",
+			"details": "This trigger is equivalent to the expression ifelse(facing = 1, RightEdge, LeftEdge).",
+			"example": "trigger1 = facing * (Pos X + CameraPos X) < facing * (FrontEdge)  \n; Triggers if the player is behind the front edge of the screen.",
+			"changeNotes": []
+		},
+		{
+			"key": "frontedgebodydist",
+			"name": "FrontEdgeBodyDist",
+			"signature": "FrontEdgeBodyDist",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "FrontEdgeBodyDist gives the distance between the front of the player (as determined by the front edge of his width bar) and the edge of the screen.",
+			"format": "FrontEdgeBodyDist",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = FrontEdgeBodyDist < 30  \n; Triggers if the front of the player is within 30 pixels of the edge of the screen in front of him.",
+			"changeNotes": []
+		},
+		{
+			"key": "frontedgedist",
+			"name": "FrontEdgeDist",
+			"signature": "FrontEdgeDist",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "FrontEdgeDist gives the distance between the x-axis of the player and the edge of the screen in front of the player.",
+			"format": "FrontEdgeDist",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = FrontEdgeDist < 30  \n; Triggers if the x-axis of the player is within 30 pixels  \n  of the edge of the screen in front of him.",
+			"changeNotes": []
+		},
+		{
+			"key": "fvar",
+			"name": "FVar",
+			"signature": "FVar",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes a mandatory variable number as an argument. It returns the value of the player's specified float variable.",
+			"format": "FVar(exprn)",
+			"args": "**exprn** An expression evaluating to a variable number. ~~Valid numbers at this time are 0-39.~~",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = FVar(5) = -1.23  \n; Triggers if the value of float variable 5 is -1.23.",
+			"changeNotes": []
+		},
+		{
+			"key": "gameheight",
+			"name": "GameHeight",
+			"signature": "GameHeight",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the current height of the game space in the player's local coordinate space. The game space is defined as the currently-visible area of the stage in which players interact. The dimensions of the game space at a zoom factor of 1.0 is specified by the `GameWidth` and `GameHeight` parameters in mugen.cfg.",
+			"format": "GameHeight",
+			"args": "none",
+			"returns": "",
+			"details": "GameWidth and GameHeight scale inversely with the zoom factor of the camera. For example, if the camera zoom factor is 0.5, the values returned by GameWidth and GameHeight will be double that of at zoom factor 1. ScreenWidth and ScreenHeight are the equivalent triggers that are not affected by the camera zoom factor.",
+			"example": "trigger1 = ScreenPos Y < GameHeight / 2  \n; Triggers if the player is above the center of the screen.",
+			"changeNotes": [
+				"If mugenVersion is specified as 1.0 in character's [[Info]](Character-features/#def_info) section, GameHeight returns the same value as ScreenHeight."
+			]
+		},
+		{
+			"key": "gamemode",
+			"name": "GameMode",
+			"signature": "GameMode",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the current game mode.",
+			"format": "GameMode [oper] \"name\"",
+			"args": "[oper] =, != (other operators not valid) \"name\" (string) Name to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = GameMode = \"arcade\"",
+			"changeNotes": []
+		},
+		{
+			"key": "gameoption",
+			"name": "GameOption",
+			"signature": "GameOption",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Allows checking the various game options as defined in config.ini (TBD) Keep in mind that until string support is added to the engine, only numeric values are useful to return.",
+			"format": "GameOption",
+			"args": "param_name The name of the variable to check.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = GameOption(sound.wavchannels) = 32",
+			"changeNotes": []
+		},
+		{
+			"key": "gametime",
+			"name": "GameTime",
+			"signature": "GameTime",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the total number of ticks that have elapsed in the game so far.",
+			"format": "GameTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = (GameTime % 27) = 0  \n  Triggers every 27th game tick.",
+			"changeNotes": []
+		},
+		{
+			"key": "gamevar",
+			"name": "GameVar",
+			"signature": "GameVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Allows checking some system variables that generally don't justify having their own dedicated triggers.",
+			"format": "GameVar(param)",
+			"args": "param The parameter to check. See details",
+			"returns": "",
+			"details": "* introtime: Returns the internal timer that controls pre-fight screens. (int)\n* outrotime: Returns the internal timer that controls post-fight screens. (int)\n* pausetime: Returns the time that the game is under the effect of Pause. (int)\n* slowtime: Returns the time that the game is under the effect of KO slowdown. (int)\n* superpausetime: Returns the time that the game is under the effect of SuperPause. (int)\n* persistrounds: Returns 1 if the round persist flag is active. (int)\n* persistlife: Returns 1 if the life persist flag is active. (int)\n* persistmusic: Returns 1 if the music persist flag is active. (int)\n* hidebars: Returns 1 if the hidebars flag is active. (int)",
+			"example": "trigger1 = GameVar(superpausetime) = 0\ntrigger2 = GameVar(introtime) = FightScreenVar(round.ctrl.time)",
+			"changeNotes": []
+		},
+		{
+			"key": "gamewidth",
+			"name": "GameWidth",
+			"signature": "GameWidth",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the current width of the game space in the player's local coordinate space. The game space is defined as the currently-visible area of the stage in which players interact. The dimensions of the game space at a zoom factor of 1.0 is specified by the GameWidth and GameHeight parameters in `mugen.cfg`.",
+			"format": "GameHeight",
+			"args": "none",
+			"returns": "",
+			"details": "GameWidth and GameHeight scale inversely with the zoom factor of the camera. For example, if the camera zoom factor is 0.5, the values returned by GameWidth and GameHeight will be double that of at zoom factor 1. ScreenWidth and ScreenHeight are the equivalent triggers that are not affected by the camera zoom factor.",
+			"example": "trigger1 = ScreenPos X >= GameWidth / 2  \n; Triggers if the player is to the right of the center of the screen.",
+			"changeNotes": [
+				"If mugenVersion is specified as 1.0 in character's [[Info]](Character-features/#def_info) section, GameWidth returns the same value as ScreenWidth."
+			]
+		},
+		{
+			"key": "gethitvar",
+			"name": "GetHitVar",
+			"signature": "GetHitVar",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "When the player is in a gethit state, returns the value of the specified hit parameter.",
+			"format": "GetHitVar(param_name)",
+			"args": "**param_name** **The name of the hit parameter to check. Valid values are:** xveladd, yveladd, type, animtype, airtype, groundtype, damage, hitcount, fallcount, hitshaketime, hittime, slidetime, ctrltime, recovertime, xoff, yoff, zoff, xvel, yvel, yaccel, hitid, chainid, guarded, fall, fall.damage, fall.xvel, fall.yvel, fall.recover, fall.time, fall.recovertime.",
+			"returns": "",
+			"details": "- xveladd: Returns the additional x-velocity that is added to the player's own when he is KOed. (float)\n- yveladd: Returns the additional y-velocity that is added to the player's own when he is KOed. (float)\n- type: Returns the type of the hit: 0 for none, 1 for high, 2 for low, 3 for trip (ground only).\n- animtype: Returns the animation type of the hit. (0 for light, 1 for medium, 2 for hard, 3 for back, 4 for up, 5 for diag-up)\n- airtype: Returns the type specified in the HitDef for an air hit.\n- groundtype: Returns the type specified in the HitDef for a ground hit.\n- damage: Returns the damage given by the hit. (int)\n- hitcount: Returns the number of hits taken by the player in current…",
+			"example": "trigger1 = GetHitVar(yvel) < -5.5  \n; Triggers if the hit's specified y velocity is less than -5.5.",
+			"changeNotes": [
+				"Returns the X, Y or Z component of the last HitDef's `air.velocity` parameter, even if the player was not hit in the air. (float)\n\nReturns the X, Y or Z component of the last HitDef's `airguard.velocity` parameter, even if the player did not guard in the air. (float)\n\nReturns the literal value specified in the HitDef.\n\n**Nightly build only:** A comparison is no longer mandatory. When used bare, `GetHitVar(attr)` now returns an attr string directly in the form `\"SCA, NA\"`. The old syntax is still supported.\n\nReturns the X, Y or Z component of the last HitDef's `down.velocity` parameter, even if the player was not hit while down. (float)\n\nReturns the X, Y or Z component of the last HitDef's `ground.velocity` parameter, even if the player was not hit on the ground. (float)\n\nReturns the X, Y or Z component of the last HitDef's `guard.velocity` parameter, even if the player did not guard on…"
+			]
+		},
+		{
+			"key": "groundangle",
+			"name": "GroundAngle",
+			"signature": "GroundAngle",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "TODO: ? Related to undocumented [PlatformAngle](https://github.com/ikemen-engine/Ikemen-GO/wiki/State-controllers-(changed)#changed_projectile_platformangle) projectile parameter.",
+			"format": "GroundAngle",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = GroundAngle != 0",
+			"changeNotes": []
+		},
+		{
+			"key": "groundlevel",
+			"name": "GroundLevel",
+			"signature": "GroundLevel",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the character's ground level, which is normally 0 but can be changed via [GroundLevelOffset](sctrl#new_groundleveloffset).",
+			"format": "GroundLevel",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "guardbreak",
+			"name": "GuardBreak",
+			"signature": "GuardBreak",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if character is under [guard break](https://github.com/ikemen-engine/Ikemen-GO/wiki/Miscellaneous-Info#guardbreak) (assigned by [GuardBreakSet](sctrl#new_guardbreakset) sctrl).",
+			"format": "GuardBreak",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = !GuardBreak",
+			"changeNotes": []
+		},
+		{
+			"key": "guardcount",
+			"name": "GuardCount",
+			"signature": "GuardCount",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns how many hits of the current attack were guarded. Similar to Hitcount.",
+			"format": "GuardCount",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = GuardCount >= 2",
+			"changeNotes": []
+		},
+		{
+			"key": "guardpoints",
+			"name": "GuardPoints",
+			"signature": "GuardPoints",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the amount of [guard points](https://github.com/ikemen-engine/Ikemen-GO/wiki/Character-features#guardpoints) the player has.",
+			"format": "GuardPoints",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = GuardPoints = 0",
+			"changeNotes": []
+		},
+		{
+			"key": "guardpointsmax",
+			"name": "GuardPointsMax",
+			"signature": "GuardPointsMax",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the maximum amount of [guard points](https://github.com/ikemen-engine/Ikemen-GO/wiki/Character-features#guardpoints) the player can have. This is normally the same value as LifeMax (adjustable in character's CNS `[Data]` section).",
+			"format": "GuardPointsMax",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = GuardPoints < GuardPointsMax / 2",
+			"changeNotes": []
+		},
+		{
+			"key": "helperindexexist",
+			"name": "HelperIndexExist",
+			"signature": "HelperIndexExist(n)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if a player's helper with the specified index number exists, or 0 otherwise.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = HelperIndexExist(5)\ntrigger1 = HelperIndex(5),time > 0",
+			"changeNotes": []
+		},
+		{
+			"key": "helpername",
+			"name": "HelperName",
+			"signature": "HelperName",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the helper's name (assigned via helper's name parameter, which defaults to \"\\<parent\\>'s helper\" if a unique name is not assigned).",
+			"format": "HelperName [oper] \"name\"",
+			"args": "[oper] =, != (other operators not valid) \"name\" (string) Name to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = HelperName = \"Fireball\"",
+			"changeNotes": []
+		},
+		{
+			"key": "helpervar",
+			"name": "HelperVar",
+			"signature": "HelperVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns a helper's unique properties. If called from a root player, the return is always invalid.",
+			"format": "helpervar(param)",
+			"args": "param The parameter to check. See details",
+			"returns": "",
+			"details": "* clsnproxy: Returns clsnproxy ID parameter (bool)\n* helpertype: Returns the helpertype parameter as an int. Returns 1 for normal, 2 for player and 3 for projectile (int)\n* ID: Returns the ID parameter (int)\n* keyctrl: Returns the keyctrl parameter (bool)\n* ownclsnscale: Returns the ownclsnscale parameter (bool)\n* ownpal: Returns the ownpal parameter (bool)\n* preserve: Returns the preserve parameter (bool)",
+			"example": "trigger1 = Helper(1000), HelperVar(keyctrl)",
+			"changeNotes": []
+		},
+		{
+			"key": "hitbyattr",
+			"name": "HitByAttr",
+			"signature": "HitByAttr",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Checks if the player can be hit by an attack with the specified attribute. See also documentation for the `attr` parameter in `HitDef` as well as `HitDefAttr`.",
+			"format": "HitByAttr(flag1, flag2)",
+			"args": "flag1 The state type flag. flag2 The attack type flag.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = HitByAttr(S, NT); Returns true if the player can be hit by standing throws",
+			"changeNotes": []
+		},
+		{
+			"key": "hitcount",
+			"name": "HitCount",
+			"signature": "HitCount",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the number times the player's current attack move has hit one or more opponents. This value is valid only for a single state; after any state change, it resets to 0. To prevent it from resetting to 0, set hitcountpersist in the StateDef (see cns documentation for details). The HitCount and UniqHitCount triggers differ only when the player is hitting more than one opponent. In the case where the player is hitting two opponents with the same attack, HitCount will increase by 1 for every hit, while UniqHitCount increases by 2.",
+			"format": "HitCount",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = HitCount > 8  \n; Triggers when more than 8 hits have been dealt to the  \n  opponent since the start of the player's attack move.",
+			"changeNotes": []
+		},
+		{
+			"key": "hitdefattr",
+			"name": "HitDefAttr",
+			"signature": "HitDefAttr",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Checks the attribute parameter of the player's currently-active HitDef. If the player is not currently attacking, then no parameters will match. Can be used for simple move-interrupts from weaker to stronger attacks in the CMD file. Note: `HitDefAttr != value1, value2` is logically equivalent to `!(HitDefAttr = value1, value2)`.",
+			"format": "HitDefAttr [oper] value1, value2",
+			"args": "**[oper]** =, != **value1** A string that has at least one of the letters \"S\", \"C\" and \"A\" for standing, crouching and aerial attacks respectively. For example, \"SA\" is for standing and aerial attacks. **value2** A set of 2-character strings, separated by commas. Each 2-character string must be of the form described: The first character is either \"N\" for \"normal\", \"S\" for \"special\", or \"H\" for \"hyper\". The second character must be either \"A\" for \"attack\" (a normal hit attack) or \"T\" for \"throw\". For example, \"NA, ST\" is for normal attacks and special throws. Assuming the attribute of the player's HitDef is in the form arg1, arg2, then the trigger condition is determined to be true only if…",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = HitDefAttr = A, HA  \n; Triggers when the player is in an attack state, where the current HitDef has the following attributes:  \n; 1. is an aerial attack and 2. is a hyper (super) attack  \n  \ntrigger1 = HitDefAttr = SC, NA, SA  \n; Triggers when the player is in an attack state, where the current HitDef has the following attributes:  \n; 1. is either a standing or a crouching attack and 2. is either a normal attack or a special attack",
+			"changeNotes": [
+				"A comparison is no longer mandatory. When used bare, `HitDefAttr` now returns an attr string in the form `\"SCA, NA\"`. The old syntax is still supported."
+			]
+		},
+		{
+			"key": "hitdefvar",
+			"name": "HitDefVar",
+			"signature": "HitDefVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns information about the player's currently active HitDef or ReversalDef. The parameter format is the same as in the `HitDef` state controller. Note: When the player has no active HitDef or ReversalDef, this trigger will return the default values of each parameter. It is generally advised to check if a HitDef or ReversalDef is active first with `HitDefAttr` or `ReversalDefAttr`.",
+			"format": "HitDefVar(param)",
+			"args": "param The parameter to check. Valid values: See details",
+			"returns": "",
+			"details": "* guard.dist.depth.bottom: Returns the guard distance in the z-axis, under the char\n* guard.dist.depth.top: Returns the guard distance in the z-axis, above the char\n* guard.dist.height.bottom: Returns the guard distance in the y-axis, under the char\n* guard.dist.height.top: Returns the guard distance in the y-axis, above the char\n* guard.dist.width.back: Returns the guard distance in the x-axis, behind the char\n* guard.dist.width.front: Returns the guard distance in the x-axis, in front of the char\n* guard.pausetime: Returns the first value of the Hitdef's guard.pausetime parameter (int)\n* guard.sparkno: The guard spark animation number (int)\n* guard.shaketime: Returns the second value of…",
+			"example": "trigger1 = HitDefVar(hitdamage) >= 100\ntrigger2 = P2, HitDefVar(guardflag) = L; attack can be blocked crouching\ntrigger3 = P2, HitDefVar(guardflag) != H; attack cannot be blocked standing",
+			"changeNotes": []
+		},
+		{
+			"key": "hitfall",
+			"name": "HitFall",
+			"signature": "HitFall",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "If the player is currently in a gethit state, returns the fall flag of the hit. The output of this trigger is undefined if the player is not in a gethit state. For an explanation of the fall flag, see the HitDef documentation.",
+			"format": "HitFall",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = !HitFall  \n; Triggers if the hit did not put the player into a fall state.",
+			"changeNotes": []
+		},
+		{
+			"key": "hitover",
+			"name": "HitOver",
+			"signature": "HitOver",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "If the player is in a gethit state, returns 1 when the hittime has expired, and 0 otherwise. For an explanation of hittime, see the HitDef documentation.",
+			"format": "HitOver",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = HitOver = 1  \n; Triggers when the player’s hittime has expired.",
+			"changeNotes": []
+		},
+		{
+			"key": "hitoverridden",
+			"name": "HitOverridden",
+			"signature": "HitOverridden",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 during frame in which player has overridden default gethit behavior via HitOverride state controller. Otherwise returns 0.",
+			"format": "HitOverridden",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = HitOverridden",
+			"changeNotes": []
+		},
+		{
+			"key": "hitpausetime",
+			"name": "HitPauseTime",
+			"signature": "HitPauseTime",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the time until the player's hitpause expires. The player enters a hitpause when his attack comes in contact with an opponent. The initial hitpause time is equal to the first value of the pausetime parameter in the player's HitDef. If `ignorehitpause` is not set, this will always return 0.",
+			"format": "HitPauseTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = HitPauseTime = 0  \n; Triggers when the player is not paused for a hit.",
+			"changeNotes": []
+		},
+		{
+			"key": "hitshakeover",
+			"name": "HitShakeOver",
+			"signature": "HitShakeOver",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "If the player is in a gethit state, returns 1 if the hit shake (the period when he is shaking in place) has ended, and 0 otherwise.",
+			"format": "HitShakeOver",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = HitShakeOver = 0  \n; Triggers if the player is still shaking from the hit.",
+			"changeNotes": []
+		},
+		{
+			"key": "hitvel",
+			"name": "HitVel",
+			"signature": "HitVel",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Gets the value of the velocity imparted to the player by a hit. You must specify the component that you want to check, eg. `HitVel Y` to check the vertical velocity component.",
+			"format": "HitVel [component]",
+			"args": "**[component]** X, Y",
+			"returns": "",
+			"details": "A positive HitVel Y means that the player is moving upward on the screen. A positive HitVel X means that the player is moving backward. Note that the HitVel X trigger behaves in the opposite manner to the Vel X trigger.",
+			"example": "trigger1 = HitVel X > 0.5  \n; True when the player's gethit x-velocity is greater than 0.5  \n  pixels per tick.",
+			"changeNotes": []
+		},
+		{
+			"key": "id",
+			"name": "ID",
+			"signature": "ID",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the ID number of the player. The ID number is unique for every player throughout the course of a match. Any helper that is created during this time will also receive its own unique ID number. This trigger may be useful for getting opponents' ID numbers, to be later used with the `playerID` redirection keyword (see exp docs). Do not confuse playerID with targetID.",
+			"format": "ID",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "value = ID  \n  This sets value to the ID number of the current player.  \nvalue = EnemyNear, ID  \n  This sets value to the ID number of the nearest opponent.",
+			"changeNotes": []
+		},
+		{
+			"key": "ifelse",
+			"name": "IfElse",
+			"signature": "IfElse (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes three arguments. If the first is nonzero, `IfElse` returns the value of the second argument. Else, it returns the value of the third argument. All arguments are evaluated prior to execution of IfElse. In particular, any side effects caused by evaluation of the arguments (such as variable assignment, or performing a computation that generates a warning) will occur. If you wish to avoid these side effects, then use `Cond`.",
+			"format": "IfElse(exp_cond,exp_true,exp_false)",
+			"args": "*exp_cond* Expression to test. *exp_true* Expression specifying value to return if exp_cond is nonzero. *exp_false* Expression specifying value to return if exp_cond is zero.",
+			"returns": "",
+			"details": "",
+			"example": "value = ifelse(var(3),1,2)  \n; Sets value to 1 if var(3) is not zero, and sets value to 2 if var(3) is 0.",
+			"changeNotes": []
+		},
+		{
+			"key": "ikemenversion",
+			"name": "IkemenVersion",
+			"signature": "IkemenVersion",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns one component of the character's Ikemen version as an integer.",
+			"format": "IkemenVersion(param_name)",
+			"args": "param_name The version component to return. Valid values are: Major, Minor, Patch",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = IkemenVersion(major) = 0 && IkemenVersion(minor) = 98 && IkemenVersion(patch) = 2",
+			"changeNotes": []
+		},
+		{
+			"key": "incustomanim",
+			"name": "InCustomAnim",
+			"signature": "InCustomAnim",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the character is in a custom animation, such as when `ChangeAnim2` is used in a custom state.",
+			"format": "InCustomAnim",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = InCustomAnim",
+			"changeNotes": []
+		},
+		{
+			"key": "incustomstate",
+			"name": "InCustomState",
+			"signature": "InCustomState",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the character is in a custom state (sent into another player's state).",
+			"format": "InCustomState",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = InCustomState",
+			"changeNotes": []
+		},
+		{
+			"key": "index",
+			"name": "Index",
+			"signature": "Index",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's index as an integer. See [PlayerIndex](redirections#playerindexn-new).",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "indialogue",
+			"name": "InDialogue",
+			"signature": "InDialogue",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 during ongoing dialogue initiated by [Dialogue](sctrl#new_dialogue) state controller.",
+			"format": "InDialogue",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = InDialogue",
+			"changeNotes": []
+		},
+		{
+			"key": "inguarddist",
+			"name": "InGuardDist",
+			"signature": "InGuardDist",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the player is within guarding distance of an opponent's physical or projectile attack. The guarding distance is the value of the guard.dist parameter of the opponent's HitDef. Returns 0 if out of guard distance, or the opponent is not attacking.",
+			"format": "InGuardDist",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "inputtime",
+			"name": "InputTime",
+			"signature": "InputTime",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns number of frames since a given button was pressed or released. A positive number means the button is being held, while a negative number means it has been released. For players without `keyctrl`, it returns 0.\n\nThis time advances regardless of the player being paused.",
+			"format": "InputTime(button)",
+			"args": "button The button to check. Valid values are: B, F, D, U, a, b, c, x, y, z, s, d, w, m, L, R These are the four cardinal directional inputs (B, F, D, U); the six attack buttons (a, b, c, x, y, z); start (s); the two new attack/tag buttons (d, w); the select/back/menu button (m); and absolute left/right directional inputs (L, R).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = InputTime(F) > 0; forward is being held\ntrigger2 = InputTime(U) < 0; up is not being held\ntrigger3 = InputTime(a) = 1; a was just pressed\ntrigger4 = InputTime(b) = 30; b has been held for 30 frames\ntrigger5 = InputTime(c) = -40; c was released 40 frames ago",
+			"changeNotes": []
+		},
+		{
+			"key": "inrunstate",
+			"name": "InRunState",
+			"signature": "InRunState",
+			"tags": [
+				"new"
+			],
+			"nightly": true,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the current state is being executed by the `RunState` state controller.",
+			"format": "InRunState",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "if !inRunState{\n    playSnd{...}\n}",
+			"changeNotes": []
+		},
+		{
+			"key": "introstate",
+			"name": "IntroState",
+			"signature": "IntroState",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the current intro state number: 0: Not applicable, or players have gained ctrl after \"fight!\" 1: Pre-intro (RoundState = 0) 2: Player intros (RoundState = 1) 3: Round announcement 4: Fight called",
+			"format": "IntroState",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = IntroState = 3",
+			"changeNotes": []
+		},
+		{
+			"key": "isasserted",
+			"name": "IsAsserted",
+			"signature": "IsAsserted",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the character has specified AssertSpecial state controller flag asserted. Flags that affect all characters at once don't have to be asserted directly by character to be detectable.",
+			"format": "IsAsserted(flag_name)",
+			"args": "flag_name The name of the AssertSpecial state controller flag to check (string).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = IsAsserted(noBG)",
+			"changeNotes": []
+		},
+		{
+			"key": "isclsnproxy",
+			"name": "IsClsnProxy",
+			"signature": "IsClsnProxy",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns if the helper is a [Clsn Proxy](sctrl#clsnproxy).",
+			"format": "IsClsnProxy",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = IsClsnProxy",
+			"changeNotes": []
+		},
+		{
+			"key": "ishelper",
+			"name": "IsHelper",
+			"signature": "IsHelper",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an optional ID number as an argument. If the ID number is omitted, IsHelper returns 1 if the player is a helper character, and 0 otherwise. If the ID number is included, then IsHelper returns 1 if the player is a helper character with the specified ID number, and 0 otherwise.",
+			"format": "- IsHelper\n- IsHelper(exprn)",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = !IsHelper\n; Triggers if the player is not a helper-type character.\n\ntrigger1 = IsHelper(1234)\n; Triggers if the player is a helper character with ID number 1234.",
+			"changeNotes": [
+				"The `IsHelper` trigger now also accepts an optional index argument, through the new format `IsHelper(ID, index)`. Defaults to -1 (any index). The old formats still work exactly the same."
+			]
+		},
+		{
+			"key": "ishometeam",
+			"name": "IsHomeTeam",
+			"signature": "IsHomeTeam",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the player's team is considered the \"home team\". In arcade modes, the computer is always considered the home team. In versus modes, P1's side (left) is the home team.",
+			"format": "IsHomeTeam",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "ishost",
+			"name": "IsHost",
+			"signature": "IsHost",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns if the player is host in online match.",
+			"format": "IsHost",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = IsHost",
+			"changeNotes": []
+		},
+		{
+			"key": "jugglepoints",
+			"name": "JugglePoints",
+			"signature": "JugglePoints",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the remaining juggle points between the player and another player with the specified ID. If the specified ID is not yet a target of the first player, the trigger will simply return the maximum juggle points.",
+			"format": "JugglePoints(exprn)",
+			"args": "exprn An expression evaluating to a player ID number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = JugglePoints(EnemyNear, ID) < 10",
+			"changeNotes": []
+		},
+		{
+			"key": "lastplayerid",
+			"name": "LastPlayerID",
+			"signature": "LastPlayerID",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the ID number of the last spawned player or helper.",
+			"format": "LastPlayerID",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PlayerID(LastPlayerID), HitDefAttr = SCA, AP",
+			"changeNotes": []
+		},
+		{
+			"key": "layerno",
+			"name": "LayerNo",
+			"signature": "LayerNo",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the layer number on which the character is currently being drawn on.",
+			"format": "LayerNo",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = LayerNo = -1",
+			"changeNotes": []
+		},
+		{
+			"key": "leftedge",
+			"name": "LeftEdge",
+			"signature": "LeftEdge",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "LeftEdge returns the x position of the left edge of the screen, in absolute stage coordinates.",
+			"format": "LeftEdge",
+			"args": "none",
+			"returns": "",
+			"details": "This trigger is equivalent to the expression CameraPos X - GameWidth / 2.",
+			"example": "trigger1 = Pos X + CameraPos X < LeftEdge  \n; Triggers if the player is to the left of the left edge of the screen.",
+			"changeNotes": []
+		},
+		{
+			"key": "lerp",
+			"name": "Lerp",
+			"signature": "Lerp (Math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Linear interpolation. Takes three arguments, and returns a number between two specified arguments at a specific increment.",
+			"format": "Lerp(a,b,amount)",
+			"args": "a Expression 1 b Expression 2 amount(Avaiable range 0-1) Expression 3",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Lerp(0, 100, 0.5) = 50",
+			"changeNotes": []
+		},
+		{
+			"key": "life",
+			"name": "Life",
+			"signature": "Life",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's life.",
+			"format": "Life",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = life <= 10  \n; Triggers if the player has 10 or less life points remaining.",
+			"changeNotes": []
+		},
+		{
+			"key": "lifemax",
+			"name": "LifeMax",
+			"signature": "LifeMax",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the maximum amount of life the player can have. This is normally the value of the `life` parameter in the [Data] group of the player variables, but may be different in situations such as team modes.",
+			"format": "LifeMax",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = life < lifemax / 4  \n; Triggers if the player has less than 1/4 of his maximum life.",
+			"changeNotes": []
+		},
+		{
+			"key": "ln",
+			"name": "Ln",
+			"signature": "Ln (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the natural logarithm of its argument. This produces slightly more accurate results than the otherwise equivalent expression log(e,(argument)).",
+			"format": "ln(exprn)",
+			"args": "**exprn** Expression to compute the natural logarithm of (float).",
+			"returns": "",
+			"details": "",
+			"example": "value = ln(time)  \n  Sets value to the natural logarithm of the player's statetime.",
+			"changeNotes": []
+		},
+		{
+			"key": "localcoord",
+			"name": "LocalCoord",
+			"signature": "LocalCoord",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the character's `localcoord` as a float. This trigger returns a constant value even when the player is in a custom state.",
+			"format": "LocalCoord [component]",
+			"args": "[component] X, Y",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = LocalCoord X < Enemy, LocalCoord Y",
+			"changeNotes": []
+		},
+		{
+			"key": "log",
+			"name": "Log",
+			"signature": "Log (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Takes two arguments a and b, and returns the base-a logarithm of b.",
+			"format": "Log(exp1,exp2)",
+			"args": "**exp1** Expression giving the base of the logarithm. Must be positive. **exp2** Expression giving the value to take the logarithm of. Must be positive.",
+			"returns": "",
+			"details": "",
+			"example": "value=log(2,64)  \n  Sets value to the base 2 log of 64, which is 6.0.",
+			"changeNotes": []
+		},
+		{
+			"key": "lose",
+			"name": "Lose",
+			"signature": "Lose",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the player (or the player's team, in team mode) has lost the round, 0 otherwise. Can be suffixed with \"KO\" or \"Time\" to return 1 only when the round has been lost by a KO or by time expiring, respectively.",
+			"format": "- Lose\n- LoseKO\n- LoseTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Lose  \n; Triggers if the player (or his team) has lost the round.  \n\ntrigger1 = !LoseKO  \n; Triggers if the player (or his team) has not lost the round by a KO.\n; For example, this will trigger if the player's team has not yet lost the round, or if they have lost the round by time over.",
+			"changeNotes": []
+		},
+		{
+			"key": "map",
+			"name": "Map",
+			"signature": "Map",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of a player's map with the specified name. Returns 0 if that map was not set yet.\n\nNote: In the nightly build, maps are now auto-typed instead of locked to float type. They become the same type of whatever they were assigned.",
+			"format": "Map(name)",
+			"args": "name Name of the map",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Map(age) >= 18\ntrigger1 = Map(ifelse(random < 500, \"foo\", \"bar\")) := \"word\"; nightly build only",
+			"changeNotes": []
+		},
+		{
+			"key": "matchno",
+			"name": "MatchNo",
+			"signature": "MatchNo",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the current match number.",
+			"format": "MatchNo",
+			"args": "none",
+			"returns": "",
+			"details": "The current match number is always 1 in versus-type modes. In Arcade and Team Arcade modes, the match number starts at 1 and increments every time a new match starts (does not increment on continue). If you finish the arcade mode and start a new game, the match number reverts to 1.",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "matchover",
+			"name": "MatchOver",
+			"signature": "MatchOver",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the match has ended. (For example, in the case of a best-of-three match, this will return true when one of the players or teams has won two rounds.)",
+			"format": "MatchOver",
+			"args": "none",
+			"returns": "",
+			"details": "Currently, MatchOver does not return true until the players start their win poses (state 180). This behavior may be subject to change in future releases.",
+			"example": "trigger1 = !matchover  \n; Triggers if the match is not over. For instance, the current round  \n  may not yet have ended, or it may have ended without deciding the  \n  match.",
+			"changeNotes": []
+		},
+		{
+			"key": "max",
+			"name": "Max",
+			"signature": "Max (math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Takes two arguments, and returns the highest-valued number.",
+			"format": "Max(exp1,exp2)",
+			"args": "exp1 Expression 1 exp2 Expression 2",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Max(var(3), 10)",
+			"changeNotes": []
+		},
+		{
+			"key": "memberno",
+			"name": "MemberNo",
+			"signature": "MemberNo",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns character's team member position. Team leader is 1, while partners receive successive numbers. In Tag mode this value is dynamic.",
+			"format": "MemberNo",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = MemberNo = 1",
+			"changeNotes": []
+		},
+		{
+			"key": "min",
+			"name": "Min",
+			"signature": "Min (math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Takes two arguments, and returns the lowest-valued number.",
+			"format": "Min(exp1,exp2)",
+			"args": "exp1 Expression 1 exp2 Expression 2",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Min(var(3), 10)",
+			"changeNotes": []
+		},
+		{
+			"key": "motifstate",
+			"name": "MotifState",
+			"signature": "MotifState",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Allows retrieval of whether the specified post-round sequence is active.",
+			"format": "MotifState(parameter)",
+			"args": "parameter The name of the motif state to check. Valid values are: challenger, continuescreen, continueyes, continueno, demo, dialogue, menu, victoryscreen, winscreen, hiscore",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "motifvar",
+			"name": "MotifVar",
+			"signature": "MotifVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Allows checking the various screenpack options as defined in system.def (TBD) Keep in mind that until string support is added to the engine, only numeric values are useful to return.",
+			"format": "MotifVar",
+			"args": "param_name The name of the variable to check.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = MotifVar(info.mugenversion) >= 1",
+			"changeNotes": []
+		},
+		{
+			"key": "movecontact",
+			"name": "MoveContact",
+			"signature": "MoveContact",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger is valid only when the player is in an attack state. MoveContact gives a non-zero value if P2 has either been hit, or has guarded P1's attack. It gives 0 otherwise. P1 is the player, and P2 is his opponent. Typically used with the `StateNo` and `Command` triggers for detecting move-interrupts in the CMD file.",
+			"format": "MoveContact",
+			"args": "none",
+			"returns": "",
+			"details": "On attack contact, MoveContact returns 1. After contact, MoveContact's return value will increase by 1 for each game tick that P1 is not paused (P1 gets paused on contact; see pausetime parameter in HitDef controller). The values of MoveGuarded, MoveHit and MoveReversed increment in the same fashion. Note 1: the values of MoveContact, MoveGuarded, MoveHit and MoveReversed are set simultaneously. For example, if one HitDef in a move hits successfully, MoveHit will return non-zero. If a following HitDef in the same move is guarded, MoveGuarded will return non-zero, and the other three triggers will return 0. Note 2: the values of the four Move\\* triggers reset to 0 and stop incrementing after…",
+			"example": "trigger1 = MoveContact\n; True if P1's attack did not miss P2.\n  \ntrigger1 = MoveContact = 1\n; True from the time P1's attack came in contact with P2, until just after P1's pausetime wears off.",
+			"changeNotes": []
+		},
+		{
+			"key": "movecountered",
+			"name": "MoveCountered",
+			"signature": "MoveCountered",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger is valid only when the player is in an attack state. MoveCountered returns 1 on attack contact, at the exact frame that p1 interrupts p2 attack (true for 1 frame, even if both P1 and P2 countered each other's moves). After contact, MoveCountered's return value will increase by 1 for each game tick that P1 is not paused. It gives 0 otherwise. See Details section of Mugen's `MoveContact` trigger for more information.",
+			"format": "MoveCountered",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = MoveCountered = 1",
+			"changeNotes": []
+		},
+		{
+			"key": "moveguarded",
+			"name": "MoveGuarded",
+			"signature": "MoveGuarded",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger is valid only when the player is in an attack state. MoveGuarded gives a non-zero value if P2 is guarding, or has guarded, P1's attack. It gives 0 otherwise. P1 is the player, and P2 is his opponent. Typically used with the `StateNo` and `Command` triggers for detecting move-interrupts in the CMD file.",
+			"format": "MoveGuarded",
+			"args": "none",
+			"returns": "",
+			"details": "See Details section for MoveContact trigger.",
+			"example": "trigger1 = MoveGuarded  \n; True if P1's attack was guarded by P2.",
+			"changeNotes": []
+		},
+		{
+			"key": "movehit",
+			"name": "MoveHit",
+			"signature": "MoveHit",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger is valid only when the player is in an attack state. MoveHit gives a non-zero value if P2 has been hit by P1's attack. It gives 0 otherwise. Typically used with the `StateNo` and `Command` triggers for detecting move-interrupts in the CMD file.",
+			"format": "MoveHit",
+			"args": "none",
+			"returns": "",
+			"details": "See Details section for MoveContact trigger.",
+			"example": "trigger1 = MoveHit  \n; True if P1's attack connected successfully with P2.",
+			"changeNotes": []
+		},
+		{
+			"key": "movehitvar",
+			"name": "MoveHitVar",
+			"signature": "MoveHitVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Similarly to `GetHitVar`, this trigger allows retrieving information about the last hit the player inflicted. This trigger works even if that hit acquired no `target`.",
+			"format": "MoveHitVar(parameter)",
+			"args": "parameter The name of the hit parameter to check. Valid values are: cornerpush.veloff, frame, overridden, playerid, playerno, sparkx, sparky, uniqhit",
+			"returns": "",
+			"details": "* cornerpush.veloff: Returns the stored velocity offset used for cornerpush. (float)\n* frame: Returns true only during the same frame where the player connected an attack. (bool)\n* overridden: Returns true if the last hit encountered a HitOverride. (bool)\n* playerid: Returns ID of the last player hit by the HitDef. (int)\n* playerno: Returns the player number of the last player hit by the HitDef. (int)\n* power: Returns the power the player gained or lost from the last hit. (int)\n* sparkx: Returns the horizontal offset of the hitsparks created by the Hitdef. (float)\n* sparky: Returns the vertical offset of the hitsparks created by the Hitdef. (float)\n* uniqhit: Returns the number of players…",
+			"example": "[State FX]\ntype = explod\ntrigger1 = MoveHit = 1\ntrigger1 = MoveHitVar(Frame) = 1\npostype = p1\npos = MoveHitVar(SparkX), MoveHitVar(SparkY)",
+			"changeNotes": []
+		},
+		{
+			"key": "movereversed",
+			"name": "MoveReversed",
+			"signature": "MoveReversed",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger is valid only when the player is in an attack state. MoveReversed gives a non-zero value if P1's attack has been reversed by P2. It gives 0 otherwise.",
+			"format": "MoveReversed",
+			"args": "none",
+			"returns": "",
+			"details": "See Details section for MoveContact trigger.",
+			"example": "trigger1 = MoveReversed  \n; True if P1's attack was reversed by P2.",
+			"changeNotes": []
+		},
+		{
+			"key": "movetype",
+			"name": "MoveType",
+			"signature": "MoveType",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "MoveType gives the player's move-type. Refer to the section on StateDef in the CNS documentation for more details on MoveType. Useful for \"move interrupts\" in the CMD file.",
+			"format": "MoveType [oper] move_type",
+			"args": "**[oper]** =, !=   (other operators not valid)",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = movetype != H  \n; Triggers if the player is not currently in a gethit-type state.",
+			"changeNotes": [
+				"A comparison is no longer mandatory. When used bare, `MoveType` now returns a move type string in the form `\"A\"`. The old syntax is still supported."
+			]
+		},
+		{
+			"key": "mugenversion",
+			"name": "MugenVersion",
+			"signature": "MugenVersion",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns one component of the character's Mugen version as an integer.\n\nCharacters with an Ikemen version are treated as Mugen 1.1, regardless of the value specified in the DEF file. WinMugen characters are treated as 0.5.",
+			"format": "MugenVersion(param_name)",
+			"args": "param_name The version component to return. Valid values are: Major, Minor",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = MugenVersion(major) = 1 && MugenVersion(minor) = 1",
+			"changeNotes": []
+		},
+		{
+			"key": "name",
+			"name": "Name",
+			"signature": "Name",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": true,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's name (the internal name specified in the .DEF file, which may not be the same as the displayed name).",
+			"format": "Name [oper] \"name\"",
+			"args": "**[oper]** =, != (other operators not valid) **\"name\" (string)** Name to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Name = \"Kumquat\"  \n; Returns true if the player is named Kumquat.",
+			"changeNotes": [
+				"`Name` can now return a string directly instead of requiring a comparison."
+			]
+		},
+		{
+			"key": "numenemy",
+			"name": "NumEnemy",
+			"signature": "NumEnemy",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "NumEnemy returns the number of opponents that exist. Neutral players and normal helpers are not considered opponents.",
+			"format": "NumEnemy",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = NumEnemy = 2\ntrigger1 = enemynear(1), name = \"Squash\"\n; Triggers if there are 2 opponents, and the second-closest one is named Squash.",
+			"changeNotes": []
+		},
+		{
+			"key": "numexplod",
+			"name": "NumExplod",
+			"signature": "NumExplod",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an ID number as an optional argument. If the ID number is omitted, NumExplod returns the number of explods owned by the player. If the ID number is included, then NumExplod returns the number of explods with that ID number that are owned by the player. The ID number must be greater than -1. An ID number of -1 or less will give the same behavior as if the ID number is omitted.",
+			"format": "- NumExplod\n- NumExplod(exprn)",
+			"args": "**exprn** Expression evaluating to an ID number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = NumExplod >= 4\n; Triggers if the player currently owns 4 or more explods.\n\ntrigger1 = NumExplod(1234) >= 4\n; Triggers if the player currently owns 4 or more explods with ID 1234.",
+			"changeNotes": []
+		},
+		{
+			"key": "numhelper",
+			"name": "NumHelper",
+			"signature": "NumHelper",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an ID number as an optional argument. If the ID number is omitted, then NumHelper returns the total number of helpers currently owned by the player. If the ID number is included, then NumHelper returns the total number of helpers with that ID number owned by the player. The ID number must be greater than 0. If the ID number is 0 or less, then all helpers are counted.",
+			"format": "- NumHelper\n- NumHelper(exprn)",
+			"args": "**exprn** Expression evaluating to an ID number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = NumHelper < 2\n; Triggers if the player now has less than 2 helpers.\n\ntrigger1 = NumHelper(1234) < 2\n; Triggers if the player now has less than 2 helpers with ID 1234.",
+			"changeNotes": []
+		},
+		{
+			"key": "numpartner",
+			"name": "NumPartner",
+			"signature": "NumPartner",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "NumPartner returns the number of partners that exist. Neutral players and normal helpers are not considered partners.",
+			"format": "NumPartner",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = NumPartner = 1\ntrigger1 = partner, life < 200\n; Triggers if the player has a partner with less than 200 life",
+			"changeNotes": []
+		},
+		{
+			"key": "numplayer",
+			"name": "NumPlayer",
+			"signature": "NumPlayer",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns total number of players (including helpers, attached chars, etc) existing ingame.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = NumPlayer > 5",
+			"changeNotes": []
+		},
+		{
+			"key": "numproj",
+			"name": "NumProj",
+			"signature": "NumProj",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the total number of projectiles currently owned by the player.",
+			"format": "NumProj",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = NumProj = 0  \n; Triggers if the player has no currently active projectiles.",
+			"changeNotes": []
+		},
+		{
+			"key": "numprojid",
+			"name": "NumProjID",
+			"signature": "NumProjID",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an ID number as a required argument. It returns the number of projectiles currently owned by the player and having the specified ID number.",
+			"format": "NumProjID(exprn)",
+			"args": "**exprn** Expression evaluating to an ID number.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = NumProjID(1234) = 1  \n; Triggers if there the player currently owns exactly 1 projectile  \n  with the ID number 1234.",
+			"changeNotes": []
+		},
+		{
+			"key": "numstagebg",
+			"name": "NumStageBG",
+			"signature": "NumStageBG",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the number of BG elements in the stage that have the specified ID. If the ID argument is not used, or if ID is -1, it returns the total.",
+			"format": "1. NumStageBG 2. NumStageBG(ID)",
+			"args": "ID Expression evaluating to an ID number (int)",
+			"returns": "",
+			"details": "",
+			"example": "if numStageBG > 0 {\n\tfor i = 0; numStageBG(-1) - 1; 1 {\n\t\tmodifyStageBG{\n\t\t\tID: -1;\n\t\t\tindex: $i;\n\t\t\tpos.x: randomRange(-10, 10);\n\t\t\tpos.y: randomRange(-10, 10);\n\t\t}\n\t}\n}",
+			"changeNotes": []
+		},
+		{
+			"key": "numtarget",
+			"name": "NumTarget",
+			"signature": "NumTarget",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an ID number as an optional argument. If the ID number is omitted, NumTarget returns the current number of targets for the player. If the ID number is included, then NumTarget returns the number of targets for the player which have that target ID number. The ID number must be greater than -1. An ID number of -1 or less will give the same behavior as if the ID number is omitted.",
+			"format": "- NumTarget\n- NumTarget(exprn)",
+			"args": "**exprn** Expression evaluating to an ID number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = NumExplod >= 4\n; Triggers if the player currently owns 4 or more explods.\n\ntrigger1 = NumExplod(1234) >= 4\n; Triggers if the player currently owns 4 or more explods with ID 1234.",
+			"changeNotes": []
+		},
+		{
+			"key": "numtext",
+			"name": "NumText",
+			"signature": "NumText",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an ID number as an optional argument. If the ID number is omitted, NumText returns the number of texts owned by the player. If the ID number is included, then NumText returns the number of texts with that ID number that are owned by the player. The ID number must be greater than -1. An ID number of -1 or less will give the same behavior as if the ID number is omitted.",
+			"format": "1.NumText 2.NumText(exprn)",
+			"args": "exprn Expression evaluating to an ID number (int)",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = NumText >= 2\ntrigger1 = NumText(1234) >= 2",
+			"changeNotes": []
+		},
+		{
+			"key": "offset",
+			"name": "Offset",
+			"signature": "Offset",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of the player's x,y offset applied with OffSet sctrl.",
+			"format": "OffSet argument",
+			"args": "x, y",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = OffSet x > 100 && OffSet y > 50",
+			"changeNotes": []
+		},
+		{
+			"key": "outrostate",
+			"name": "OutroState",
+			"signature": "OutroState",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the current outro state number: 0: Not applicable 1: Payers can still act, allowing a possible double KO 2: Players still have control, but the match outcome can no longer be changed 3: Players lose control, but the round has not yet entered win states 4: Player win states 5: Round over (starting from the last frame of the RoundState sequence and continuing through the entire post-round sequence, individually detactable with [MotifState](https://github.com/ikemen-engine/Ikemen-GO/wiki/Triggers-(new)#motifstate) trigger)",
+			"format": "OutroState",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = OutroState = 3",
+			"changeNotes": []
+		},
+		{
+			"key": "p1name",
+			"name": "P1Name",
+			"signature": "P1Name",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This is an alias for the Name trigger. See `Name`.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "p2bodydist",
+			"name": "P2BodyDist",
+			"signature": "P2BodyDist",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the distance of P2 from P1, where P1 is the player, and P2 is his opponent. P2BodyDist is useful in the CMD for cases where P1 has an attack that is different when performed close to P2.",
+			"format": "P2BodyDist [component]",
+			"args": "**[component]** X, Y",
+			"returns": "",
+			"details": "For comparing the Y-distance, P2BodyDist gives the difference in the heights of the players' Y-axes. A negative value means that P2 is above P1. For comparing the X-distance, P2BodyDist gives the X-distance of P2's front from P1's front. So, if the players are standing right next to each other, then P2BodyDist is 0. Remember that you can set the width of the player in \"front.width\", etc. under [Size] in the player variables. See also P2Dist.",
+			"example": "trigger1 = P2BodyDist X < 30  \n; Triggers if the front of P2 is within 30 pixels of the front of  \n  P1.",
+			"changeNotes": []
+		},
+		{
+			"key": "p2dist",
+			"name": "P2Dist",
+			"signature": "P2Dist",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the distance of P2 from P1, where P1 is the player, and P2 is his opponent.",
+			"format": "P2Dist [component]",
+			"args": "**[component]** X, Y",
+			"returns": "",
+			"details": "For comparing the Y-distance, P2Dist gives the difference in the heights of the players' Y-axes. A negative value means that P2 is above P1. For comparing the X-distance, P2Dist gives the X-distance of P2's axis from P1's axis. A positive value indicates P2 is in front of P1. See also P2BodyDist.",
+			"example": "trigger1 = P2Dist Y <= -12  \n; True if P2 is at least 12 pixels higher up than P1.",
+			"changeNotes": [
+				"The `P2Dist` trigger now also accepts a `Z` argument. Returns the distance between the players in the Z axis."
+			]
+		},
+		{
+			"key": "p2life",
+			"name": "P2Life",
+			"signature": "P2Life",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as Life, except that this returns the opponent's life.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "p2movetype",
+			"name": "P2MoveType",
+			"signature": "P2MoveType",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as MoveType, except that this returns the opponent's movetype.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": [
+				"A comparison is no longer mandatory. When used bare, `P2MoveType` now returns a move type string in the form `\"A\"`. The old syntax is still supported."
+			]
+		},
+		{
+			"key": "p2name",
+			"name": "P2Name",
+			"signature": "P2Name",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": true,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as P1Name, except that this returns the name of the primary opponent (the opponent in versus mode, or the first opponent in team mode). If there is no primary opponent, then `p2name = \"name\"` returns 0 no matter what name is specified. Similarly, `p2name != \"name\"` will return 1 no matter what name is specified.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": [
+				"`P2Name` can now return a string directly instead of requiring a comparison."
+			]
+		},
+		{
+			"key": "p2stateno",
+			"name": "P2StateNo",
+			"signature": "P2StateNo",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as StateNo, except that this returns the opponent's state number.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "p2statetype",
+			"name": "P2StateType",
+			"signature": "P2StateType",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as StateType, except that this returns the opponent's state type.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": [
+				"A comparison is no longer mandatory. When used bare, `P2StateType` now returns a state type string in the form `\"S\"`. The old syntax is still supported."
+			]
+		},
+		{
+			"key": "p3name",
+			"name": "P3Name",
+			"signature": "P3Name",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": true,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as P1Name, except that this returns the name of the player's teammate, if present. If there is no teammate, then `p3name = \"name\"` returns 0 no matter what name is specified. Similarly, `p3name != \"name\"` will return 1 no matter what name is specified.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": [
+				"`P3Name` can now return a string directly instead of requiring a comparison."
+			]
+		},
+		{
+			"key": "p4name",
+			"name": "P4Name",
+			"signature": "P4Name",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": true,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as P1Name, except that this returns the name of the secondary opponent, if present. If there is no secondary opponent, then `p4name = \"name\"` returns 0 no matter what name is specified. Similarly, `p4name != \"name\"` will return 1 no matter what name is specified.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": [
+				"`P4Name` can now return a string directly instead of requiring a comparison."
+			]
+		},
+		{
+			"key": "p5name",
+			"name": "P5Name",
+			"signature": "P5Name",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as P1Name-P4Name, except that these return the name of other team members, if present. If there is no such opponent, then it returns 0 no matter what name is specified. Similarly, P5Name != \"name\" will return 1 no matter what name is specified.",
+			"format": "PXName [oper] \"name\"",
+			"args": "[oper] =, != (other operators not valid) \"name\" (string) Name to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = P5Name = \"Kumquat\"",
+			"changeNotes": []
+		},
+		{
+			"key": "p6name",
+			"name": "P6Name",
+			"signature": "P6Name",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as P1Name-P4Name, except that these return the name of other team members, if present. If there is no such opponent, then it returns 0 no matter what name is specified. Similarly, P5Name != \"name\" will return 1 no matter what name is specified.",
+			"format": "PXName [oper] \"name\"",
+			"args": "[oper] =, != (other operators not valid) \"name\" (string) Name to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = P5Name = \"Kumquat\"",
+			"changeNotes": []
+		},
+		{
+			"key": "p7name",
+			"name": "P7Name",
+			"signature": "P7Name",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as P1Name-P4Name, except that these return the name of other team members, if present. If there is no such opponent, then it returns 0 no matter what name is specified. Similarly, P5Name != \"name\" will return 1 no matter what name is specified.",
+			"format": "PXName [oper] \"name\"",
+			"args": "[oper] =, != (other operators not valid) \"name\" (string) Name to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = P5Name = \"Kumquat\"",
+			"changeNotes": []
+		},
+		{
+			"key": "p8name",
+			"name": "P8Name",
+			"signature": "P8Name",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Same as P1Name-P4Name, except that these return the name of other team members, if present. If there is no such opponent, then it returns 0 no matter what name is specified. Similarly, P5Name != \"name\" will return 1 no matter what name is specified.",
+			"format": "PXName [oper] \"name\"",
+			"args": "[oper] =, != (other operators not valid) \"name\" (string) Name to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = P5Name = \"Kumquat\"",
+			"changeNotes": []
+		},
+		{
+			"key": "palfxvar",
+			"name": "PalFXVar",
+			"signature": "PalFXVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "[TODO] Returns information about the player, background or global (\"all\") PalFX. Accepted parameters:\n\ntime add.r, add.g, add.b mul.r, mul.g, mul.b color, hue, invertall, invertblend bg.time bg.add.r, bg.add.g, bg.add.b bg.mul.r, bg.mul.g, bg.mul.b bg.color, bg.hue, bg.invertall all.time all.add.r, all.add.g, all.add.b all.mul.r, all.mul.g, all.mul.b all.color, all.hue, all.invertall, all.invertblend",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PalFXVar(add.r) != 0\n  ;triggers when red has been added to the player via PalFX",
+			"changeNotes": []
+		},
+		{
+			"key": "palno",
+			"name": "PalNo",
+			"signature": "PalNo",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the palette number of the player (i.e., the color scheme chosen for the character during character select.)",
+			"format": "PalNo",
+			"args": "none",
+			"returns": "",
+			"details": "The palette ordering is specified in the character's def file. If omitted, the default ordering is: A  B  C  X  Y  Z A2 B2 C2 X2 Y2 Z2 1  2  3  4  5  6  7  8  9 10 11 12",
+			"example": "trigger1 = PalNo = 5  \n; Returns true if the current palette number is 5.",
+			"changeNotes": []
+		},
+		{
+			"key": "parentdist",
+			"name": "ParentDist",
+			"signature": "ParentDist",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger is only valid for helper-type characters. ParentDist returns the distance from the helper to its parent. It works similarly to P2Dist.",
+			"format": "ParentDist [component]",
+			"args": "**[component]** X, Y",
+			"returns": "",
+			"details": "For comparing the Y-distance, ParentDist gives the difference in the heights of the players' Y-axes. A negative value means that the parent is above its child. For comparing the X-distance, ParentDist gives the X-distance of the parent's axis from the child's axis. A positive value indicates the parent is in front of the child.",
+			"example": "trigger1 = ParentDist X != 0  \n; Triggers if the parent is not at the exact same x-position as the  \n  helper character.",
+			"changeNotes": [
+				"The `ParentDist` trigger now also accepts a `Z` argument. Returns the distance between the helper and its parent in the Z axis."
+			]
+		},
+		{
+			"key": "parentexist",
+			"name": "ParentExist",
+			"signature": "ParentExist",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the helper's parent is still present in the game.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "if parentExist {\n    bindToParent{}\n}",
+			"changeNotes": []
+		},
+		{
+			"key": "pausetime",
+			"name": "PauseTime",
+			"signature": "PauseTime",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the time until the active Pause and/or SuperPause effect expires (whichever lasts longer). The non 0 value is returned only after movetime parameter of these sctrls expires (player can no longer move).\n\nNormally states are not running during Pause and SuperPause, so this trigger will only work when used in a special statedef -4, which ignores these state controllers.",
+			"format": "PauseTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PauseTime = 0\n  ;triggers when the player's movement is not paused by Pause/SuperPause sctrls.",
+			"changeNotes": []
+		},
+		{
+			"key": "physics",
+			"name": "Physics",
+			"signature": "Physics",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's physics-type. Refer to the section on StateDef in the CNS documentation for more details on physics.",
+			"format": "Physics [oper] physics_type",
+			"args": "[oper] =, != (other operators not valid) physics_type (string) S, C, A, N *(stand, crouch, air, none)*",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Physics != A",
+			"changeNotes": []
+		},
+		{
+			"key": "pi",
+			"name": "Pi",
+			"signature": "Pi (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger returns the numeric value of pi (3.141593...)",
+			"format": "pi",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "playeridexist",
+			"name": "PlayerIDExist",
+			"signature": "PlayerIDExist",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if a player with the specified ID number exists, 0 otherwise. This ID number is obtained using the `ID` trigger (see ID). Do not confuse PlayerID with TargetID.",
+			"format": "PlayerIDExist(ID_number)",
+			"args": "**ID_number** An expression that evaluates to the ID number to check for (int)",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PlayerIDExist(var(4))  \n; Triggers if a player with an ID number equal to the value of  \n  var(4) exists.",
+			"changeNotes": []
+		},
+		{
+			"key": "playerindexexist",
+			"name": "PlayerIndexExist",
+			"signature": "PlayerIndexExist(n)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if a player with the specified index number exists, 0 otherwise. See [PlayerIndex](redirections#playerindexn-new).",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PlayerIndexExist(2)",
+			"changeNotes": []
+		},
+		{
+			"key": "playerno",
+			"name": "PlayerNo",
+			"signature": "PlayerNo",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns character's player number. Player 1 side uses odd numbers (1, 3, 5, 7), player 2 side even numbers (2, 4, 6, 8). Stage [AttachedChar](https://github.com/ikemen-engine/Ikemen-GO/wiki/Stage-features#info_attachedchar) uses number outside maximum player range (9).",
+			"format": "PlayerNo",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PlayerNo < 3",
+			"changeNotes": []
+		},
+		{
+			"key": "playernoexist",
+			"name": "PlayerNoExist",
+			"signature": "PlayerNoExist",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Evaluates if the specified player number is currently in use.",
+			"format": "PlayerNoExist(player_number)",
+			"args": "player_number An expression that evaluates to the player number to check for (int)",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PlayerNoExist(3); Returns true if there's a player number 3\ntrigger1 = Player(3), Alive",
+			"changeNotes": []
+		},
+		{
+			"key": "pos",
+			"name": "Pos",
+			"signature": "Pos",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Gets the value of the player's position. You must specify the component that you want to check, eg. `Pos Y` to check the Y-position.",
+			"format": "Pos [component]",
+			"args": "**[component]** X, Y",
+			"returns": "",
+			"details": "For Pos X, the value is relative to the center of the screen (value 0). Negative is left, positive is right. Due to historical reasons, \"Pos X\" does not return absolute position of the player (i.e. relative to the center of the stage), which may be the more intuitive behavior. To get the absolute position of the player, use Pos X + CameraPos X. For Pos Y, the value is relative to the floor. Negative is higher up, positive is below the floor.",
+			"example": "trigger1 = Pos Y >= 0  \n; True when the player is below the floor.",
+			"changeNotes": []
+		},
+		{
+			"key": "power",
+			"name": "Power",
+			"signature": "Power",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the amount of power the player has.",
+			"format": "Power",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = power >= 1000  \n; True if player has at least 1000 power (level 1).",
+			"changeNotes": []
+		},
+		{
+			"key": "powermax",
+			"name": "PowerMax",
+			"signature": "PowerMax",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the maximum amount of power the player can have. This is normally 3000 (level 3).",
+			"format": "PowerMax",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = power < powermax / 2  \n; True if player has less than half his maximum power.",
+			"changeNotes": []
+		},
+		{
+			"key": "prevanim",
+			"name": "PrevAnim",
+			"signature": "PrevAnim",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the number of the anim that the player was last in.",
+			"format": "PrevAnim",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PrevAnim = 200",
+			"changeNotes": []
+		},
+		{
+			"key": "prevmovetype",
+			"name": "PrevMoveType",
+			"signature": "PrevMoveType",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the MoveType that the player was last in.",
+			"format": "PrevMoveType",
+			"args": "[oper] =, != (other operators not valid) move_type (char) move_type to compare against: A, I, H (Attack, Idle and GetHit move-types respectively)",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PrevMoveType = H",
+			"changeNotes": []
+		},
+		{
+			"key": "prevstateno",
+			"name": "PrevStateNo",
+			"signature": "PrevStateNo",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the number of the state that the player was last in. The results of this trigger are not guaranteed to be accurate.",
+			"format": "StateNo",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PrevStateNo = [200,650]  \n; Returns true if the player's last state number is between 200 and 650, inclusive.",
+			"changeNotes": []
+		},
+		{
+			"key": "prevstatetype",
+			"name": "PrevStateType",
+			"signature": "PrevStateType",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the StateType that the player was last in.",
+			"format": "PrevStateType",
+			"args": "[oper] =, != (other operators not valid) state_type (char) state_type to compare against: S, C, A, L (Stand, Crouch, Air and Liedown respectively)",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = PrevStateType = C",
+			"changeNotes": []
+		},
+		{
+			"key": "projcanceltime",
+			"name": "ProjCancelTime",
+			"signature": "ProjCancelTime",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an required nonnegative ID number as an argument. If the player's last projectile to make any kind of contact was cancelled by an opponent's projectile and had the specified ID number, then ProjCancelTime returns the number of ticks since that contact occurred. If the specified ID number is 0, then the projectile ID is not checked. If no projectile meets all the above conditions, then ProjCancelTime returns -1.",
+			"format": "ProjCancelTime(exprn)",
+			"args": "**exprn** Expression evaluating to a nonnegative ID number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ProjCancelTime(1234) = 1\n; Triggers if a projectile with ID 1234 was just cancelled by an opponent's projectile.\n\ntrigger1 = ProjCancelTime(0) != -1 && ProjCancelTime(0) < 15\n; Triggers if any of the player's projectiles were cancelled within last 15 ticks.",
+			"changeNotes": []
+		},
+		{
+			"key": "projclsnoverlap",
+			"name": "ProjClsnOverlap",
+			"signature": "ProjClsnOverlap",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the projectile's collision box (either Clsn1 or Clsn2) overlaps with another player's collision boxes. This trigger uses Ikemen's internal collision detection, so it will work even with angled and rescaled boxes. If you want to specify a projectile with a specific projID, create a loop process that combines the projID with ProjVar.",
+			"format": "ProjClsnOverlap(index, playerID, box_type)",
+			"args": "index An index number based on all projectiles owned by the player. The index is equivalent to the index when -1 is specified for the ID in ProjVar. playerID The ID of the player against which to check the overlap box_type The target's collision box type. Valid values are Clsn1, Clsn2, Size and Dummy (nightly build only)",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ProjClsnOverlap(var(3), p2,ID, clsn2)",
+			"changeNotes": []
+		},
+		{
+			"key": "projcontact",
+			"name": "ProjContact",
+			"signature": "ProjContact",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an optional ID number as a suffix. If the ID number is omitted, ProjContact returns true if any of the player's projectiles either successfully hit the opponent or were guarded by the opponent. When the ID number is specified, ProjContact returns true only if any of the player's projectiles with the specified ID number either successfully hit the opponent or was guarded.",
+			"format": "- ProjContact[ID] = value\n- ProjContact[ID] = value, [oper] value2",
+			"args": "**[ID]** Optional ID number.",
+			"returns": "",
+			"details": "ProjContact will trigger once for each hit of the projectile, so a multi-hit projectile can trigger multiple times. The first form of ProjContact shown above is only valid for one tick after contact, unlike MoveContact. For the second form, ProjContact returns true if the projectile made contact n ticks ago, where n is a nonnegative number satisfying the relation \"n [oper] value2\". Specifying an ID number of 0 gives the same behavior as if the ID number is omitted (check all projectiles).",
+			"example": "trigger1 = ProjContact1234 = 1\n; Triggers if a projectile with ID 1234 just made contact with the opponent.  \n\ntrigger1 = ProjContact456 = 0, < 15\n; Triggers if no projectile with ID 456 made contact in the last 15 ticks.",
+			"changeNotes": []
+		},
+		{
+			"key": "projcontacttime",
+			"name": "ProjContactTime",
+			"signature": "ProjContactTime",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an required nonnegative ID number as an argument. If the player's last projectile to make any kind of contact, made contact with the opponent and had the specified ID number, then ProjContactTime returns the number of ticks since that contact occurred. If the specified ID number is 0, then the projectile ID is not checked. If no projectile meets all the above conditions, then ProjContactTime returns -1.",
+			"format": "ProjContactTime(exprn)",
+			"args": "**exprn** Expression evaluating to a nonnegative ID number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ProjContactTime(1234) = 1  \n; Triggers if a projectile with ID 1234 just made contact with the opponent.\n\ntrigger1 = ProjContactTime(0) != -1 && ProjContactTime(0) < 15  \n; Triggers if any of the player's projectiles made successful contact with the opponent within the last 15 ticks.",
+			"changeNotes": []
+		},
+		{
+			"key": "projguarded",
+			"name": "ProjGuarded",
+			"signature": "ProjGuarded",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an optional ID number as a suffix. If the ID number is omitted, ProjGuarded returns true if any of the player's projectiles were guarded by the opponent. When the ID number is specified, ProjGuarded returns true only if one of the player's projectiles with the specified ID number was guarded by the opponent.",
+			"format": "- ProjGuarded[ID] = value\n- ProjGuarded[ID] = value, [oper] value2",
+			"args": "**[ID]** Optional ID number.",
+			"returns": "",
+			"details": "ProjGuarded will trigger once for each hit of the projectile, so a multi-hit projectile can trigger multiple times. The first form of ProjGuarded shown above is only valid for one tick after hit, unlike MoveGuarded. For the second form, ProjGuarded returns true if the projectile was guarded n ticks ago, where n is a nonnegative number satisfying the relation \"n [oper] value2\". Specifying an ID number of 0 gives the same behavior as if the ID number is omitted (check all projectiles).",
+			"example": "trigger1 = ProjGuarded1234 = 1\n; Triggers if the opponent just blocked a projectile with ID 1234.\n\ntrigger1 = ProjGuarded = 1, < 15\n; Triggers if the opponent blocked any projectile in the last 15 ticks.",
+			"changeNotes": []
+		},
+		{
+			"key": "projguardedtime",
+			"name": "ProjGuardedTime",
+			"signature": "ProjGuardedTime",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an required nonnegative ID number as an argument. If the player's last projectile to make any kind of contact was guarded by the opponent and had the specified ID number, then ProjGuardedTime returns the number of ticks since that contact occurred. If the specified ID number is 0, then the projectile ID is not checked. If no projectile meets all the above conditions, then ProjGuardedTime returns -1.",
+			"format": "ProjCancelTime(exprn)",
+			"args": "**exprn** Expression evaluating to a nonnegative ID number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ProjGuardedTime(1234) = 1\n; Triggers if a projectile with ID 1234 was just guarded by the opponent.\n\ntrigger1 = ProjGuardedTime(0) != -1 && ProjGuardedTime(0) < 15\n; Triggers if any of the player's projectiles was guarded by the opponent within the last 15 ticks.",
+			"changeNotes": []
+		},
+		{
+			"key": "projhit",
+			"name": "ProjHit",
+			"signature": "ProjHit",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an optional positive ID number as a suffix. If the ID number is omitted, ProjHit returns true if any of the player's projectiles successfully hit the opponent. When the ID number is specified, ProjHit returns true only if one of the player's projectiles with the specified ID number successfully hit the opponent.",
+			"format": "- ProjHit[ID] = value\n- ProjHit[ID] = value, [oper] value2",
+			"args": "*[ID] (int)* Optional ID number.",
+			"returns": "",
+			"details": "ProjHit will trigger once for each hit of the projectile, so a multi-hit projectile can trigger multiple times. The first form of ProjHit shown above is only valid for one tick after hit, unlike MoveHit. For the second form, ProjHit returns true if the projectile hit n ticks ago, where n is a nonnegative number satisfying the relation \"n [oper] value2\". Specifying an ID number of 0 gives the same behavior as if the ID number is omitted (check all projectiles).",
+			"example": "trigger1 = ProjHit1234 = 1\n; Triggers if a projectile with ID 1234 just made successful contact with the opponent.\n\ntrigger1 = ProjHit1234 = 1, < 15\n; Triggers if any of the player's projectiles made successful contact with the opponent within the last 15 ticks.",
+			"changeNotes": []
+		},
+		{
+			"key": "projhittime",
+			"name": "ProjHitTime",
+			"signature": "ProjHitTime",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes an required nonnegative ID number as an argument. If the player's last projectile to make any kind of contact successfully hit the opponent and had the specified ID number, then ProjHit returns the number of ticks since that contact occurred. If the specified ID number is 0, then the projectile ID is not checked. If no projectile meets all the above conditions, then ProjHitTime returns -1.",
+			"format": "ProjHitTime(exprn)",
+			"args": "*exprn* Expression evaluating to a nonnegative ID number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ProjHitTime(1234) = 1\n; Triggers if a projectile with ID 1234 just made successful contact with the opponent.\n\ntrigger1 = ProjHitTime(0) != -1 && ProjHitTime(0) < 15  \n; Triggers if any of the player's projectiles made successful contact with the opponent within the last 15 ticks.",
+			"changeNotes": []
+		},
+		{
+			"key": "projvar",
+			"name": "ProjVar",
+			"signature": "ProjVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the specified projectile parameter. Use -1 for ID to iterate over all projectiles.",
+			"format": "ProjVar(id, index, param)",
+			"args": "id Expression 1 index Expression 2 param Valid values are accel x, accel y, angle, angle x, angle y, anim, animelem, animprefix (nightly build only), attr, drawpal.group, drawpal.index, guardflag, highbound, hitflag, layerno, lowbound, pausemovetime, pos x, pos y, projcancelanim, projedgebound, projhitanim, projhits, projID, projmisstime, projpriority, projremove, projremovetime, projremanim, projstagebound, remvelocity x, remvelocity y, scale x, scale y, shader, shadow r, shadow g, shadow b, sprpriority, teamside, vel x, vel y, velmul x, velmul y",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ProjVar(1000, 0, vel Y) > 0\ntrigger2 = ProjVar(2000, 0, attr) = SCA, HP\ntrigger3 = ProjVar(3000, 0, guardflag) = L",
+			"changeNotes": []
+		},
+		{
+			"key": "rad",
+			"name": "Rad",
+			"signature": "Rad (Math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Converts an argument value from degree to radians.",
+			"format": "Rad(exp)",
+			"args": "exp Expression",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Rad(Angle) > pi*0.5",
+			"changeNotes": []
+		},
+		{
+			"key": "random",
+			"name": "Random",
+			"signature": "Random",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns a random number between 0 and 999, inclusive.",
+			"format": "Random",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Random <= 249  \n; Triggers if the random number returned is less than or equal to  \n  249. (This occurs with 25% probability.)",
+			"changeNotes": []
+		},
+		{
+			"key": "randomrange",
+			"name": "RandomRange",
+			"signature": "RandomRange(math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Generates pseudo-random integer numbers uniformly distributed between the given range (both bounds inclusive).",
+			"format": "RandomRange(lower,upper)",
+			"args": "lower Lower range (inclusive) upper Upper range (inclusive)",
+			"returns": "",
+			"details": "",
+			"example": "type = Explod\ntrigger1 = RandomRange(var(3), 666) > 100\npos = RandomRange(-300, 600), 0",
+			"changeNotes": []
+		},
+		{
+			"key": "receiveddamage",
+			"name": "ReceivedDamage",
+			"signature": "ReceivedDamage",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the total damage dealt by the opposite team to this character, in the currently ongoing combo. This value is valid as long as the opposite team combo count stays above 0, otherwise it returns 0 too.",
+			"format": "ReceivedDamage",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ReceivedDamage > (LifeMax / 10)",
+			"changeNotes": []
+		},
+		{
+			"key": "receivedhits",
+			"name": "ReceivedHits",
+			"signature": "ReceivedHits",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the total number of hits done by the opposite team to this character, in the currently ongoing combo. Unlike GetHitVar(hitcount), it takes into account all hits, including those applied by HitAdd. This value is valid as long as the opposite team combo count stays above 0, otherwise it returns 0 too.",
+			"format": "ReceivedHits",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ReceivedHits > 10",
+			"changeNotes": []
+		},
+		{
+			"key": "redlife",
+			"name": "RedLife",
+			"signature": "RedLife",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the amount of [red life](https://github.com/ikemen-engine/Ikemen-GO/wiki/Miscellaneous-Info#redlife) the player has.",
+			"format": "RedLife",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = RedLife = 0",
+			"changeNotes": []
+		},
+		{
+			"key": "reversaldefattr",
+			"name": "ReversalDefAttr",
+			"signature": "ReversalDefAttr",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Checks the attribute parameter of the player's currently-active ReversalDef. If the player does not currently have an active ReversalDef, then no parameters will match. Can be used for AI to detect a counter or to code something to happen if it exists.\n\nNote: ReversalDefAttr != value1, value2 is logically equivalent to !(ReversalDefAttr = value1, value2).",
+			"format": "ReversalDefAttr [oper] value1, value2",
+			"args": "[oper] =, != value1 A string that has at least one of the letters \"S\", \"C\" and \"A\" for standing, crouching and aerial attacks respectively. For example, \"SA\" is for standing and aerial attacks. value2 A set of 2-character strings, separated by commas. Each 2-character string must be of the form described: The first character is either \"N\" for \"normal\", \"S\" for \"special\", or \"H\" for \"hyper\". The second character must be either \"A\" for \"attack\" (a normal hit attack) or \"T\" for \"throw\". For example, \"NA, ST\" is for normal attacks and special throws. Assuming the attribute of the player's ReversalDefAttr is in the form: arg1, arg2 then the trigger condition is determined to be true only if arg1…",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ReversalDefAttr = A, HA\n  Triggers when the player activates a ReversalDef with the following attributes:  \n    1. player will reverse an aerial attack\n    2. player will reverse a hyper (super) attack\n\ntrigger1 = ReversalDefAttr = SC, NA, SA\n  Triggers when the player activates a ReversalDef with the following attributes:\n    1. player will reverse both standing and crouching attacks\n    2. player will reverse both normal and special attacks",
+			"changeNotes": []
+		},
+		{
+			"key": "rightedge",
+			"name": "RightEdge",
+			"signature": "RightEdge",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "RightEdge returns the x position of the right edge of the screen, in absolute stage coordinates.",
+			"format": "LeftEdge",
+			"args": "none",
+			"returns": "",
+			"details": "This trigger is equivalent to the expression CameraPos X + GameWidth / 2.",
+			"example": "trigger1 = Pos X + CameraPos X > RightEdge  \n; Triggers if the player is to the right of the right edge of the screen.",
+			"changeNotes": []
+		},
+		{
+			"key": "rootdist",
+			"name": "RootDist",
+			"signature": "RootDist",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger is only valid for helper-type characters. RootDist returns the distance from the helper to its root. The root is the main player character who owns the helper: for instance, if you select Kumquat to play with, and Kumquat spawns a helper named Kiwi, who in turn spawns a helper named Penguin, then Penguin's root is Kumquat, and Penguin is a descendant of Kumquat. RootDist works similarly to P2Dist.",
+			"format": "RootDist [component]",
+			"args": "**[component]** X, Y",
+			"returns": "",
+			"details": "For comparing the Y-distance, RootDist gives the difference in the heights of the players' Y-axes. A negative value means that the root is above its descendant. For comparing the X-distance, ParentDist gives the X-distance of the root's axis from the descendant's axis. A positive value indicates the root is in front of its descendant.",
+			"example": "trigger1 = RootDist X != 0  \n; Triggers if the root is not at the exact same x-position as the helper character.",
+			"changeNotes": [
+				"The `RootDist` trigger now also accepts a `Z` argument. Returns the distance between the helper and its root in the Z axis."
+			]
+		},
+		{
+			"key": "round",
+			"name": "Round",
+			"signature": "Round (math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the rounded value of `val` to specified `precision` (number of digits after the decimal point). `precision` can also be negative or zero.",
+			"format": "Round(val,precision)",
+			"args": "val Expression evaluating to the value to round. precision Expression evaluating to the number of decimal digits to round to. If the precision is positive, the rounding will occur after the decimal point. If the precision is negative, the rounding will occur before the decimal point. If the absolute value of the precision is greater than or equal to the number of digits, the result of the rounding is equal to 0.",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Round(var(3), -2) > 100",
+			"changeNotes": []
+		},
+		{
+			"key": "roundno",
+			"name": "RoundNo",
+			"signature": "RoundNo",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the current round number.",
+			"format": "RoundNo",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = RoundNo = 3  \n; Triggers if this is the third round of the match.",
+			"changeNotes": []
+		},
+		{
+			"key": "roundsexisted",
+			"name": "RoundsExisted",
+			"signature": "RoundsExisted",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the number of rounds the player has existed for. On the first round, returns 0. This is useful for a Turns mode intro.",
+			"format": "RoundsExisted",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = RoundsExisted = 0  \ntrigger1 = TeamMode = Turns  \ntrigger1 = RoundNo > 0  \n; Triggers if the player has just entered a Turns mode team match after the first round.\n; You can use this example with a ChangeState controller to switch to an intro state by overriding the Initialize state (state 5900).",
+			"changeNotes": []
+		},
+		{
+			"key": "roundstate",
+			"name": "RoundState",
+			"signature": "RoundState",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the current round state number.",
+			"format": "RoundState",
+			"args": "none",
+			"returns": "",
+			"details": "Return values: 0: Pre-intro  - screen fades in 1: Intro 2: Fight - players do battle 3: Pre-over - just a round is won or lost 4: Over - win poses",
+			"example": "trigger1 = RoundState = 2  \n; Triggers if the actual fighting portion of the round is in  \n  progress.",
+			"changeNotes": [
+				"The `RoundState` trigger no longer returns 2 during the \"Fight!\" screen, before players have control, returning 1 instead. `RoundState = 2` is generally understood and documented as the main part of the fight, so this oddity only caused trouble in Mugen."
+			]
+		},
+		{
+			"key": "roundswon",
+			"name": "RoundsWon",
+			"signature": "RoundsWon",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns how many total rounds the teamside has won during the current match. Resets between matches.\n\n[TODO]",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "roundtime",
+			"name": "RoundTime",
+			"signature": "RoundTime",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the tick count since the start of the round.",
+			"format": "RoundTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = RoundTime > 600",
+			"changeNotes": []
+		},
+		{
+			"key": "runorder",
+			"name": "RunOrder",
+			"signature": "RunOrder",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "At the start of each frame, players are sorted into a list for code processing based on their current actions (see [character processing order](https://github.com/ikemen-engine/Ikemen-GO/wiki/Miscellaneous-info#character-processing-order)). `RunOrder` returns their position in this list as an integer.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "scale",
+			"name": "Scale",
+			"signature": "Scale",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of the player's drawing scale. `Scale X` and `Scale Y` refer to the scale applied by `AngleDraw`. `Scale Z` refers to the rescaling that affects the player when moving in the Z space.",
+			"format": "Scale argument",
+			"args": "x, y, z",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Scale x > 2 && Scale y > 1",
+			"changeNotes": []
+		},
+		{
+			"key": "score",
+			"name": "Score",
+			"signature": "Score",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the score points gained in this round by all team members.",
+			"format": "Score",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Score > 10000",
+			"changeNotes": []
+		},
+		{
+			"key": "scoretotal",
+			"name": "ScoreTotal",
+			"signature": "ScoreTotal",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the total score points value. Takes into account all team members, previous rounds and previous matches since the start of this game mode.",
+			"format": "ScoreTotal",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ScoreTotal > 1000000",
+			"changeNotes": []
+		},
+		{
+			"key": "screenheight",
+			"name": "ScreenHeight",
+			"signature": "ScreenHeight",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the height of the screen space in the player's local coordinate space.",
+			"format": "ScreenHeight",
+			"args": "none",
+			"returns": "",
+			"details": "ScreenWidth and ScreenHeight are not affected by the camera zoom factor.",
+			"example": "type = Explod  \nspace = screen  \npos = 0, ScreenHeight  \n...  \n  Creates an explod in screen-space in the lower-right corner  \n  of the screen.",
+			"changeNotes": []
+		},
+		{
+			"key": "screenpos",
+			"name": "ScreenPos",
+			"signature": "ScreenPos",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Gets the value of the player's position relative to the top-right corner of the screen.",
+			"format": "ScreenPos [component]",
+			"args": "**[component]** X, Y",
+			"returns": "",
+			"details": "For ScreenPos X, the value is relative to the left of the screen (value 0). Negative is left, positive is right. For ScreenPos Y, the value is relative to the top of the screen. Negative is above the screen, positive is downward.",
+			"example": "trigger1 = ScreenPos Y >= 0 && ScreenPos Y < GameHeight  \n; True when the player's is in the screen's vertical extent.",
+			"changeNotes": []
+		},
+		{
+			"key": "screenwidth",
+			"name": "ScreenWidth",
+			"signature": "ScreenWidth",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the width of the screen space in the player's local coordinate space.",
+			"format": "ScreenWidth",
+			"args": "none",
+			"returns": "",
+			"details": "ScreenWidth and ScreenHeight are not affected by the camera zoom factor.",
+			"example": "type = Explod  \nspace = screen  \npos = ScreenWidth / 2, ScreenHeight / 2  \n...  \n  Creates an explod in screen-space in the center of the screen.",
+			"changeNotes": []
+		},
+		{
+			"key": "selfanimexist",
+			"name": "SelfAnimExist",
+			"signature": "SelfAnimExist",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Like AnimExist, except that this only checks P1's animation data. If P1 has been given P2's animation data by a hit, SelfAnimExist will not check P2's animation data to determine whether or not a given action exists.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "selfcommand",
+			"name": "SelfCommand",
+			"signature": "SelfCommand",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "[TODO]",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "selfstatenoexist",
+			"name": "SelfStatenoExist",
+			"signature": "SelfStatenoExist",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Checks for the existence of a state only within P1's state numbers, even when P1 is custom stated by a hit. Returns 1 if there is a statedef with the specified number. Otherwise it returns 0. Use the statedef number you want to recognize in parentheses.",
+			"format": "SelfStatenoExist(exprn)",
+			"args": "exprn An expression evaluating to a state number (int).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = !SelfStatenoExist(200)\n  ;Triggers if the player is missing state 200.",
+			"changeNotes": []
+		},
+		{
+			"key": "shader",
+			"name": "Shader",
+			"signature": "Shader",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the name of the custom shader applied to the player. If no custom shader is applied, \"\" is returned.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = shader != \"\"\n  ;Triggers if any shader is applied to the player.",
+			"changeNotes": []
+		},
+		{
+			"key": "sign",
+			"name": "Sign",
+			"signature": "Sign (Math)",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the sign of a real number. If value < 0 return -1. If value 0 return 0. if value > 0 return 1.",
+			"format": "Sign(exp)",
+			"args": "exp Expression",
+			"returns": "",
+			"details": "",
+			"example": "var(0) = var(0)*Sign(vel x)",
+			"changeNotes": []
+		},
+		{
+			"key": "sin",
+			"name": "Sin",
+			"signature": "Sin (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Computes the sine of the specified argument (in radians.)",
+			"format": "sin(exprn)",
+			"args": "**exprn** Expression to compute the sine of. (float)",
+			"returns": "",
+			"details": "",
+			"example": "value = sin(pi/2)  \n; Sets value to the sine of pi/2, which is approximately 1.0 (possibly with some rounding error.)",
+			"changeNotes": []
+		},
+		{
+			"key": "soundvar",
+			"name": "SoundVar",
+			"signature": "SoundVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the specified sound channel parameter. Use -1 for channelNo to find the first sound available.\n\n**Warning: The results of this trigger are NOT network-safe due to the asynchronous nature of sound playback. Usage of this trigger in production environments is discouraged.**",
+			"format": "SoundVar(channelNo, param)",
+			"args": "channelNo Expression param Valid values are group, number, freqmul, isplaying, length, loopcount, loopstart, loopend, pan, position, priority, samplerate (nightly build only), startposition, volumescale",
+			"returns": "",
+			"details": "",
+			"example": "var(0) = SoundVar(0, IsPlaying)\nfvar(1) = SoundVar(1, VolumeScale)",
+			"changeNotes": []
+		},
+		{
+			"key": "spriteplayerno",
+			"name": "SpritePlayerNo",
+			"signature": "SpritePlayerNo",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player number of the owner of the player's current sprite. Normally returns the same number as the player's player number, but when for instance `ChangeAnim2` is used in a custom state, it will return the number of who owns that sprite.",
+			"format": "SpritePlayerNo",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Player(SpritePlayerNo), SelfAnimExist(1234)",
+			"changeNotes": []
+		},
+		{
+			"key": "spritevar",
+			"name": "SpriteVar",
+			"signature": "SpriteVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns information about the player's current sprite.",
+			"format": "SpriteVar(param_name)",
+			"args": "param_name The name of the parameter to check. Valid values are: Group, Height, Image, Width, XOffset, YOffset",
+			"returns": "",
+			"details": "",
+			"example": "; top left corner of sprite\npos = -SpriteVar(xoffset), -SpriteVar(yoffset)\n; lower right corner of sprite\npos = -SpriteVar(xoffset) + SpriteVar(width), -SpriteVar(yoffset) + SpriteVar(height)",
+			"changeNotes": []
+		},
+		{
+			"key": "sprpriority",
+			"name": "SprPriority",
+			"signature": "SprPriority",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's/helper's current SprPriority value.",
+			"format": "SprPriority",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = SprPriority > 0",
+			"changeNotes": []
+		},
+		{
+			"key": "stagebackedgedist",
+			"name": "StageBackEdgeDist",
+			"signature": "StageBackEdgeDist",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the distance to the stage edge (corner) behind the player.",
+			"format": "StageBackEdgeDist",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = StageBackEdgeDist < 100",
+			"changeNotes": []
+		},
+		{
+			"key": "stagebgvar",
+			"name": "StageBGVar",
+			"signature": "StageBGVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns information about the stage's BG elements.",
+			"format": "stagebgvar(ID, index, param)",
+			"args": "ID The ID of the element to be checked index The index of the element to be checked param The parameter to check. See details",
+			"returns": "",
+			"details": "* actionno: Returns the animation number for type = anim elements (int)\n* animelem: Returns the current animation element (int) (nightly build only)\n* animelemtime: Returns the current animation element time (int) (nightly build only)\n* animloopcount: Returns the number of times the animation has looped (int) (nightly build only)\n* animtime: Returns time until animation ends (int) (nightly build only)\n* delta.x: Returns the X delta (float)\n* delta.y: Returns the Y delta (float)\n* id: Returns the ID (int)\n* layerno: Returns the layer number (int)\n* pos.x: Returns the X position in relation to the starting position (float)\n* pos.y: Returns the Y position in relation to the starting position…",
+			"example": "trigger1 = StageBGVar(4, 1, actionno) = 40",
+			"changeNotes": []
+		},
+		{
+			"key": "stageconst",
+			"name": "StageConst",
+			"signature": "StageConst",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of one of the stage's constants. Stage constant variables can be set under stage's DEF [[Constants]](Stage-features/#constants) section.",
+			"format": "StageConst(param_name)",
+			"args": "param_name The name of the constant to check (string).",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = StageConst(WaterGround) = 1",
+			"changeNotes": []
+		},
+		{
+			"key": "stagefrontedgedist",
+			"name": "StageFrontEdgeDist",
+			"signature": "StageFrontEdgeDist",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the distance to the stage edge (corner) in front of the player.",
+			"format": "StageFrontEdgeDist",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = StageFrontEdgeDist < 100",
+			"changeNotes": []
+		},
+		{
+			"key": "stagetime",
+			"name": "StageTime",
+			"signature": "StageTime",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the stage's internal time, or the amount of ticks since the last stage reset. The value returned by this trigger corresponds directly to the amount of times stage backgrounds have been updated (taking into account `pausebg`, `resetbg`, etc), allowing one to for instance reliably synchronize [attachedchar](https://github.com/ikemen-engine/Ikemen-GO/wiki/Stage-features#info_attachedchar) actions to what's currently displayed by the stage.",
+			"format": "StageTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = StageTime > 600",
+			"changeNotes": []
+		},
+		{
+			"key": "stagevar",
+			"name": "StageVar",
+			"signature": "StageVar",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns information about the stage. A limited number of parameters are supported.",
+			"format": "StageVar(param_name) [oper] \"string\"",
+			"args": "**param_name** **The name of the stage parameter to check. Valid values are:** info.name, info.displayname, info.authorname. **[oper]** =, != (other operators not valid) **\"string\" (string)** String to compare against. Must be in double quotes.",
+			"returns": "",
+			"details": "- info.author: Compares the value of the \"author\" parameter in the [Info] group. (boolean)\n- info.displayname: Compares the value of the \"displayname\" parameter in the [Info] group. (boolean)\n- info.name: Compares the value of the \"name\" parameter in the [Info] group. (boolean)\n**Versions:** 1.0 and newer",
+			"example": "trigger1 = StageVar(info.author) = \"Suika\"  \n; Returns true if the stage author is named \"Suika\".",
+			"changeNotes": [
+				"A comparison is no longer mandatory. When used bare, `StageVar` returns the stage's name, display name or author name as a string, so it can be compared against another string instead of only a literal. The old syntax is still supported."
+			]
+		},
+		{
+			"key": "standby",
+			"name": "Standby",
+			"signature": "Standby",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if character is under standby effect (assigned by [TagOut](sctrl#new_tagout) sctrl).",
+			"format": "Standby",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = !Standby",
+			"changeNotes": []
+		},
+		{
+			"key": "stateno",
+			"name": "StateNo",
+			"signature": "StateNo",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the player's current state number. Useful for \"move interrupts\" in the CMD file.",
+			"format": "StateNo",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = stateno = [200,650]  \n; Returns true if the state number is between 200 and 650, inclusive.",
+			"changeNotes": []
+		},
+		{
+			"key": "statetype",
+			"name": "StateType",
+			"signature": "StateType",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "StateType gives the player's state-type. Refer to the section on StateDef in the CNS documentation for more details on StateType. Useful for \"move interrupts\" in the CMD file.",
+			"format": "StateType [oper] state_type",
+			"args": "**[oper]** =, !=   (other operators not valid)",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = StateType != A  \n; Triggers if the player is not in an air-type state.",
+			"changeNotes": [
+				"A comparison is no longer mandatory. When used bare, `StateType` now returns a state type string in the form `\"S\"`. The old syntax is still supported."
+			]
+		},
+		{
+			"key": "sysfvar",
+			"name": "SysFVar",
+			"signature": "SysFVar",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes a mandatory variable number as an argument. It returns the value of the player's specified system float variable. This trigger should NOT be used under normal circumstances. System variables are reserved for bookkeeping in common1.cns.",
+			"format": "SysFVar(exprn)",
+			"args": "**exprn** An expression evaluating to a variable number. ~~Valid numbers at this time are 0-4.~~",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = SysFVar(0) = -1.23  \n; Triggers if the value of system float variable 0 is -1.23.",
+			"changeNotes": []
+		},
+		{
+			"key": "sysvar",
+			"name": "SysVar",
+			"signature": "SysVar",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes a mandatory variable number as an argument. It returns the value of the player's specified system int variable. This trigger is NOT to be used under normal circumstances. System variables are reserved for bookkeeping in common1.cns.",
+			"format": "SysVar(exprn)",
+			"args": "**exprn** An expression evaluating to a variable number. ~~Valid numbers at this time are 0-4.~~",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = SysVar(0) = -34  \n; Triggers if the value of system variable 0 is -34.",
+			"changeNotes": []
+		},
+		{
+			"key": "tan",
+			"name": "Tan",
+			"signature": "Tan (math)",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Computes the tangent of the specified argument (in radians).",
+			"format": "tan(exprn)",
+			"args": "**exprn** Expression to compute the tangent of. (float)",
+			"returns": "",
+			"details": "",
+			"example": "value = tan(pi/4)  \n  Sets value to the tangent of pi/4, which is approximately 1.0  \n  (possibly with some rounding error.)",
+			"changeNotes": []
+		},
+		{
+			"key": "teamleader",
+			"name": "TeamLeader",
+			"signature": "TeamLeader",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns [playerno](triggers#playerno) of the character that is considered a team leader. In modes where only one player is controlled in particular round (*single*, *turns* and *ratio*) it will be either 1 or 2, depending on team side. In *simul* and *tag* modes, team leader is the first party member (again 1 or 2) by default, but who is considered a leader can be also dynamically adjusted via optional [TagIn](sctrl#new_tagin) sctrl *leader* parameter.\n\nManually swapping leader changes lifebar elements assignment - leader always uses P1 (or P2, depending on team side) lifebar elements, remaining players positions are moved accordingly, in ascending players order.",
+			"format": "TeamLeader",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = TeamLeader = PlayerNo",
+			"changeNotes": []
+		},
+		{
+			"key": "teammode",
+			"name": "TeamMode",
+			"signature": "TeamMode",
+			"tags": [
+				"old",
+				"changed"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "TeamMode gives the current mode of play for the player's team.",
+			"format": "TeamMode [oper] mode",
+			"args": "*[oper]* =, !=   (other operators not valid)",
+			"returns": "",
+			"details": "In survival mode, TeamMode = turns on the enemy side.",
+			"example": "trigger1 = TeamMode = Single  \n; Triggers if the player is playing in single play.",
+			"changeNotes": [
+				"A comparison is no longer mandatory. When used bare, `TeamMode` returns the current mode as a string directly, which can be read by another trigger or displayed. The old syntax is still supported."
+			]
+		},
+		{
+			"key": "teamside",
+			"name": "TeamSide",
+			"signature": "TeamSide",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the team side the player is on. 1 represents P1 side (left), 2 for P2 side (right).",
+			"format": "TeamSide",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = TeamSide = 2  \n; Triggers if player is on the P2 side team.",
+			"changeNotes": []
+		},
+		{
+			"key": "teamsize",
+			"name": "TeamSize",
+			"signature": "TeamSize",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns character's team size (for *turns* mode it returns information that was previously not obtainable, for other team modes the returned value is equivalent to using `NumPartner + 1`)",
+			"format": "TeamSize",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = TeamSize = 4",
+			"changeNotes": []
+		},
+		{
+			"key": "tickspersecond",
+			"name": "TicksPerSecond",
+			"signature": "TicksPerSecond",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the number of ticks per second. Useful for time calculations.",
+			"format": "TicksPerSecond",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Time > 10 * TicksPerSecond  \n; Triggers after 10 seconds, regardless of game speed.",
+			"changeNotes": []
+		},
+		{
+			"key": "time",
+			"name": "Time",
+			"signature": "Time",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the state-time of the player (that is, the number of ticks that the player has been in the current state so far).",
+			"format": "Time",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Time = 2  \n; Triggers when the player's state-time is 2.",
+			"changeNotes": []
+		},
+		{
+			"key": "timeelapsed",
+			"name": "TimeElapsed",
+			"signature": "TimeElapsed",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the amount of clock ticks since the battle began (0 if time is disabled). Value returned by this trigger corresponds to lifebar timer (only ticks during RoundState = 2)",
+			"format": "TimeElapsed",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = TimeElapsed > 600",
+			"changeNotes": []
+		},
+		{
+			"key": "timemod",
+			"name": "TimeMod",
+			"signature": "TimeMod",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the remainder when the state-time of the player is divided by the specified value. The `%` operator subsumes the functionality of `TimeMod`, so it is recommended that you use `%` instead.",
+			"format": "TimeMod [oper] divisor, value1",
+			"args": "*[oper]* =, !=, <, >, <=, >=",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = TimeMod = 4, 3  \n; Triggers when the state-time is 3, 7, 11, 15, ...",
+			"changeNotes": []
+		},
+		{
+			"key": "timeremaining",
+			"name": "TimeRemaining",
+			"signature": "TimeRemaining",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the amount of clock ticks until time over (-1 if time is disabled). Value returned by this trigger corresponds to lifebar timer (only ticks during RoundState = 2)",
+			"format": "TimeRemaining",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = TimeRemaining > 600",
+			"changeNotes": []
+		},
+		{
+			"key": "timetotal",
+			"name": "TimeTotal",
+			"signature": "TimeTotal",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the total number of clock ticks that have elapsed so far. Takes into account previous rounds and matches since the start of this game mode.",
+			"format": "TimeTotal",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = TimeTotal > 5940",
+			"changeNotes": []
+		},
+		{
+			"key": "topboundbodydist",
+			"name": "TopBoundBodyDist",
+			"signature": "TopBoundBodyDist",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Like `TopBoundDist`, except this trigger accounts for the player's top `edge` parameter, as defined by the `Depth` state controller.",
+			"format": "",
+			"args": "",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "topbounddist",
+			"name": "TopBoundDist",
+			"signature": "TopBoundDist",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "TopBoundDist gives the distance between the player's z-axis and the `topbound` limit of the stage.",
+			"format": "TopBoundDist",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = TopBoundDist < 40",
+			"changeNotes": []
+		},
+		{
+			"key": "topedge",
+			"name": "TopEdge",
+			"signature": "TopEdge",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "TopEdge returns the y position of the top edge of the screen, in absolute stage coordinates.",
+			"format": "TopEdge",
+			"args": "none",
+			"returns": "",
+			"details": "This trigger is equivalent to the expression Pos Y - ScreenPos Y.",
+			"example": "trigger1 = Pos Y > TopEdge  \n; Triggers if the player is below the top edge of the screen.",
+			"changeNotes": []
+		},
+		{
+			"key": "uniqhitcount",
+			"name": "UniqHitCount",
+			"signature": "UniqHitCount",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the total number of hits the player's current attack move has done. This value is valid only for a single state; after any state change, it resets to 0. To prevent it from resetting to 0, set hitcountpersist in the StateDef (see cns documentation for details). The HitCount and UniqHitCount triggers differ only when the player is hitting more than one opponent. In the case where the player is hitting two opponents with the same attack, HitCount will increase by 1 for every hit, while UniqHitCount increases by 2.",
+			"format": "UniqHitCount",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = UniqHitCount = [4,6]  \n; Triggers when 4, 5 or 6 hits have been dealt since the start of the player's attack move.",
+			"changeNotes": []
+		},
+		{
+			"key": "var",
+			"name": "Var",
+			"signature": "Var",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "This trigger takes a mandatory variable number as an argument. It returns the value of the player's specified int variable.",
+			"format": "Var(exprn)",
+			"args": "**exprn** An expression evaluating to a variable number. ~~Valid numbers at this time are 0-59.~~",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Var(0) = -34  \n; Triggers if the value of variable 0 is -34.",
+			"changeNotes": []
+		},
+		{
+			"key": "vel",
+			"name": "Vel",
+			"signature": "Vel",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Gets the value of the player's velocity. You must specify the component that you want to check, eg. `Vel Y` to check the Y-velocity.",
+			"format": "Vel [component]",
+			"args": "**[component]** X, Y",
+			"returns": "",
+			"details": "For Vel X, a positive value indicates that the player is moving forward. (This behavior is the opposite of HitVel X's behavior.) For Vel Y, a positive value indicates that the player is moving downward.",
+			"example": "trigger1 = Vel Y >= 0  \n; True when the player is not moving upward.",
+			"changeNotes": []
+		},
+		{
+			"key": "win",
+			"name": "Win",
+			"signature": "Win",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the player (or the player's team, in team mode) has won the round, false otherwise. Can be suffixed with \"KO\", \"Time\", or \"Perfect\" to return true only when the round has been won by a KO, by time expiring, or with no life lost, respectively.\n\nFormat: 1. Win 2. WinKO 3. WinTime 4. WinPerfect",
+			"format": "",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Win  \n; Triggers if the player (or his team) has won the round.  \n  \ntrigger1 = !WinKO  \n; Triggers if the player (or his team) has not won the round by a KO. For example, this will trigger if the player's team has not yet won the round, or if they have won the round by time over.",
+			"changeNotes": []
+		},
+		{
+			"key": "winclutch",
+			"name": "WinClutch",
+			"signature": "WinClutch",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the player (or the player's team, in team mode) has won the round with health below the limit set by ``clutch.threshold`` in fight.def. If the parameter isn't defined, the default is under 10%.",
+			"format": "WinClutch",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "",
+			"changeNotes": []
+		},
+		{
+			"key": "winhyper",
+			"name": "WinHyper",
+			"signature": "WinHyper",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the player (or the player's team, in team mode) has won the round with the finishing blow being a hyper attack.",
+			"format": "WinHyper",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = !WinHyper",
+			"changeNotes": []
+		},
+		{
+			"key": "winspecial",
+			"name": "WinSpecial",
+			"signature": "WinSpecial",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the player (or the player's team, in team mode) has won the round with the finishing blow being a special attack.",
+			"format": "WinSpecial",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = !WinSpecial",
+			"changeNotes": []
+		},
+		{
+			"key": "xangle",
+			"name": "XAngle",
+			"signature": "XAngle",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of the player's Xangle applied with AngleDraw/AngleSet/AngleAdd/AngleMul sctrl.",
+			"format": "XAngle",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = XAngle >= 90",
+			"changeNotes": []
+		},
+		{
+			"key": "xshear",
+			"name": "Xshear",
+			"signature": "Xshear",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of the player's xshear applied with TransformSprite sctrl.",
+			"format": "xshear",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = xshear > 40",
+			"changeNotes": []
+		},
+		{
+			"key": "yangle",
+			"name": "YAngle",
+			"signature": "YAngle",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns the value of the player's yangle applied with AngleDraw/AngleSet/AngleAdd/AngleMul sctrl.",
+			"format": "YAngle",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = YAngle >= 90",
+			"changeNotes": []
+		},
+		{
+			"key": "zoomvar",
+			"name": "ZoomVar",
+			"signature": "ZoomVar",
+			"tags": [
+				"new"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Allows checking the scale, pos x, pos y, lag, and remaining time of the currently Zoom sctrl.",
+			"format": "ZoomVar(param_name)",
+			"args": "param_name The name of the variable to check. Valid values are: scale, pos.x, pos.y, lag, time",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = ZoomVar(scale) < 0.9\ntrigger2 = ZoomVar(pos.x) >= 100",
+			"changeNotes": []
+		}
+	]
+}

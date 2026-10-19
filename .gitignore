@@ -1,0 +1,16 @@
+node_modules/
+*.vsix
+.vscode-test/
+.vscode/
+
+# Copies of the documentation downloaded by "node tools/build-data.js" (the script recreates them).
+# data/sctrls.json and data/triggers.json ARE committed: the extension reads them.
+data/source/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
+
+# Local tests and unused screenshots
+/test/

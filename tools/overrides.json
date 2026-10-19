@@ -1,0 +1,10 @@
+{
+	"inherits": {
+		"SelfState": "ChangeState",
+		"ModifyExplod": { "from": "Explod", "required": false },
+		"ModifyText": { "from": "Text", "required": false }
+	},
+	"templateParams": {
+		"ChangeAnim": ["ElemTime", "AnimPlayerNo", "SpritePlayerNo", "ReadPlayerID"]
+	}
+}

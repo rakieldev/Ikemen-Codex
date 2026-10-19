@@ -1,0 +1,79 @@
+{
+	"name": "AIR",
+	"scopeName": "source.air",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#sections" },
+		{ "include": "#hitboxes" },
+		{ "include": "#commands" },
+		{ "include": "#numbers" }
+	],
+	"repository": {
+		"comments": {
+			"name": "comment.line.air",
+			"match": ";.*$"
+		},
+		"sections": {
+			"name": "entity.name.section.air",
+			"begin": "^\\s*\\[",
+			"end": "\\]|$",
+			"patterns": [
+				{ "include": "#numbers" }
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.air",
+					"match": "-?\\.?\\b[0-9.]+\\b"
+				}
+			]
+		},
+		"hitboxes": {
+			"patterns": [
+				{
+					"name": "storage.type.air",
+					"match": "(?i)\\bclsn2(?:default)?\\b"
+				},
+				{
+					"name": "keyword.control.air",
+					"match": "(?i)\\bclsn1(?:default)?\\b"
+				}
+			]
+		},
+		"commands": {
+			"patterns": [
+				{
+					"match": "(?i)\\b(interpolate)\\s+(offset|blend|scale|angle)\\b",
+					"captures": {
+						"1": { "name": "support.function.air" },
+						"2": { "name": "constant.language.air" }
+					}
+				},
+				{
+					"name": "support.function.air",
+					"match": "(?i)\\bloopstart\\b"
+				},
+				{
+					"name": "support.class.air",
+					"match": "(?i)\\bAS(\\d+)D(\\d+)\\b",
+					"captures": {
+						"1": { "name": "constant.numeric.air" },
+						"2": { "name": "constant.numeric.air" }
+					}
+				},
+				{
+					"match": "(?i)\\b(A)(1)\\b",
+					"captures": {
+						"1": { "name": "support.class.air" },
+						"2": { "name": "constant.numeric.air" }
+					}
+				},
+				{
+					"name": "support.class.air",
+					"match": "(?i)\\b[ASVH]+\\b"
+				}
+			]
+		}
+	}
+}

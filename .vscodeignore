@@ -1,0 +1,18 @@
+# Everything listed here is left out of the .vsix.
+# Kept on purpose: src/, syntaxes/, languages/, data/sctrls.json, data/triggers.json,
+# package.json, README.md, CHANGELOG.md and LICENCE.
+.vscode/**
+.vscode-test/**
+.github/**
+.gitignore
+.gitattributes
+vsc-extension-quickstart.md
+**/*.vsix
+**/*.map
+
+# development only (these live in the repository, not in the package)
+CONTRIBUTING.md
+tools/**
+test/**
+data/source/**
+language-configuration.json
