@@ -1,4 +1,4 @@
-# Ikemen VS
+# Ikemen Codex
 
 Language support for **Ikemen GO** (and MUGEN) character code in VS Code and VSCodium: syntax highlighting, outline, autocomplete with documentation, a few safe warnings, and a button to test the current character in the engine.
 
@@ -40,34 +40,34 @@ It only handles the **text** files. Sprites and sounds (`.sff`, `.snd`) are not 
 
 1. Install the extension (`.vsix`: *Extensions* view, `...` menu, *Install from VSIX...*).
 2. Open a character folder and a `.cns`, `.cmd`, `.zss` or `.air` file.
-3. To use the run button, set **`ikemenVS.ikemen.executable`** (for example `D:\Ikemen\Ikemen_GO.exe`). The rest has working defaults.
+3. To use the run button, set **`ikemenCodex.ikemen.executable`** (for example `D:\Ikemen\Ikemen_GO.exe`). The rest has working defaults.
 
 ## Commands
 
 | Command | What it does |
 | --- | --- |
-| `IkemenVS: Run Current Character in Ikemen GO` | Character being edited as player 1, opponent as player 2 |
-| `IkemenVS: Run Current Character as Player 2 in Ikemen GO` | Same, with the sides swapped |
-| `IkemenVS: Run Current Stage in Ikemen GO` | Stage being edited, with the configured opponent character on both sides |
-| `IkemenVS: Stop Ikemen GO` | Closes the running engine |
+| `Ikemen Codex: Run Current Character in Ikemen GO` | Character being edited as player 1, opponent as player 2 |
+| `Ikemen Codex: Run Current Character as Player 2 in Ikemen GO` | Same, with the sides swapped |
+| `Ikemen Codex: Run Current Stage in Ikemen GO` | Stage being edited, with the configured opponent character on both sides |
+| `Ikemen Codex: Stop Ikemen GO` | Closes the running engine |
 
-The character is found automatically: the extension looks for the `.def` of the character next to the open file (and up to two folders above, so files in a `states/` folder work too). If the open file is a stage `.def`, the stage is tested instead, with the opponent on both sides. By default, open files with an existing path are saved before running. If saving fails or is cancelled, the extension shows an error and cancels the run. Disable `ikemenVS.ikemen.saveBeforeRun` to run without saving.
+The character is found automatically: the extension looks for the `.def` of the character next to the open file (and up to two folders above, so files in a `states/` folder work too). If the open file is a stage `.def`, the stage is tested instead, with the opponent on both sides. By default, open files with an existing path are saved before running. If saving fails or is cancelled, the extension shows an error and cancels the run. Disable `ikemenCodex.ikemen.saveBeforeRun` to run without saving.
 
 ## Settings
 
 | Setting | Default | Description |
 | --- | --- | --- |
-| `ikemenVS.ikemen.executable` | `""` | Path to the Ikemen GO executable. User settings only. |
-| `ikemenVS.ikemen.opponent` | `kfm_zss` | Opponent character: a name or a `.def` path. Also used on both sides when testing a stage. |
-| `ikemenVS.ikemen.opponentAI` | `0` | AI level of the opponent (0 = none, 1 to 8). |
-| `ikemenVS.ikemen.stage` | `""` | Stage to use, for example `stages/stage0.def`. Empty uses the engine default. |
-| `ikemenVS.ikemen.extraArgs` | `[]` | Extra command line options, for example `["-windowed", "-nomusic"]`. |
-| `ikemenVS.ikemen.saveBeforeRun` | `true` | Save all open files before running. |
-| `ikemenVS.zss.nameStyle` | `camelCase` | `camelCase` inserts `modifyExplod` / `stateNo`; `documentation` inserts `ModifyExplod` / `StateNo`. |
-| `ikemenVS.diagnostics.enabled` | `true` | Turn all diagnostics on or off. |
-| `ikemenVS.diagnostics.unknownTriggers` | `true` | Report unknown trigger names. |
-| `ikemenVS.diagnostics.ignoredNames` | `[]` | Controller or trigger names that must never be reported (useful for names missing from the data). |
-| `ikemenVS.diagnostics.missingSemicolons` | `true` | Report missing ZSS statement terminators and separators between controller parameters. |
+| `ikemenCodex.ikemen.executable` | `""` | Path to the Ikemen GO executable. User settings only. |
+| `ikemenCodex.ikemen.opponent` | `kfm_zss` | Opponent character: a name or a `.def` path. Also used on both sides when testing a stage. |
+| `ikemenCodex.ikemen.opponentAI` | `0` | AI level of the opponent (0 = none, 1 to 8). |
+| `ikemenCodex.ikemen.stage` | `""` | Stage to use, for example `stages/stage0.def`. Empty uses the engine default. |
+| `ikemenCodex.ikemen.extraArgs` | `[]` | Extra command line options, for example `["-windowed", "-nomusic"]`. |
+| `ikemenCodex.ikemen.saveBeforeRun` | `true` | Save all open files before running. |
+| `ikemenCodex.zss.nameStyle` | `camelCase` | `camelCase` inserts `modifyExplod` / `stateNo`; `documentation` inserts `ModifyExplod` / `StateNo`. |
+| `ikemenCodex.diagnostics.enabled` | `true` | Turn all diagnostics on or off. |
+| `ikemenCodex.diagnostics.unknownTriggers` | `true` | Report unknown trigger names. |
+| `ikemenCodex.diagnostics.ignoredNames` | `[]` | Controller or trigger names that must never be reported (useful for names missing from the data). |
+| `ikemenCodex.diagnostics.missingSemicolons` | `true` | Report missing ZSS statement terminators and separators between controller parameters. |
 
 The command line options come from the *Miscellaneous info* page of the Ikemen GO wiki.
 

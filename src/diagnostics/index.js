@@ -20,7 +20,7 @@ function appliesTo(document) {
 }
 
 function options() {
-	const cfg = vscode.workspace.getConfiguration('ikemenVS.diagnostics');
+	const cfg = vscode.workspace.getConfiguration('ikemenCodex.diagnostics');
 	return {
 		enabled: cfg.get('enabled', true),
 		triggers: cfg.get('unknownTriggers', true),
@@ -34,7 +34,7 @@ function register(context) {
 	if (!data) return;
 
 	const checker = createChecker(data.sctrls, data.triggers);
-	const collection = vscode.languages.createDiagnosticCollection('ikemenVS');
+	const collection = vscode.languages.createDiagnosticCollection('ikemenCodex');
 	const timers = new Map();
 
 	function refresh(document) {
@@ -50,12 +50,12 @@ function register(context) {
 				const diagnostic = new vscode.Diagnostic(
 					new vscode.Range(d.sl, d.sc, d.el, d.ec), d.message, SEVERITY[d.severity]
 				);
-				diagnostic.source = 'IkemenVS';
+				diagnostic.source = 'Ikemen Codex';
 				diagnostic.code = d.code;
 				return diagnostic;
 			}));
 		} catch (e) {
-			console.error('IkemenVS diagnostics failed:', e);
+			console.error('Ikemen Codex diagnostics failed:', e);
 			collection.delete(document.uri);
 		}
 	}
@@ -81,7 +81,7 @@ function register(context) {
 			collection.delete(document.uri);
 		}),
 		vscode.workspace.onDidChangeConfiguration(e => {
-			if (e.affectsConfiguration('ikemenVS.diagnostics')) vscode.workspace.textDocuments.forEach(refresh);
+			if (e.affectsConfiguration('ikemenCodex.diagnostics')) vscode.workspace.textDocuments.forEach(refresh);
 		}),
 		{ dispose() { timers.forEach(t => clearTimeout(t)); timers.clear(); } }
 	);

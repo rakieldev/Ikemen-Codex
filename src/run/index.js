@@ -10,7 +10,7 @@ const output = vscode.window.createOutputChannel('Ikemen GO');
 let child = null;
 
 function settings() {
-	return vscode.workspace.getConfiguration('ikemenVS.ikemen');
+	return vscode.workspace.getConfiguration('ikemenCodex.ikemen');
 }
 
 function quote(arg) {
@@ -26,8 +26,8 @@ function stop() {
 
 function fail(message, openSettings) {
 	const buttons = openSettings ? ['Open Settings'] : [];
-	vscode.window.showErrorMessage('IkemenVS: ' + message, ...buttons).then(choice => {
-		if (choice) vscode.commands.executeCommand('workbench.action.openSettings', 'ikemenVS.ikemen');
+	vscode.window.showErrorMessage('Ikemen Codex: ' + message, ...buttons).then(choice => {
+		if (choice) vscode.commands.executeCommand('workbench.action.openSettings', 'ikemenCodex.ikemen');
 	});
 }
 
@@ -61,7 +61,7 @@ function activeRunTarget() {
 }
 
 function updateRunContext() {
-	vscode.commands.executeCommand('setContext', 'ikemenVS.runTarget', activeRunTarget());
+	vscode.commands.executeCommand('setContext', 'ikemenCodex.runTarget', activeRunTarget());
 }
 
 async function run(side) {
@@ -81,7 +81,7 @@ async function run(side) {
 	const cfg = settings();
 	const exe = (cfg.get('executable', '') || '').trim();
 	if (!exe || !fs.existsSync(exe)) {
-		fail('set the path of the Ikemen GO executable (ikemenVS.ikemen.executable).', true);
+		fail('set the path of the Ikemen GO executable (ikemenCodex.ikemen.executable).', true);
 		return;
 	}
 
@@ -119,11 +119,11 @@ async function run(side) {
 
 function register(context) {
 	context.subscriptions.push(
-		vscode.commands.registerCommand('ikemenVS.run', () => run('p1')),
-		vscode.commands.registerCommand('ikemenVS.runStage', () => run('p1')),
-		vscode.commands.registerCommand('ikemenVS.runUnavailable', () => run('p1')),
-		vscode.commands.registerCommand('ikemenVS.runAsP2', () => run('p2')),
-		vscode.commands.registerCommand('ikemenVS.stop', stop),
+		vscode.commands.registerCommand('ikemenCodex.run', () => run('p1')),
+		vscode.commands.registerCommand('ikemenCodex.runStage', () => run('p1')),
+		vscode.commands.registerCommand('ikemenCodex.runUnavailable', () => run('p1')),
+		vscode.commands.registerCommand('ikemenCodex.runAsP2', () => run('p2')),
+		vscode.commands.registerCommand('ikemenCodex.stop', stop),
 		output,
 		vscode.window.onDidChangeActiveTextEditor(updateRunContext),
 		vscode.workspace.onDidChangeTextDocument(e => {

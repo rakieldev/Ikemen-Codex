@@ -13,7 +13,7 @@ function loadData() {
 			triggers: require('../../data/triggers.json').triggers
 		};
 	} catch (e) {
-		console.warn('IkemenVS: documentation data not found. Run "node tools/build-data.js" first.');
+		console.warn('Ikemen Codex: documentation data not found. Run "node tools/build-data.js" first.');
 		cache = null;
 	}
 	return cache;

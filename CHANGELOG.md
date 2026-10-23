@@ -3,6 +3,20 @@
 All notable changes to this extension are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.2.0] - 2026-10-23
+
+### Added
+- Context-aware Quick VS button: *Run Current Stage in Ikemen GO* for stage definitions, while retaining the character command for character files.
+- A visible, disabled Quick VS button for system and lifebar definitions, with a guard against running them through commands.
+
+### Changed
+- Renamed the extension from Ikemen VS to **Ikemen Codex**, with package name `ikemen-codex` and repository links pointing to `rakieldev/Ikemen-Codex`.
+- Renamed command IDs and settings from `ikemenVS.*` to `ikemenCodex.*`. Existing settings must be configured again under the new prefix. Uninstall the old extension before installing this package to avoid duplicate providers and commands.
+- Quick VS button state updates when switching editors or editing a DEF file, including unsaved changes.
+
+### Fixed
+- Character detection now checks character file keys only inside `[Files]`, avoiding confusion with animation entries in system definitions.
+
 ## [0.1.0] - 2026-10-18
 
 Initial release.

@@ -1,19 +1,19 @@
 {
-	"name": "ikemen-vs",
-	"displayName": "Ikemen VS",
-	"icon": "images/ikemenvs_ico.png",
+	"name": "ikemen-codex",
+	"displayName": "Ikemen Codex",
+	"icon": "images/ikemen-codex.png",
 	"description": "Highlighting, outline, autocomplete, warnings and a Quick VS button for Ikemen GO and MUGEN files (.cns, .cmd, .st, .zss, .air, .def).",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"publisher": "Rakiel",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/rakieldev/IkemenVS.git"
+		"url": "https://github.com/rakieldev/Ikemen-Codex.git"
 	},
 	"bugs": {
-		"url": "https://github.com/rakieldev/IkemenVS/issues"
+		"url": "https://github.com/rakieldev/Ikemen-Codex/issues"
 	},
-	"homepage": "https://github.com/rakieldev/IkemenVS#readme",
+	"homepage": "https://github.com/rakieldev/Ikemen-Codex#readme",
 	"keywords": ["ikemen", "ikemen go", "mugen", "cns", "zss", "air", "cmd", "state controller", "fighting game"],
 	"engines": {
 		"vscode": "^1.75.0"
@@ -27,7 +27,7 @@
 		"untrustedWorkspaces": {
 			"supported": "limited",
 			"description": "Running Ikemen GO uses a program path and command line options, which are ignored from workspace settings in an untrusted workspace.",
-			"restrictedConfigurations": ["ikemenVS.ikemen.executable", "ikemenVS.ikemen.extraArgs"]
+			"restrictedConfigurations": ["ikemenCodex.ikemen.executable", "ikemenCodex.ikemen.extraArgs"]
 		}
 	},
 	"contributes": {
@@ -58,68 +58,68 @@
 		],
 		"commands": [
 			{
-				"command": "ikemenVS.run",
+				"command": "ikemenCodex.run",
 				"title": "Run Current Character in Ikemen GO",
-				"enablement": "ikemenVS.runTarget == character || ikemenVS.runTarget == stage",
-				"category": "IkemenVS",
+				"enablement": "ikemenCodex.runTarget == character || ikemenCodex.runTarget == stage",
+				"category": "Ikemen Codex",
 				"icon": "$(play)"
 			},
 			{
-				"command": "ikemenVS.runStage",
+				"command": "ikemenCodex.runStage",
 				"title": "Run Current Stage in Ikemen GO",
-				"category": "IkemenVS",
+				"category": "Ikemen Codex",
 				"icon": "$(play)",
-				"enablement": "ikemenVS.runTarget == stage"
+				"enablement": "ikemenCodex.runTarget == stage"
 			},
 			{
-				"command": "ikemenVS.runUnavailable",
+				"command": "ikemenCodex.runUnavailable",
 				"title": "Quick VS is unavailable for this file",
-				"category": "IkemenVS",
+				"category": "Ikemen Codex",
 				"icon": "$(play)",
 				"enablement": "false"
 			},
 			{
-				"command": "ikemenVS.runAsP2",
+				"command": "ikemenCodex.runAsP2",
 				"title": "Run Current Character as Player 2 in Ikemen GO",
-				"enablement": "ikemenVS.runTarget == character",
-				"category": "IkemenVS"
+				"enablement": "ikemenCodex.runTarget == character",
+				"category": "Ikemen Codex"
 			},
 			{
-				"command": "ikemenVS.stop",
+				"command": "ikemenCodex.stop",
 				"title": "Stop Ikemen GO",
-				"category": "IkemenVS",
+				"category": "Ikemen Codex",
 				"icon": "$(debug-stop)"
 			}
 		],
 		"menus": {
 			"editor/title": [
 				{
-					"command": "ikemenVS.run",
-					"when": "resourceLangId =~ /^(cns|air|zss)$/ && ikemenVS.runTarget == character",
+					"command": "ikemenCodex.run",
+					"when": "resourceLangId =~ /^(cns|air|zss)$/ && ikemenCodex.runTarget == character",
 					"group": "navigation"
 				},
 				{
-					"command": "ikemenVS.runStage",
-					"when": "resourceLangId =~ /^(cns|air|zss)$/ && ikemenVS.runTarget == stage",
+					"command": "ikemenCodex.runStage",
+					"when": "resourceLangId =~ /^(cns|air|zss)$/ && ikemenCodex.runTarget == stage",
 					"group": "navigation"
 				},
 				{
-					"command": "ikemenVS.runUnavailable",
-					"when": "resourceLangId =~ /^(cns|air|zss)$/ && (ikemenVS.runTarget == system || ikemenVS.runTarget == unsupported)",
+					"command": "ikemenCodex.runUnavailable",
+					"when": "resourceLangId =~ /^(cns|air|zss)$/ && (ikemenCodex.runTarget == system || ikemenCodex.runTarget == unsupported)",
 					"group": "navigation"
 				}
 			],
 			"commandPalette": [
-				{ "command": "ikemenVS.run", "when": "ikemenVS.runTarget == character" },
-				{ "command": "ikemenVS.runAsP2", "when": "ikemenVS.runTarget == character" },
-				{ "command": "ikemenVS.runStage", "when": "ikemenVS.runTarget == stage" },
-				{ "command": "ikemenVS.runUnavailable", "when": "false" }
+				{ "command": "ikemenCodex.run", "when": "ikemenCodex.runTarget == character" },
+				{ "command": "ikemenCodex.runAsP2", "when": "ikemenCodex.runTarget == character" },
+				{ "command": "ikemenCodex.runStage", "when": "ikemenCodex.runTarget == stage" },
+				{ "command": "ikemenCodex.runUnavailable", "when": "false" }
 			]
 		},
 		"configuration": {
-			"title": "IkemenVS",
+			"title": "Ikemen Codex",
 			"properties": {
-				"ikemenVS.zss.nameStyle": {
+				"ikemenCodex.zss.nameStyle": {
 					"type": "string",
 					"enum": ["camelCase", "documentation"],
 					"enumDescriptions": [
@@ -129,57 +129,57 @@
 					"default": "camelCase",
 					"description": "How state controller and trigger names are written when inserted by the ZSS autocomplete."
 				},
-				"ikemenVS.ikemen.executable": {
+				"ikemenCodex.ikemen.executable": {
 					"type": "string",
 					"default": "",
 					"scope": "machine",
 					"description": "Absolute path to the Ikemen GO executable (for example D:\\Ikemen\\Ikemen_GO.exe)."
 				},
-				"ikemenVS.ikemen.opponent": {
+				"ikemenCodex.ikemen.opponent": {
 					"type": "string",
 					"default": "kfm_zss",
 					"description": "Character used as the test opponent: a name (kfm_zss) or a .def path. Also used on both sides when testing a stage."
 				},
-				"ikemenVS.ikemen.opponentAI": {
+				"ikemenCodex.ikemen.opponentAI": {
 					"type": "number",
 					"default": 0,
 					"minimum": 0,
 					"maximum": 8,
 					"description": "AI level of the opponent (0 = no AI, 1-8 = AI)."
 				},
-				"ikemenVS.ikemen.stage": {
+				"ikemenCodex.ikemen.stage": {
 					"type": "string",
 					"default": "",
 					"description": "Stage used when running a character, for example stages/stage0.def. Empty uses the engine default."
 				},
-				"ikemenVS.ikemen.extraArgs": {
+				"ikemenCodex.ikemen.extraArgs": {
 					"type": "array",
 					"items": { "type": "string" },
 					"default": [],
 					"description": "Extra command line options, for example [\"-windowed\", \"-nomusic\"]."
 				},
-				"ikemenVS.ikemen.saveBeforeRun": {
+				"ikemenCodex.ikemen.saveBeforeRun": {
 					"type": "boolean",
 					"default": true,
 					"description": "Save all open files before running."
 				},
-				"ikemenVS.diagnostics.enabled": {
+				"ikemenCodex.diagnostics.enabled": {
 					"type": "boolean",
 					"default": true,
 					"description": "Show diagnostics for duplicated parameters, unknown controllers and triggers, and ZSS syntax errors in CNS/CMD/ST/ZSS character files."
 				},
-				"ikemenVS.diagnostics.unknownTriggers": {
+				"ikemenCodex.diagnostics.unknownTriggers": {
 					"type": "boolean",
 					"default": true,
 					"description": "Warn about trigger names that are not in the documentation data."
 				},
-				"ikemenVS.diagnostics.ignoredNames": {
+				"ikemenCodex.diagnostics.ignoredNames": {
 					"type": "array",
 					"items": { "type": "string" },
 					"default": [],
 					"description": "Controller or trigger names that should never be reported as unknown (useful for names missing from the documentation data)."
 				},
-				"ikemenVS.diagnostics.missingSemicolons": {
+				"ikemenCodex.diagnostics.missingSemicolons": {
 					"type": "boolean",
 					"default": true,
 					"description": "In ZSS files, report a missing \";\" between parameters and at the end of statements (let, call, assignments)."

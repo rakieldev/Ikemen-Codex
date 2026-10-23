@@ -19,7 +19,7 @@ function register(context) {
 	if (!data) return;
 
 	// 'camelCase' (modifyExplod) or 'documentation' (ModifyExplod); read on every request
-	const nameStyle = () => vscode.workspace.getConfiguration('ikemenVS').get('zss.nameStyle', 'camelCase');
+	const nameStyle = () => vscode.workspace.getConfiguration('ikemenCodex').get('zss.nameStyle', 'camelCase');
 	const engine = createZssEngine(data.sctrls, data.triggers, nameStyle);
 
 	const completion = {
