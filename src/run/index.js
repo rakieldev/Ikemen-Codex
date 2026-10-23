@@ -4,7 +4,7 @@ const vscode = require('vscode');
 const path = require('path');
 const fs = require('fs');
 const { spawn } = require('child_process');
-const { planRun } = require('./logic');
+const { planRun, classifyRunTarget } = require('./logic');
 
 const output = vscode.window.createOutputChannel('Ikemen GO');
 let child = null;
@@ -53,10 +53,28 @@ function launch(exe, args, description) {
 	});
 }
 
+function activeRunTarget() {
+	const editor = vscode.window.activeTextEditor;
+	if (!editor || editor.document.uri.scheme !== 'file') return 'unsupported';
+	const document = editor.document;
+	return classifyRunTarget(document.fileName, /\.def$/i.test(document.fileName) ? document.getText() : '');
+}
+
+function updateRunContext() {
+	vscode.commands.executeCommand('setContext', 'ikemenVS.runTarget', activeRunTarget());
+}
+
 async function run(side) {
 	const editor = vscode.window.activeTextEditor;
 	if (!editor) {
-		fail('open a character file (.def, .cns, .cmd, .zss, .air...) first.');
+		fail('open a character or stage file (.def, .cns, .cmd, .zss, .air...) first.');
+		return;
+	}
+
+	const target = activeRunTarget();
+	if (target === 'system' || target === 'unsupported') {
+		fail(target === 'system' ? 'Quick VS is not available for system or lifebar definitions.' :
+			'Quick VS is not available for this file. Open a local character or stage file.');
 		return;
 	}
 
@@ -102,11 +120,19 @@ async function run(side) {
 function register(context) {
 	context.subscriptions.push(
 		vscode.commands.registerCommand('ikemenVS.run', () => run('p1')),
+		vscode.commands.registerCommand('ikemenVS.runStage', () => run('p1')),
+		vscode.commands.registerCommand('ikemenVS.runUnavailable', () => run('p1')),
 		vscode.commands.registerCommand('ikemenVS.runAsP2', () => run('p2')),
 		vscode.commands.registerCommand('ikemenVS.stop', stop),
 		output,
+		vscode.window.onDidChangeActiveTextEditor(updateRunContext),
+		vscode.workspace.onDidChangeTextDocument(e => {
+			const editor = vscode.window.activeTextEditor;
+			if (editor && e.document === editor.document) updateRunContext();
+		}),
 		{ dispose: stop }
 	);
+	updateRunContext();
 }
 
 module.exports = { register };

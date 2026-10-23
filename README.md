@@ -34,7 +34,7 @@ It only handles the **text** files. Sprites and sounds (`.sff`, `.snd`) are not 
 
   Parameter names and values are *not* checked, because the documentation does not cover every alias and nightly-only syntax. Nothing is ever reported in `.def`, `.const` or `.air` files.
 - **ZSS function completion across files**: `call` suggests functions from the character's ZSS files referenced by its `.def`, including unsaved edits. Functions from other characters are kept separate. If the character cannot be identified unambiguously, only functions in the current file are suggested.
-- **Run in Ikemen GO**: the play button in the editor title bar (or the command palette) starts a Quick VS with the character you are editing, and *Stop Ikemen GO* closes it. The engine output shows in the *Ikemen GO* output panel.
+- **Run in Ikemen GO**: the play button in the editor title bar (or the command palette) starts a Quick VS with the character you are editing, and *Stop Ikemen GO* closes it. The button title follows the active character or stage; it stays visible but disabled for system and lifebar definitions. The engine output shows in the *Ikemen GO* output panel.
 
 ## Quick start
 
@@ -48,6 +48,7 @@ It only handles the **text** files. Sprites and sounds (`.sff`, `.snd`) are not 
 | --- | --- |
 | `IkemenVS: Run Current Character in Ikemen GO` | Character being edited as player 1, opponent as player 2 |
 | `IkemenVS: Run Current Character as Player 2 in Ikemen GO` | Same, with the sides swapped |
+| `IkemenVS: Run Current Stage in Ikemen GO` | Stage being edited, with the configured opponent character on both sides |
 | `IkemenVS: Stop Ikemen GO` | Closes the running engine |
 
 The character is found automatically: the extension looks for the `.def` of the character next to the open file (and up to two folders above, so files in a `states/` folder work too). If the open file is a stage `.def`, the stage is tested instead, with the opponent on both sides. By default, open files with an existing path are saved before running. If saving fails or is cancelled, the extension shows an error and cancels the run. Disable `ikemenVS.ikemen.saveBeforeRun` to run without saving.

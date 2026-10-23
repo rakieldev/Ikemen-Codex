@@ -60,12 +60,28 @@
 			{
 				"command": "ikemenVS.run",
 				"title": "Run Current Character in Ikemen GO",
+				"enablement": "ikemenVS.runTarget == character || ikemenVS.runTarget == stage",
 				"category": "IkemenVS",
 				"icon": "$(play)"
 			},
 			{
+				"command": "ikemenVS.runStage",
+				"title": "Run Current Stage in Ikemen GO",
+				"category": "IkemenVS",
+				"icon": "$(play)",
+				"enablement": "ikemenVS.runTarget == stage"
+			},
+			{
+				"command": "ikemenVS.runUnavailable",
+				"title": "Quick VS is unavailable for this file",
+				"category": "IkemenVS",
+				"icon": "$(play)",
+				"enablement": "false"
+			},
+			{
 				"command": "ikemenVS.runAsP2",
 				"title": "Run Current Character as Player 2 in Ikemen GO",
+				"enablement": "ikemenVS.runTarget == character",
 				"category": "IkemenVS"
 			},
 			{
@@ -79,9 +95,25 @@
 			"editor/title": [
 				{
 					"command": "ikemenVS.run",
-					"when": "resourceLangId =~ /^(cns|air|zss)$/",
+					"when": "resourceLangId =~ /^(cns|air|zss)$/ && ikemenVS.runTarget == character",
+					"group": "navigation"
+				},
+				{
+					"command": "ikemenVS.runStage",
+					"when": "resourceLangId =~ /^(cns|air|zss)$/ && ikemenVS.runTarget == stage",
+					"group": "navigation"
+				},
+				{
+					"command": "ikemenVS.runUnavailable",
+					"when": "resourceLangId =~ /^(cns|air|zss)$/ && (ikemenVS.runTarget == system || ikemenVS.runTarget == unsupported)",
 					"group": "navigation"
 				}
+			],
+			"commandPalette": [
+				{ "command": "ikemenVS.run", "when": "ikemenVS.runTarget == character" },
+				{ "command": "ikemenVS.runAsP2", "when": "ikemenVS.runTarget == character" },
+				{ "command": "ikemenVS.runStage", "when": "ikemenVS.runTarget == stage" },
+				{ "command": "ikemenVS.runUnavailable", "when": "false" }
 			]
 		},
 		"configuration": {

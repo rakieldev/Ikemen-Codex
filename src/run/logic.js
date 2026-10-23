@@ -7,7 +7,6 @@
 const path = require('path');
 const fs = require('fs');
 
-const RE_FILES_SECTION = /^\s*\[\s*files\s*\]/im;
 const RE_CHAR_KEY = /^\s*(cns|sprite|anim|cmd)\s*=/im;
 const RE_STAGE_SECTION = /^\s*\[\s*stageinfo\s*\]/im;
 
@@ -18,11 +17,30 @@ function readText(file, io) {
 // A character .def has a [Files] section pointing at cns/sprite/anim/cmd.
 // (system.def and fight.def also have [Files], but never those keys.)
 function isCharacterDef(text) {
-	return RE_FILES_SECTION.test(text) && RE_CHAR_KEY.test(text);
+	let inFiles = false;
+	for (const line of text.split(/\r?\n/)) {
+		const header = /^\s*\[\s*([^\]]+?)\s*\]/.exec(line);
+		if (header) {
+			if (inFiles) break;
+			inFiles = header[1].toLowerCase() === 'files';
+		} else if (inFiles && RE_CHAR_KEY.test(line)) return true;
+	}
+	return false;
 }
 
 function isStageDef(text) {
 	return RE_STAGE_SECTION.test(text);
+}
+
+// UI classification uses the edited text, including unsaved changes.
+function classifyRunTarget(file, text) {
+	if (!/\.(?:cns|cmd|st|const|air|zss|def)$/i.test(file)) return 'unsupported';
+	if (!/\.def$/i.test(file)) return 'character';
+	if (isStageDef(text)) return 'stage';
+	if (isCharacterDef(text)) return 'character';
+	const systemSections = /^\s*\[\s*(?:title info|select info|vs screen|victory screen|lifebar|fightfx)\s*\]/im;
+	if (systemSections.test(text) || /^(?:system|fight)\.def$/i.test(path.basename(file))) return 'system';
+	return 'character'; // Preserve character lookup for other character-related DEF files.
 }
 
 // Starting from the file being edited, looks for the character's .def in the
@@ -77,6 +95,9 @@ function buildArgs(o) {
 // Returns { args, description } or { error }.
 function planRun(o) {
 	const io = o.io || fs;
+	if (/\.def$/i.test(o.file) && classifyRunTarget(o.file, o.text || readText(o.file, io)) === 'system') {
+		return { error: 'Quick VS is not available for system or lifebar definitions.' };
+	}
 	const s = o.settings;
 	const opponent = toEngineArg((s.opponent || 'kfm_zss').trim(), o.exeDir);
 	const extra = Array.isArray(s.extraArgs) ? s.extraArgs.map(String) : [];
@@ -110,4 +131,4 @@ function planRun(o) {
 	};
 }
 
-module.exports = { findCharacterDef, isCharacterDef, isStageDef, toEngineArg, buildArgs, planRun };
+module.exports = { classifyRunTarget, findCharacterDef, isCharacterDef, isStageDef, toEngineArg, buildArgs, planRun };
