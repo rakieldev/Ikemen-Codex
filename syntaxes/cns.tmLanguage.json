@@ -18,6 +18,9 @@
 			"include": "#keyvalue"
 		},
 		{
+			"include": "#ranges"
+		},
+		{
 			"include": "#operators"
 		},
 		{
@@ -145,6 +148,58 @@
 			"name": "string.quoted.double.cns",
 			"begin": "\"",
 			"end": "\"|$"
+		},
+		"ranges": {
+			"patterns": [
+				{
+					"name": "meta.range.cns",
+					"match": "(?<![<>=!:])(!?=)[ \\t]*(\\[)[ \\t]*([+-]?\\d+)[ \\t]*(,)[ \\t]*([+-]?\\d+)[ \\t]*(\\))",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.cns"
+						},
+						"2": {
+							"name": "punctuation.definition.range.cns keyword.operator.range.cns"
+						},
+						"3": {
+							"name": "constant.numeric.cns"
+						},
+						"4": {
+							"name": "punctuation.separator.range.cns"
+						},
+						"5": {
+							"name": "constant.numeric.cns"
+						},
+						"6": {
+							"name": "punctuation.definition.range.cns keyword.operator.range.cns"
+						}
+					}
+				},
+				{
+					"name": "meta.range.cns",
+					"match": "(?<![<>=!:])(!?=)[ \\t]*(\\()[ \\t]*([+-]?\\d+)[ \\t]*(,)[ \\t]*([+-]?\\d+)[ \\t]*(\\])",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.cns"
+						},
+						"2": {
+							"name": "punctuation.definition.range.cns keyword.operator.range.cns"
+						},
+						"3": {
+							"name": "constant.numeric.cns"
+						},
+						"4": {
+							"name": "punctuation.separator.range.cns"
+						},
+						"5": {
+							"name": "constant.numeric.cns"
+						},
+						"6": {
+							"name": "punctuation.definition.range.cns keyword.operator.range.cns"
+						}
+					}
+				}
+			]
 		}
 	}
 }

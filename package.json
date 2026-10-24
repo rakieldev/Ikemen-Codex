@@ -3,7 +3,7 @@
 	"displayName": "Ikemen Codex",
 	"icon": "images/ikemen-codex.png",
 	"description": "Highlighting, outline, autocomplete, warnings and a Quick VS button for Ikemen GO and MUGEN files (.cns, .cmd, .st, .zss, .air, .def).",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"publisher": "Rakiel",
 	"license": "MIT",
 	"repository": {
@@ -52,9 +52,9 @@
 			}
 		],
 		"grammars": [
-			{ "language": "cns", "scopeName": "source.cns", "path": "./syntaxes/cns.tmLanguage.json" },
+			{ "language": "cns", "scopeName": "source.cns", "path": "./syntaxes/cns.tmLanguage.json", "unbalancedBracketScopes": ["punctuation.definition.range.cns"] },
 			{ "language": "air", "scopeName": "source.air", "path": "./syntaxes/air.tmLanguage.json" },
-			{ "language": "zss", "scopeName": "source.zss", "path": "./syntaxes/zss.tmLanguage.json" }
+			{ "language": "zss", "scopeName": "source.zss", "path": "./syntaxes/zss.tmLanguage.json", "unbalancedBracketScopes": ["punctuation.definition.range.zss"] }
 		],
 		"commands": [
 			{

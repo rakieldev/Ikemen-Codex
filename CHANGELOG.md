@@ -3,6 +3,12 @@
 All notable changes to this extension are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.2.1] - 2026-10-24
+
+### Fixed
+- Valid numeric ranges with mixed delimiters, such as `[3050, 3100)`, no longer participate in conventional bracket matching in CNS and ZSS. Symmetric ranges (`[a, b]` and `(a, b)`), grouping and function parentheses retain native bracket coloring. Mixed range delimiters use operator highlighting instead.
+- Recognize the aggregate hit attributes `AA`, `AT` and `AP`, avoiding false unknown-trigger warnings for valid expressions such as `HitDefAttr = SC, AT`.
+
 ## [0.2.0] - 2026-10-23
 
 ### Added

@@ -73,7 +73,7 @@ function suggest(word, names) {
 function looksLikeConstant(w) {
 	return /^[scalunhxyzef]$/.test(w) ||
 		/^[sca]{2,3}$/.test(w) ||
-		/^[nsh][atp]$/.test(w) ||
+		/^[nsha][atp]$/.test(w) ||
 		/^[sf]\d+$/.test(w);
 }
 

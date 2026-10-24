@@ -39,6 +39,9 @@
 			"include": "#functions"
 		},
 		{
+			"include": "#ranges"
+		},
+		{
 			"include": "#operators"
 		}
 	],
@@ -170,6 +173,58 @@
 		"operators": {
 			"name": "keyword.operator.zss",
 			"match": "\\|\\||&&|\\^\\^|:=|!=|<=|>=|\\*\\*|[=<>+\\-*/%!~&|^]"
+		},
+		"ranges": {
+			"patterns": [
+				{
+					"name": "meta.range.zss",
+					"match": "(?<![<>=!:])(!?=)[ \\t]*(\\[)[ \\t]*([+-]?\\d+)[ \\t]*(,)[ \\t]*([+-]?\\d+)[ \\t]*(\\))",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.zss"
+						},
+						"2": {
+							"name": "punctuation.definition.range.zss keyword.operator.range.zss"
+						},
+						"3": {
+							"name": "constant.numeric.zss"
+						},
+						"4": {
+							"name": "punctuation.separator.range.zss"
+						},
+						"5": {
+							"name": "constant.numeric.zss"
+						},
+						"6": {
+							"name": "punctuation.definition.range.zss keyword.operator.range.zss"
+						}
+					}
+				},
+				{
+					"name": "meta.range.zss",
+					"match": "(?<![<>=!:])(!?=)[ \\t]*(\\()[ \\t]*([+-]?\\d+)[ \\t]*(,)[ \\t]*([+-]?\\d+)[ \\t]*(\\])",
+					"captures": {
+						"1": {
+							"name": "keyword.operator.zss"
+						},
+						"2": {
+							"name": "punctuation.definition.range.zss keyword.operator.range.zss"
+						},
+						"3": {
+							"name": "constant.numeric.zss"
+						},
+						"4": {
+							"name": "punctuation.separator.range.zss"
+						},
+						"5": {
+							"name": "constant.numeric.zss"
+						},
+						"6": {
+							"name": "punctuation.definition.range.zss keyword.operator.range.zss"
+						}
+					}
+				}
+			]
 		}
 	}
 }
