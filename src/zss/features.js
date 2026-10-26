@@ -4,7 +4,7 @@ const vscode = require('vscode');
 const { createZssEngine } = require('./completion');
 const { getContext } = require('./context');
 const { characterFunctions } = require('./character-functions');
-const { loadData } = require('../shared/data');
+const { loadData, onDidChangeData } = require('../shared/data');
 
 const KINDS = {
 	sctrl: vscode.CompletionItemKind.Class,
@@ -20,7 +20,10 @@ function register(context) {
 
 	// 'camelCase' (modifyExplod) or 'documentation' (ModifyExplod); read on every request
 	const nameStyle = () => vscode.workspace.getConfiguration('ikemenCodex').get('zss.nameStyle', 'camelCase');
-	const engine = createZssEngine(data.sctrls, data.triggers, nameStyle);
+	let engine = createZssEngine(data.sctrls, data.triggers, nameStyle);
+	context.subscriptions.push(onDidChangeData(data => {
+		engine = createZssEngine(data.sctrls, data.triggers, nameStyle);
+	}));
 
 	const completion = {
 		provideCompletionItems(document, position, token) {

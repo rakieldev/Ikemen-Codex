@@ -1,5 +1,5 @@
 {
-	"generatedAt": "2026-10-24T19:16:54.320Z",
+	"generatedAt": "2026-10-26T21:18:29.958Z",
 	"source": "https://raw.githubusercontent.com/potsmugen/ikemen-merged-docs/main/docs/",
 	"count": 268,
 	"triggers": [
@@ -2378,11 +2378,11 @@
 			"experimental": false,
 			"deprecated": false,
 			"description": "Returns the value of a player's map with the specified name. Returns 0 if that map was not set yet.\n\nNote: In the nightly build, maps are now auto-typed instead of locked to float type. They become the same type of whatever they were assigned.",
-			"format": "Map(name)",
-			"args": "name Name of the map",
+			"format": "Map(name) Map(name, index) (nightly build only)",
+			"args": "name Name of the map index (int) (optional) (nightly build only) Index of the map entry. This lets a single map name act as an array. Index 0 is the same as having no index, so Map(foo, 0) is the same as Map(foo).",
 			"returns": "",
 			"details": "",
-			"example": "trigger1 = Map(age) >= 18\ntrigger1 = Map(ifelse(random < 500, \"foo\", \"bar\")) := \"word\"; nightly build only",
+			"example": "trigger1 = Map(age) >= 18\ntrigger1 = Map(ifelse(random < 500, \"foo\", \"bar\")) := \"word\"; nightly build only\ntrigger1 = Map(inventory, 2) = 5; nightly build only",
 			"changeNotes": []
 		},
 		{

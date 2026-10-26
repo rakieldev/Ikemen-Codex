@@ -3,6 +3,18 @@
 All notable changes to this extension are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.3.0] - 2026-10-26
+
+### Added
+- Automatic documentation updates on activation and every 24 hours, with validated offline storage, live autocomplete/hover/diagnostic refresh and a notification after successful updates. Disable `ikemenCodex.documentation.autoUpdate` to use the bundled data after reloading.
+
+### Changed
+- Refresh the bundled documentation for offline use, including nightly map indexes.
+
+### Fixed
+- Read optional parameters whose nightly tag follows the closing Markdown emphasis, including `index` in MapSet and MapAdd. Older documentation caches are rebuilt with the corrected parser.
+- Recognize the idle move type `I` in MoveType, P2MoveType and PrevMoveType comparisons in CNS and ZSS.
+
 ## [0.2.1] - 2026-10-24
 
 ### Fixed

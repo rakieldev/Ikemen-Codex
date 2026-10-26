@@ -6,6 +6,7 @@
 //   node tools/build-data.js --docs C:\path\to\docs  uses local sctrl.md and triggers.md
 
 const fs = require('fs');
+const { validateData } = require('../src/shared/documents');
 const path = require('path');
 const { parseSctrls, parseTriggers, applyInherits, applyTemplateParams } = require('./docparser');
 
@@ -76,35 +77,6 @@ async function main() {
 	if (sc.ignored.length) console.log(`\nTítulos ignorados em sctrl.md: ${sc.ignored.join(' | ')}`);
 	if (tr.ignored.length) console.log(`Títulos ignorados em triggers.md: ${tr.ignored.slice(0, 15).join(' | ')}${tr.ignored.length > 15 ? ' ...' : ''}`);
 
-}
-
-function validateData(sctrls, triggers) {
-	for (const [name, list, minimum] of [['controllers', sctrls, 100], ['triggers', triggers, 50]]) {
-		if (list.length < minimum) throw new Error('Too few ' + name + ': ' + list.length);
-		const keys = new Set();
-		for (const entry of list) {
-			if (!entry.name || entry.key !== entry.name.toLowerCase() || keys.has(entry.key)) {
-				throw new Error('Invalid or duplicate ' + name + ' key: ' + entry.key);
-			}
-			keys.add(entry.key);
-		}
-	}
-	for (const s of sctrls) {
-		if (!Array.isArray(s.params) || new Set(s.params.map(p => p.key)).size !== s.params.length ||
-			s.params.some(p => !p.name || p.key !== p.name.toLowerCase())) {
-			throw new Error('Invalid parameters for ' + s.name);
-		}
-	}
-	for (const [key, params] of [['changestate', ['value']], ['selfstate', ['value', 'ctrl', 'anim']],
-		['explod', ['anim', 'id', 'pos']], ['modifyexplod', ['id', 'pos']]]) {
-		const entry = sctrls.find(s => s.key === key);
-		if (!entry || params.some(key => !entry.params.some(p => p.key === key))) {
-			throw new Error('Missing essential parameters for ' + key);
-		}
-	}
-	for (const key of ['time', 'anim', 'command', 'var']) {
-		if (!triggers.some(t => t.key === key)) throw new Error('Missing essential trigger: ' + key);
-	}
 }
 
 if (require.main === module) main().catch(e => {

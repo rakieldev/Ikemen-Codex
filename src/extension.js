@@ -12,6 +12,7 @@ function activate(context) {
 	air.register(context);
 	run.register(context);
 	diagnostics.register(context);
+	require('./shared/documentation-update').register(context);
 }
 
 function deactivate() {}

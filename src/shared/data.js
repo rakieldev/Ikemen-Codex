@@ -1,9 +1,7 @@
 'use strict';
 
-// Loads the generated documentation data (data/sctrls.json and data/triggers.json) once.
-// Returns { sctrls, triggers }, or null when the files do not exist yet.
-
 let cache;
+const listeners = new Set();
 
 function loadData() {
 	if (cache !== undefined) return cache;
@@ -19,4 +17,14 @@ function loadData() {
 	return cache;
 }
 
-module.exports = { loadData };
+function setData(data) {
+	cache = data;
+	for (const listener of listeners) listener(data);
+}
+
+function onDidChangeData(listener) {
+	listeners.add(listener);
+	return { dispose() { listeners.delete(listener); } };
+}
+
+module.exports = { loadData, setData, onDidChangeData };

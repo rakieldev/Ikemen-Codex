@@ -2,7 +2,7 @@
 
 const vscode = require('vscode');
 const { createChecker } = require('./checker');
-const { loadData } = require('../shared/data');
+const { loadData, onDidChangeData } = require('../shared/data');
 
 const SEVERITY = {
 	error: vscode.DiagnosticSeverity.Error,
@@ -33,7 +33,7 @@ function register(context) {
 	const data = loadData();
 	if (!data) return;
 
-	const checker = createChecker(data.sctrls, data.triggers);
+	let checker = createChecker(data.sctrls, data.triggers);
 	const collection = vscode.languages.createDiagnosticCollection('ikemenCodex');
 	const timers = new Map();
 
@@ -71,6 +71,10 @@ function register(context) {
 	}
 
 	context.subscriptions.push(
+		onDidChangeData(data => {
+			checker = createChecker(data.sctrls, data.triggers);
+			vscode.workspace.textDocuments.forEach(refresh);
+		}),
 		collection,
 		vscode.workspace.onDidOpenTextDocument(refresh),
 		vscode.workspace.onDidChangeTextDocument(e => schedule(e.document)),

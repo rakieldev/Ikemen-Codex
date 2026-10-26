@@ -142,7 +142,9 @@ function parseTitle(rawTitle) {
 // ---------- parameter line: **name = *placeholder* (type)** ----------
 
 function parseParamLine(line) {
-	const s = line.trim();
+	// The nightly tag may follow the closing emphasis instead of being inside it.
+	const trailingNightly = /\*\s*\(nightly build only\)\s*$/i.test(line.trim());
+	const s = line.trim().replace(/(\*)\s*\(nightly build only\)\s*$/i, '$1');
 	if (!/^\*/.test(s) || !/\*$/.test(s)) return null;
 	const body = s.replace(/^\*+/, '').replace(/\*+$/, '').trim();
 	const m = /^([A-Za-z_][\w.]*)\s*(=|\()/.exec(body);
@@ -159,7 +161,7 @@ function parseParamLine(line) {
 	}
 
 	const types = [];
-	let nightly = false;
+	let nightly = trailingNightly;
 	const re = /\(([^()]*)\)/g;
 	let t;
 	while ((t = re.exec(rest))) {

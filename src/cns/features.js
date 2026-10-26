@@ -2,7 +2,7 @@
 
 const vscode = require('vscode');
 const { createEngine } = require('./completion');
-const { loadData } = require('../shared/data');
+const { loadData, onDidChangeData } = require('../shared/data');
 
 const KINDS = {
 	sctrl: vscode.CompletionItemKind.Class,
@@ -19,7 +19,10 @@ function readLines(document) {
 function register(context) {
 	const data = loadData();
 	if (!data) return;
-	const engine = createEngine(data.sctrls, data.triggers);
+	let engine = createEngine(data.sctrls, data.triggers);
+	context.subscriptions.push(onDidChangeData(data => {
+		engine = createEngine(data.sctrls, data.triggers);
+	}));
 
 	const completion = {
 		provideCompletionItems(document, position) {

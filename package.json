@@ -3,7 +3,7 @@
 	"displayName": "Ikemen Codex",
 	"icon": "images/ikemen-codex.png",
 	"description": "Highlighting, outline, autocomplete, warnings and a Quick VS button for Ikemen GO and MUGEN files (.cns, .cmd, .st, .zss, .air, .def).",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"publisher": "Rakiel",
 	"license": "MIT",
 	"repository": {
@@ -162,6 +162,12 @@
 					"type": "boolean",
 					"default": true,
 					"description": "Save all open files before running."
+				},
+				"ikemenCodex.documentation.autoUpdate": {
+					"type": "boolean",
+					"default": true,
+					"scope": "application",
+					"description": "Check for documentation updates on activation and every 24 hours. Uses bundled data when disabled (reload required)."
 				},
 				"ikemenCodex.diagnostics.enabled": {
 					"type": "boolean",

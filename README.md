@@ -64,6 +64,7 @@ The character is found automatically: the extension looks for the `.def` of the 
 | `ikemenCodex.ikemen.extraArgs` | `[]` | Extra command line options, for example `["-windowed", "-nomusic"]`. |
 | `ikemenCodex.ikemen.saveBeforeRun` | `true` | Save all open files before running. |
 | `ikemenCodex.zss.nameStyle` | `camelCase` | `camelCase` inserts `modifyExplod` / `stateNo`; `documentation` inserts `ModifyExplod` / `StateNo`. |
+| `ikemenCodex.documentation.autoUpdate` | `true` | Check for documentation updates on activation and every 24 hours. Disable and reload to use bundled data only. |
 | `ikemenCodex.diagnostics.enabled` | `true` | Turn all diagnostics on or off. |
 | `ikemenCodex.diagnostics.unknownTriggers` | `true` | Report unknown trigger names. |
 | `ikemenCodex.diagnostics.ignoredNames` | `[]` | Controller or trigger names that must never be reported (useful for names missing from the data). |
@@ -73,7 +74,7 @@ The command line options come from the *Miscellaneous info* page of the Ikemen G
 
 ## Documentation data
 
-The descriptions, parameters and trigger lists come from the [Ikemen GO Merged Documentation](https://potsmugen.github.io/ikemen-merged-docs/) and are bundled with the extension: nothing is downloaded while you work. They are refreshed in new releases. Entries that only exist in the Ikemen GO nightly build are labeled "nightly" in the suggestion and hover boxes.
+The descriptions, parameters and trigger lists come from the [Ikemen GO Merged Documentation](https://potsmugen.github.io/ikemen-merged-docs/) and are bundled with the extension for offline use. By default, the extension checks for updates in the background on activation and every 24 hours, validates the new data and applies it without restarting. A notification confirms successful updates; connection or validation failures keep the previous data. Updates are stored separately from your project. Disable `ikemenCodex.documentation.autoUpdate` and reload to use only the bundled documentation. Entries that only exist in the Ikemen GO nightly build are labeled "nightly" in the suggestion and hover boxes.
 
 ## Credits
 

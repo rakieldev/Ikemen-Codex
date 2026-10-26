@@ -10,9 +10,11 @@ vsc-extension-quickstart.md
 **/*.vsix
 **/*.map
 
-# development only (these live in the repository, not in the package)
+# Development files; the parser and overrides below are also used at runtime.
 CONTRIBUTING.md
 tools/**
+!tools/docparser.js
+!tools/overrides.json
 test/**
 data/source/**
 language-configuration.json
