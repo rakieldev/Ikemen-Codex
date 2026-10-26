@@ -71,7 +71,7 @@ function suggest(word, names) {
 // Words that are valid inside expressions without being triggers:
 // state/move/physics types, hit attributes (SCA, NA, HP...), axes, S1/F5 style prefixes.
 function looksLikeConstant(w) {
-	return /^[scalunhxyzef]$/.test(w) ||
+	return /^[scalunhxyzefi]$/.test(w) ||
 		/^[sca]{2,3}$/.test(w) ||
 		/^[nsha][atp]$/.test(w) ||
 		/^[sf]\d+$/.test(w);
