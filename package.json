@@ -3,7 +3,7 @@
 	"displayName": "Ikemen Codex",
 	"icon": "images/ikemen-codex.png",
 	"description": "Highlighting, outline, autocomplete, warnings and a Quick VS button for Ikemen GO and MUGEN files (.cns, .cmd, .st, .zss, .air, .def).",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"publisher": "Rakiel",
 	"license": "MIT",
 	"repository": {

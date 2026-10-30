@@ -3,6 +3,11 @@
 All notable changes to this extension are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.3.1] - 2026-10-30
+
+### Fixed
+- Recognize documented WinKO, WinTime, WinPerfect, LoseKO and LoseTime variants in diagnostics, autocomplete and hover, including rebuilt documentation caches.
+
 ## [0.3.0] - 2026-10-26
 
 ### Added

@@ -4,7 +4,7 @@ const { parseSctrls, parseTriggers, applyInherits, applyTemplateParams } = requi
 const overrides = require('../../tools/overrides.json');
 
 // Increment when parser changes require rebuilding previously cached catalogs.
-const PARSER_VERSION = 2;
+const PARSER_VERSION = 3;
 
 function buildDocuments(sctrlMd, triggersMd) {
 	const sctrls = parseSctrls(sctrlMd).list;

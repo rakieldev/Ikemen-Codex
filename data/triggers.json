@@ -1,7 +1,7 @@
 {
-	"generatedAt": "2026-10-26T21:18:29.958Z",
+	"generatedAt": "2026-10-30T22:41:41.980Z",
 	"source": "https://raw.githubusercontent.com/potsmugen/ikemen-merged-docs/main/docs/",
-	"count": 268,
+	"count": 273,
 	"triggers": [
 		{
 			"key": "abs",
@@ -2353,6 +2353,42 @@
 			"key": "lose",
 			"name": "Lose",
 			"signature": "Lose",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the player (or the player's team, in team mode) has lost the round, 0 otherwise. Can be suffixed with \"KO\" or \"Time\" to return 1 only when the round has been lost by a KO or by time expiring, respectively.",
+			"format": "- Lose\n- LoseKO\n- LoseTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Lose  \n; Triggers if the player (or his team) has lost the round.  \n\ntrigger1 = !LoseKO  \n; Triggers if the player (or his team) has not lost the round by a KO.\n; For example, this will trigger if the player's team has not yet lost the round, or if they have lost the round by time over.",
+			"changeNotes": []
+		},
+		{
+			"key": "loseko",
+			"name": "LoseKO",
+			"signature": "LoseKO",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns 1 if the player (or the player's team, in team mode) has lost the round, 0 otherwise. Can be suffixed with \"KO\" or \"Time\" to return 1 only when the round has been lost by a KO or by time expiring, respectively.",
+			"format": "- Lose\n- LoseKO\n- LoseTime",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Lose  \n; Triggers if the player (or his team) has lost the round.  \n\ntrigger1 = !LoseKO  \n; Triggers if the player (or his team) has not lost the round by a KO.\n; For example, this will trigger if the player's team has not yet lost the round, or if they have lost the round by time over.",
+			"changeNotes": []
+		},
+		{
+			"key": "losetime",
+			"name": "LoseTime",
+			"signature": "LoseTime",
 			"tags": [
 				"old"
 			],
@@ -4805,6 +4841,42 @@
 			"changeNotes": []
 		},
 		{
+			"key": "winko",
+			"name": "WinKO",
+			"signature": "WinKO",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the player (or the player's team, in team mode) has won the round, false otherwise. Can be suffixed with \"KO\", \"Time\", or \"Perfect\" to return true only when the round has been won by a KO, by time expiring, or with no life lost, respectively.\n\nFormat: 1. Win 2. WinKO 3. WinTime 4. WinPerfect",
+			"format": "",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Win  \n; Triggers if the player (or his team) has won the round.  \n  \ntrigger1 = !WinKO  \n; Triggers if the player (or his team) has not won the round by a KO. For example, this will trigger if the player's team has not yet won the round, or if they have won the round by time over.",
+			"changeNotes": []
+		},
+		{
+			"key": "winperfect",
+			"name": "WinPerfect",
+			"signature": "WinPerfect",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the player (or the player's team, in team mode) has won the round, false otherwise. Can be suffixed with \"KO\", \"Time\", or \"Perfect\" to return true only when the round has been won by a KO, by time expiring, or with no life lost, respectively.\n\nFormat: 1. Win 2. WinKO 3. WinTime 4. WinPerfect",
+			"format": "",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Win  \n; Triggers if the player (or his team) has won the round.  \n  \ntrigger1 = !WinKO  \n; Triggers if the player (or his team) has not won the round by a KO. For example, this will trigger if the player's team has not yet won the round, or if they have won the round by time over.",
+			"changeNotes": []
+		},
+		{
 			"key": "winspecial",
 			"name": "WinSpecial",
 			"signature": "WinSpecial",
@@ -4820,6 +4892,24 @@
 			"returns": "",
 			"details": "",
 			"example": "trigger1 = !WinSpecial",
+			"changeNotes": []
+		},
+		{
+			"key": "wintime",
+			"name": "WinTime",
+			"signature": "WinTime",
+			"tags": [
+				"old"
+			],
+			"nightly": false,
+			"experimental": false,
+			"deprecated": false,
+			"description": "Returns true if the player (or the player's team, in team mode) has won the round, false otherwise. Can be suffixed with \"KO\", \"Time\", or \"Perfect\" to return true only when the round has been won by a KO, by time expiring, or with no life lost, respectively.\n\nFormat: 1. Win 2. WinKO 3. WinTime 4. WinPerfect",
+			"format": "",
+			"args": "none",
+			"returns": "",
+			"details": "",
+			"example": "trigger1 = Win  \n; Triggers if the player (or his team) has won the round.  \n  \ntrigger1 = !WinKO  \n; Triggers if the player (or his team) has not won the round by a KO. For example, this will trigger if the player's team has not yet won the round, or if they have won the round by time over.",
 			"changeNotes": []
 		},
 		{

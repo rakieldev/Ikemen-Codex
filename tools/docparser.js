@@ -456,6 +456,20 @@ function parseTriggers(text) {
 		});
 	}
 
+	// Win/Lose variants are documented in the base section rather than separate headings.
+	// Keep this list explicit: arbitrary suffixes are not valid trigger names.
+	for (const [base, variants] of [
+		['win', ['WinKO', 'WinTime', 'WinPerfect']],
+		['lose', ['LoseKO', 'LoseTime']]
+	]) {
+		const source = map.get(base);
+		if (!source) continue;
+		for (const name of variants) {
+			const key = name.toLowerCase();
+			if (!map.has(key)) map.set(key, Object.assign({}, source, { key, name, signature: name }));
+		}
+	}
+
 	const list = [...map.values()].map(e => {
 		e.deprecated = RE_TRIGGER_DEPRECATED.test(e.description.split('\n\n')[0] || '');
 		return e;
