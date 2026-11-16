@@ -81,6 +81,10 @@ The descriptions, parameters and trigger lists come from the [Ikemen GO Merged D
 - The documentation text bundled with the extension comes from the [Ikemen GO Merged Documentation](https://potsmugen.github.io/ikemen-merged-docs/), which merges the Ikemen GO wiki and the MUGEN 1.1 documentation, and is used under its MIT license.
 - Ikemen GO is developed by the [Ikemen GO team](https://github.com/ikemen-engine/Ikemen-GO). MUGEN is by Elecbyte.
 
+## Support development
+
+If you would like to support my work, you can do so through [Ko-fi](https://ko-fi.com/rakiel).
+
 ## License
 
 [MIT](LICENCE) © Rakíel

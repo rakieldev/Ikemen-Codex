@@ -1,5 +1,5 @@
 {
-	"generatedAt": "2026-10-30T22:41:41.980Z",
+	"generatedAt": "2026-11-16T02:41:44.295Z",
 	"source": "https://raw.githubusercontent.com/potsmugen/ikemen-merged-docs/main/docs/",
 	"count": 161,
 	"sctrls": [
@@ -198,7 +198,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Inverts current blend mode if enabled so Sub becomes Add and Add becomes Sub.\n\nFor PalFx it accepts 4 values:\n* 0 = Disabled (Mugen 1.0 blending behavior)\n* 1 = Enabled (Mugen 1.0 blending behavior)\n* -1 = Disabled (Mugen 1.1 blending behavior)\n* 2 = Enabled (Mugen 1.1 blending behavior)\n\nIf character MugenVersion is 1.1 and invertall = 1 and if invertblend param is omitted, it inverts blend by default. For all other MugenVersion invertblend is 0 if omitted.",
 					"key": "palinvertblend",
 					"name": "palinvertblend",
 					"placeholder": "blend_mode",
@@ -209,11 +209,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Inverts current blend mode if enabled so Sub becomes Add and Add becomes Sub.\n\nFor PalFx it accepts 4 values:\n* 0 = Disabled (Mugen 1.0 blending behavior)\n* 1 = Enabled (Mugen 1.0 blending behavior)\n* -1 = Disabled (Mugen 1.1 blending behavior)\n* 2 = Enabled (Mugen 1.1 blending behavior)\n\nIf character MugenVersion is 1.1 and invertall = 1 and if invertblend param is omitted, it inverts blend by default. For all other MugenVersion invertblend is 0 if omitted."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifying the name of the currently loaded custom shader will apply that shader to the Afterimage.",
 					"key": "shader.name",
 					"name": "shader.name",
 					"placeholder": "shader_name",
@@ -224,11 +224,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifying the name of the currently loaded custom shader will apply that shader to the Afterimage."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the value to send to the custom shader. The value specified here can be used as a variable within the custom shader. X is limited to 0 to 15, and a maximum of 16 values ​​can be sent.",
 					"key": "shader.paramx",
 					"name": "shader.paramX",
 					"placeholder": "value",
@@ -239,7 +239,7 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the value to send to the custom shader. The value specified here can be used as a variable within the custom shader. X is limited to 0 to 15, and a maximum of 16 values ​​can be sent."
+					"description": ""
 				},
 				{
 					"since": "changed",
@@ -273,7 +273,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the player number who owns the shader to be used. Defaults to own player number.",
 					"key": "shader.playerno",
 					"name": "shader.playerno",
 					"placeholder": "player_number",
@@ -284,7 +284,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the player number who owns the shader to be used. Defaults to own player number."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -336,7 +336,7 @@
 			"params": [
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Inverts current blend mode if enabled so Sub becomes Add and Add becomes Sub.\n\nFor AllPalFx it accepts 2 values:\n* 0 = Disabled (Mugen 1.0 blending behavior)\n* 1 = Enabled (Mugen 1.1 blending behavior)\n\nDefaults to 0 if omitted. If 1 it inverts blending on chars \"layer\".",
 					"key": "invertblend",
 					"name": "invertblend",
 					"placeholder": "blend_mode",
@@ -347,7 +347,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Inverts current blend mode if enabled so Sub becomes Add and Add becomes Sub.\n\nFor AllPalFx it accepts 2 values:\n* 0 = Disabled (Mugen 1.0 blending behavior)\n* 1 = Enabled (Mugen 1.1 blending behavior)\n\nDefaults to 0 if omitted. If 1 it inverts blending on chars \"layer\"."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -429,7 +429,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Shifts the sprite's rotation center by the specified x and y offsets.",
 					"key": "pivot",
 					"name": "pivot",
 					"placeholder": "pivot_x, pivot_y",
@@ -440,7 +440,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Shifts the sprite's rotation center by the specified x and y offsets."
+					"description": ""
 				},
 				{
 					"since": "changed",
@@ -966,7 +966,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Setting this parameter to 0 will disable the specified flags instead. Defaults to 1.",
 					"key": "enabled",
 					"name": "Enabled",
 					"placeholder": "",
@@ -977,7 +977,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Setting this parameter to 0 will disable the specified flags instead. Defaults to 1."
+					"description": ""
 				}
 			],
 			"flags": [
@@ -1322,7 +1322,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Works the same as Value.",
 					"key": "width",
 					"name": "Width",
 					"placeholder": "",
@@ -1333,11 +1333,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Works the same as Value."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Changes the value of the attack.dist.height parameter for the player's current HitDef.",
 					"key": "height",
 					"name": "Height",
 					"placeholder": "",
@@ -1348,11 +1348,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Changes the value of the attack.dist.height parameter for the player's current HitDef."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Changes the value of the attack.dist.depth parameter for the player's current HitDef.",
 					"key": "depth",
 					"name": "Depth",
 					"placeholder": "",
@@ -1363,7 +1363,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Changes the value of the attack.dist.depth parameter for the player's current HitDef."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -1399,7 +1399,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets an attack multiplier for regular damage only.",
 					"key": "damage",
 					"name": "Damage",
 					"placeholder": "",
@@ -1410,11 +1410,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Sets an attack multiplier for regular damage only."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets an attack multiplier for dizzy points only.",
 					"key": "dizzypoints",
 					"name": "DizzyPoints",
 					"placeholder": "",
@@ -1425,11 +1425,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Sets an attack multiplier for dizzy points only."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets an attack multiplier for guard points only.",
 					"key": "guardpoints",
 					"name": "GuardPoints",
 					"placeholder": "",
@@ -1440,11 +1440,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Sets an attack multiplier for guard points only."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets an attack multiplier for red life only.",
 					"key": "redlife",
 					"name": "RedLife",
 					"placeholder": "",
@@ -1455,7 +1455,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Sets an attack multiplier for red life only."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -1478,7 +1478,7 @@
 			"params": [
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The ID of the stage BG element to affect. Defaults to -1 (any).",
 					"key": "id",
 					"name": "ID",
 					"placeholder": "",
@@ -1489,11 +1489,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The ID of the stage BG element to affect. Defaults to -1 (any)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the stage BG element to affect. Defaults to -1 (any).",
 					"key": "index",
 					"name": "Index",
 					"placeholder": "",
@@ -1504,7 +1504,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the stage BG element to affect. Defaults to -1 (any)."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -1692,7 +1692,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specify the offset (in the z-axis) to bind to. Can be skipped, so it's backward compatible with lines having only x,y declared.",
 					"key": "posz",
 					"name": "PosZ",
 					"placeholder": "pos_z",
@@ -1703,11 +1703,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specify the offset (in the z-axis) to bind to. Can be skipped, so it's backward compatible with lines having only x,y declared."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the target to bind to. Defaults to 0 (first one).",
 					"key": "index",
 					"name": "Index",
 					"placeholder": "",
@@ -1718,7 +1718,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the target to bind to. Defaults to 0 (first one)."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -1800,7 +1800,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the exact time of an animation element to change to. Defaults to 0.",
 					"key": "elemtime",
 					"name": "ElemTime",
 					"placeholder": "",
@@ -1811,12 +1811,12 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Specifies the exact time of an animation element to change to. Defaults to 0.",
+					"description": "",
 					"includeInTemplate": true
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter lets a character use the specified animation from another character. Defaults to own playerno.",
 					"key": "animplayerno",
 					"name": "AnimPlayerNo",
 					"placeholder": "",
@@ -1827,12 +1827,12 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "This parameter lets a character use the specified animation from another character. Defaults to own playerno.",
+					"description": "",
 					"includeInTemplate": true
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter lets a character use the specified sprites from another character. Defaults to own playerno.",
 					"key": "spriteplayerno",
 					"name": "SpritePlayerNo",
 					"placeholder": "",
@@ -1843,12 +1843,12 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "This parameter lets a character use the specified sprites from another character. Defaults to own playerno.",
+					"description": "",
 					"includeInTemplate": true
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter lets a character use the specified animation from another character, including their sprites.",
 					"key": "readplayerid",
 					"name": "ReadPlayerID",
 					"placeholder": "",
@@ -1859,7 +1859,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "This parameter lets a character use the specified animation from another character, including their sprites.",
+					"description": "",
 					"includeInTemplate": true
 				}
 			],
@@ -1881,7 +1881,7 @@
 			"params": [
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "See ChangeAnim.",
 					"key": "elemtime",
 					"name": "ElemTime",
 					"placeholder": "",
@@ -1892,11 +1892,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "See ChangeAnim."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter lets a character use the specified animation from another character, but maintaining their own sprites.",
 					"key": "readplayerid",
 					"name": "ReadPlayerID",
 					"placeholder": "",
@@ -1907,7 +1907,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "This parameter lets a character use the specified animation from another character, but maintaining their own sprites."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -2004,7 +2004,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Due to the way State -1 is normally used to read inputs and change states, Mugen had it so that using a `ChangeState` in a negative state would stop the execution of the rest of the code in that state. Setting `Continue` to 1 will disable this behavior. When a `ChangeState` is redirected, `Continue` will default to 1.",
 					"key": "continue",
 					"name": "Continue",
 					"placeholder": "",
@@ -2015,7 +2015,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Due to the way State -1 is normally used to read inputs and change states, Mugen had it so that using a `ChangeState` in a negative state would stop the execution of the rest of the code in that state. Setting `Continue` to 1 will disable this behavior. When a `ChangeState` is redirected, `Continue` will default to 1."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -2099,7 +2099,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Defines how damage taken should be multiplied.\n\nIf 0, damage taken is multiplied by `value`. If 1, defense is multiplied by `value` (therefore the damage is divided).\n\nDefaults to 1 for characters with `ikemenversion`, and to 0 otherwise.",
 					"key": "multype",
 					"name": "MulType",
 					"placeholder": "bvalue",
@@ -2110,11 +2110,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Defines how damage taken should be multiplied.\n\nIf 0, damage taken is multiplied by `value`. If 1, defense is multiplied by `value` (therefore the damage is divided).\n\nDefaults to 1 for characters with `ikemenversion`, and to 0 otherwise."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Defines if the defense value should also apply outside of `moveType = H`.\n\nIf 0, the defense value works without delay. If 1, the defense value is only active if the char is already in `moveType = H`.\n\nDefaults to 0 for characters with `ikemenversion`, and 1 otherwise.",
 					"key": "onhit",
 					"name": "OnHit",
 					"placeholder": "bvalue",
@@ -2125,7 +2125,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Defines if the defense value should also apply outside of `moveType = H`.\n\nIf 0, the defense value works without delay. If 1, the defense value is only active if the char is already in `moveType = H`.\n\nDefaults to 0 for characters with `ikemenversion`, and 1 otherwise."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -2623,7 +2623,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Applies an exponential decay to the shake amplitude over time, making it fade out automatically.\n\n- `decay = 0`: no fading\n- `0 < decay < 1`: fades slow, then fast\n- `decay = 1`: fades linearly\n- `decay > 1`: fades fast, then slow",
 					"key": "decay",
 					"name": "Decay",
 					"placeholder": "exponent",
@@ -2634,11 +2634,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Applies an exponential decay to the shake amplitude over time, making it fade out automatically.\n\n- `decay = 0`: no fading\n- `0 < decay < 1`: fades slow, then fast\n- `decay = 1`: fades linearly\n- `decay > 1`: fades fast, then slow"
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Changes the direction in degrees in which the shake is applied. Defaults to 0. For a negative amplitude, 90 will make the screen shake from left to right.",
 					"key": "dir",
 					"name": "Dir",
 					"placeholder": "angle",
@@ -2649,11 +2649,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Changes the direction in degrees in which the shake is applied. Defaults to 0. For a negative amplitude, 90 will make the screen shake from left to right."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Increases the shaking angle by the specified value each frame. Allows the effect to appear more exaggerated and erratic.",
 					"key": "diradd",
 					"name": "DirAdd",
 					"placeholder": "angle",
@@ -2664,11 +2664,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Increases the shaking angle by the specified value each frame. Allows the effect to appear more exaggerated and erratic."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "For every EnvShake cycle, the amplitude is multiplied by this value. Defaults to 1. Cycle duration is determined by frequency, with a frequency of 180 needing two frames to complete one cycle.",
 					"key": "mul",
 					"name": "Mul",
 					"placeholder": "factor",
@@ -2679,7 +2679,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "For every EnvShake cycle, the amplitude is multiplied by this value. Defaults to 1. Cycle duration is determined by frequency, with a frequency of 180 needing two frames to complete one cycle."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -3120,7 +3120,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Explods now support AfterImage parameters (e.g. afterimage.time, afterimage.length, afterimage.trans). Usage is identical to Projectile's AfterImage.",
 					"key": "afterimage",
 					"name": "AfterImage",
 					"placeholder": "",
@@ -3131,11 +3131,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Explods now support AfterImage parameters (e.g. afterimage.time, afterimage.length, afterimage.trans). Usage is identical to Projectile's AfterImage."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets the element where the explod's animation should start. Defaults to 1.",
 					"key": "animelem",
 					"name": "AnimElem",
 					"placeholder": "elem_no",
@@ -3146,11 +3146,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Sets the element where the explod's animation should start. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter lets a explod use the specified animation from another character. Defaults to own playerno.",
 					"key": "animplayerno",
 					"name": "AnimPlayerNo",
 					"placeholder": "playerno",
@@ -3161,11 +3161,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter lets a explod use the specified animation from another character. Defaults to own playerno."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter hides the explod automatically when the fight screen is hidden. Defaults to 0.",
 					"key": "hidewithbars",
 					"name": "HideWithBars",
 					"placeholder": "bvalue",
@@ -3176,11 +3176,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter hides the explod automatically when the fight screen is hidden. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter lets a explod use the specified sprites from another character. Defaults to own playerno.\n\nThis parameter lets a explod use the specified sprites from another character. Defaults to own playerno.",
 					"key": "spriteplayerno",
 					"name": "SpritePlayerNo",
 					"placeholder": "playerno",
@@ -3191,11 +3191,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter lets a explod use the specified sprites from another character. Defaults to own playerno.\n\nThis parameter lets a explod use the specified sprites from another character. Defaults to own playerno."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets the time at which the explod's animation element should start. Defaults to 0.",
 					"key": "animelemtime",
 					"name": "AnimElemTime",
 					"placeholder": "time",
@@ -3206,11 +3206,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Sets the time at which the explod's animation element should start. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Freezes the explod's animation. Defaults to 0.",
 					"key": "animfreeze",
 					"name": "AnimFreeze",
 					"placeholder": "bvalue",
@@ -3221,11 +3221,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Freezes the explod's animation. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Focal Length of the projection. Does nothing when `projection` is not perspective or perspective2. This value is fixed in Mugen 1.1, the explods will look differently under different different resolution/loaclcoord/camera zoom. In Ikemen, this value scales internally like xy scales so that the explods will always look the same. Default value is 2048.",
 					"key": "focallength",
 					"name": "FocalLength",
 					"placeholder": "",
@@ -3236,11 +3236,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Focal Length of the projection. Does nothing when `projection` is not perspective or perspective2. This value is fixed in Mugen 1.1, the explods will look differently under different different resolution/loaclcoord/camera zoom. In Ikemen, this value scales internally like xy scales so that the explods will always look the same. Default value is 2048."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Applies friction to explod on the defined axis (Friction value example: 0.95).",
 					"key": "friction",
 					"name": "Friction",
 					"placeholder": "friction_x, friction_y, friction_z",
@@ -3251,11 +3251,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Applies friction to explod on the defined axis (Friction value example: 0.95)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the time period of the animation (if omitted, defaults to 0).",
 					"key": "interpolation.time",
 					"name": "interpolation.time",
 					"placeholder": "value",
@@ -3266,11 +3266,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the time period of the animation (if omitted, defaults to 0)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target animelem for the interpolation. If animelem is omitted, defaults to 1. animfreeze will stop the animation from going further than interpolation.animelem.",
 					"key": "interpolation.animelem",
 					"name": "interpolation.animelem",
 					"placeholder": "elem_no",
@@ -3281,11 +3281,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target animelem for the interpolation. If animelem is omitted, defaults to 1. animfreeze will stop the animation from going further than interpolation.animelem."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the source and destination alpha values for the interpolation. sub and add1 are not supported.",
 					"key": "interpolation.alpha",
 					"name": "interpolation.alpha",
 					"placeholder": "alpha_source, alpha_dest",
@@ -3296,11 +3296,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the source and destination alpha values for the interpolation. sub and add1 are not supported."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target angle, xangle, and yangle values for the interpolation.\n\nNote: For the nightly build, these have been separated into individual parameters.",
 					"key": "interpolation.angle",
 					"name": "interpolation.angle",
 					"placeholder": "angle, xangle, yangle",
@@ -3311,11 +3311,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target angle, xangle, and yangle values for the interpolation.\n\nNote: For the nightly build, these have been separated into individual parameters."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target x and y offset values for the interpolation.",
 					"key": "interpolation.offset",
 					"name": "interpolation.offset",
 					"placeholder": "offset_x, offset_y",
@@ -3326,11 +3326,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target x and y offset values for the interpolation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target x and y scale values for the interpolation.",
 					"key": "interpolation.scale",
 					"name": "interpolation.scale",
 					"placeholder": "scale_x, scale_y",
@@ -3341,11 +3341,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target x and y scale values for the interpolation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target xshear value.",
 					"key": "interpolation.xshear",
 					"name": "interpolation.xshear",
 					"placeholder": "value",
@@ -3356,11 +3356,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target xshear value."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target focallength value.\n\nPalFX is also compatible with the syntax. **interpolation.palfx.time** and **ownppal = 1** are required for any of the parameters to work.",
 					"key": "interpolation.focallength",
 					"name": "interpolation.focallength",
 					"placeholder": "value",
@@ -3371,11 +3371,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target focallength value.\n\nPalFX is also compatible with the syntax. **interpolation.palfx.time** and **ownppal = 1** are required for any of the parameters to work."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target red, green, and blue multiplication values. If palfx.mul is omitted, defaults to 256, 256, 256.",
 					"key": "interpolation.palfx.mul",
 					"name": "interpolation.palfx.mul",
 					"placeholder": "mul_r, mul_g, mul_b",
@@ -3386,11 +3386,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target red, green, and blue multiplication values. If palfx.mul is omitted, defaults to 256, 256, 256."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target red, green, and blue addition values. If palfx.add is omitted, defaults to 0, 0, 0.",
 					"key": "interpolation.palfx.add",
 					"name": "interpolation.palfx.add",
 					"placeholder": "add_r, add_g, add_b",
@@ -3401,11 +3401,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target red, green, and blue addition values. If palfx.add is omitted, defaults to 0, 0, 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target hue value. If palfx.hue is omitted, defaults to 0.",
 					"key": "interpolation.palfx.hue",
 					"name": "interpolation.palfx.hue",
 					"placeholder": "value",
@@ -3416,11 +3416,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target hue value. If palfx.hue is omitted, defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target color value. If palfx.color is omitted, defaults to 256.\n\nThese parameters can be used interchangeably.",
 					"key": "interpolation.palfx.color",
 					"name": "interpolation.palfx.color",
 					"placeholder": "value",
@@ -3431,11 +3431,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target color value. If palfx.color is omitted, defaults to 256.\n\nThese parameters can be used interchangeably."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specify on which layer the explod should be drawn. Valid values are -1, 0 and 1. Defaults to the same layer as the player. Layer number 1 is effectively the same as the legacy `ontop` parameter.",
 					"key": "layerno",
 					"name": "LayerNo",
 					"placeholder": "",
@@ -3446,11 +3446,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Specify on which layer the explod should be drawn. Valid values are -1, 0 and 1. Defaults to the same layer as the player. Layer number 1 is effectively the same as the legacy `ontop` parameter."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Apply palette effects on explods. The parameters are the same as in the HitDef controller. Requires `ownpal` to be a nonzero value.",
 					"key": "palfx",
 					"name": "PalFx",
 					"placeholder": "",
@@ -3461,11 +3461,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Apply palette effects on explods. The parameters are the same as in the HitDef controller. Requires `ownpal` to be a nonzero value."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Affect how the explod is drawn when `xangle` or `yangle` is not zero.\n- orthographic: The default value when Mugen version is not 1.1 or Ikemen version is not 0. The explod is drawn using orthographic projection.\n- perspective: The default value when Mugen version is 1.1 and Ikemen version is 0. The explod is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the screen.\n- perspective2: The explod is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the animation.",
 					"key": "projection",
 					"name": "Projection",
 					"placeholder": "",
@@ -3476,11 +3476,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Affect how the explod is drawn when `xangle` or `yangle` is not zero.\n- orthographic: The default value when Mugen version is not 1.1 or Ikemen version is not 0. The explod is drawn using orthographic projection.\n- perspective: The default value when Mugen version is 1.1 and Ikemen version is 0. The explod is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the screen.\n- perspective2: The explod is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the animation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If 0, disables reflection on the explod regardless of its shadow color. If 1, enables reflection on the explod regardless of its shadow color. Defaults to showing a reflection if the explod's shadow is not 0, 0, 0.",
 					"key": "reflection",
 					"name": "Reflection",
 					"placeholder": "",
@@ -3491,11 +3491,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If 0, disables reflection on the explod regardless of its shadow color. If 1, enables reflection on the explod regardless of its shadow color. Defaults to showing a reflection if the explod's shadow is not 0, 0, 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the Explod will be removed if the character changes state. Defaults to 0.",
 					"key": "removeonchangestate",
 					"name": "RemoveOnChangeState",
 					"placeholder": "",
@@ -3506,11 +3506,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, the Explod will be removed if the character changes state. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifying the name of the currently loaded custom shader will apply that shader to Explod.\n\nNote: In the nightly build the syntax changed to `shader.name`.",
 					"key": "shader",
 					"name": "Shader",
 					"placeholder": "shader_name",
@@ -3521,11 +3521,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifying the name of the currently loaded custom shader will apply that shader to Explod.\n\nNote: In the nightly build the syntax changed to `shader.name`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifying this parameter will remove the custom shader after it has been displayed for the specified number of ticks. The default value is -1.\n\nNote: In the nightly build the syntax changed to `shader.time`.",
 					"key": "shadertime",
 					"name": "ShaderTime",
 					"placeholder": "time",
@@ -3536,11 +3536,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifying this parameter will remove the custom shader after it has been displayed for the specified number of ticks. The default value is -1.\n\nNote: In the nightly build the syntax changed to `shader.time`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the value to send to the custom shader. The value specified here can be used as a variable within the custom shader. X is limited to 0 to 15, and a maximum of 16 values ​​can be sent.\n\nNote: In the nightly build the syntax changed to `shader.paramX`.",
 					"key": "shaderparam.px",
 					"name": "ShaderParam.pX",
 					"placeholder": "value",
@@ -3551,11 +3551,11 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the value to send to the custom shader. The value specified here can be used as a variable within the custom shader. X is limited to 0 to 15, and a maximum of 16 values ​​can be sent.\n\nNote: In the nightly build the syntax changed to `shader.paramX`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Note: In the nightly build the syntax changed to `shader.texX.spr`.",
 					"key": "shadertexx.spr",
 					"name": "ShaderTexX.spr",
 					"placeholder": "group, image",
@@ -3566,11 +3566,11 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Note: In the nightly build the syntax changed to `shader.texX.spr`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the texture to send to the custom shader. The sprites specified here can be used as textures within the custom shader. You can specify 1 or 2 for X, and send up to two sprites. Each tex can be assigned either a sprite number (spr) or an anim number. It is not possible to assign both sprite and anim numbers to the same tex number simultaneously. Note that since textures are loaded as raw data, images with palettes may not display correctly as is.\n\nNote: In the nightly build the syntax changed to `shader.texX.anim`.",
 					"key": "shadertexx.anim",
 					"name": "ShaderTexX.anim",
 					"placeholder": "anim_no",
@@ -3581,11 +3581,11 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the texture to send to the custom shader. The sprites specified here can be used as textures within the custom shader. You can specify 1 or 2 for X, and send up to two sprites. Each tex can be assigned either a sprite number (spr) or an anim number. It is not possible to assign both sprite and anim numbers to the same tex number simultaneously. Note that since textures are loaded as raw data, images with palettes may not display correctly as is.\n\nNote: In the nightly build the syntax changed to `shader.texX.anim`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the player number who owns the shader to be used. Defaults to own player number.",
 					"key": "shader.playerno",
 					"name": "shader.playerno",
 					"placeholder": "player_number",
@@ -3596,11 +3596,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the player number who owns the shader to be used. Defaults to own player number."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies if the explod shadow is affected by the shader. Defaults to 1.",
 					"key": "shader.shadow",
 					"name": "shader.shadow",
 					"placeholder": "shadow_flag",
@@ -3611,11 +3611,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies if the explod shadow is affected by the shader. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies if the explod reflection is affected by the shader. Defaults to 1.",
 					"key": "shader.reflection",
 					"name": "shader.reflection",
 					"placeholder": "reflection_flag",
@@ -3626,11 +3626,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies if the explod reflection is affected by the shader. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies if the explod afterimage is affected by the shader. Defaults to 1.",
 					"key": "shader.afterimage",
 					"name": "shader.afterimage",
 					"placeholder": "afterimage_flag",
@@ -3641,11 +3641,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies if the explod afterimage is affected by the shader. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the ID of a character to synchronize with. The Explod will group with the target in the draw order. If syncparams is 1, it also copies the target's drawing properties (Position, Scale, Angle, Trans, etc.).",
 					"key": "syncid",
 					"name": "syncid",
 					"placeholder": "id",
@@ -3656,11 +3656,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the ID of a character to synchronize with. The Explod will group with the target in the draw order. If syncparams is 1, it also copies the target's drawing properties (Position, Scale, Angle, Trans, etc.)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Adjusts the drawing order relative to the character specified in syncid.\n* 0: Same layer as the character (default).\n* \\> 0: Drawn in front of the character.\n* < 0: Drawn behind the character.",
 					"key": "synclayer",
 					"name": "synclayer",
 					"placeholder": "layer",
@@ -3671,11 +3671,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Adjusts the drawing order relative to the character specified in syncid.\n* 0: Same layer as the character (default).\n* \\> 0: Drawn in front of the character.\n* < 0: Drawn behind the character."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, visual parameters (Scale, Angle, Trans, etc.) are continuously copied from the character specified in syncid. If set to 0, only the draw order is synchronized. Defaults to 1.",
 					"key": "syncparams",
 					"name": "syncparams",
 					"placeholder": "value",
@@ -3686,11 +3686,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "If set to 1, visual parameters (Scale, Angle, Trans, etc.) are continuously copied from the character specified in syncid. If set to 0, only the draw order is synchronized. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1 and the explod is on layer 0, it will always be drawn behind lifebars and character shadows.",
 					"key": "under",
 					"name": "under",
 					"placeholder": "",
@@ -3701,11 +3701,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1 and the explod is on layer 0, it will always be drawn behind lifebars and character shadows."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter takes four numbers (similar to the format of a Clsn box) which forms a rectangle outside of which the pixels will not be rendered.",
 					"key": "window",
 					"name": "window",
 					"placeholder": "x1, y1, x2, y2",
@@ -3716,11 +3716,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter takes four numbers (similar to the format of a Clsn box) which forms a rectangle outside of which the pixels will not be rendered."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the amount of horizontal shearing to apply to the explod. Defaults to 0.",
 					"key": "xshear",
 					"name": "xshear",
 					"placeholder": "xshear",
@@ -3731,7 +3731,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the amount of horizontal shearing to apply to the explod. Defaults to 0."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -3890,7 +3890,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets the frequency for the low frequency (left) rumble motor. Defaults to 0.",
 					"key": "lo",
 					"name": "lo",
 					"placeholder": "lo_value",
@@ -3901,11 +3901,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Sets the frequency for the low frequency (left) rumble motor. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets the frequency for the high frequency (right) rumble motor. Defaults to 0.",
 					"key": "hi",
 					"name": "hi",
 					"placeholder": "hi_value",
@@ -3916,7 +3916,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Sets the frequency for the high frequency (right) rumble motor. Defaults to 0."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -4543,7 +4543,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, any overlap with the helper's clsn boxes will instead affect its parent as if the helper's clsn boxes were part of the parent's anim. Defaults to 0.",
 					"key": "clsnproxy",
 					"name": "ClsnProxy",
 					"placeholder": "",
@@ -4554,11 +4554,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, any overlap with the helper's clsn boxes will instead affect its parent as if the helper's clsn boxes were part of the parent's anim. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the parent map is inherited by helper. Defaults to 0.",
 					"key": "extendsmap",
 					"name": "ExtendsMap",
 					"placeholder": "",
@@ -4569,11 +4569,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, the parent map is inherited by helper. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the helper's life can't be reduced to 0. Defaults to 0.",
 					"key": "immortal",
 					"name": "Immortal",
 					"placeholder": "",
@@ -4584,11 +4584,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, the helper's life can't be reduced to 0. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, helper shares parent's sound channels. Setting it to 2 does the same thing but for root instead of parent. Defaults to 0.",
 					"key": "inheritchannels",
 					"name": "InheritChannels",
 					"placeholder": "",
@@ -4599,11 +4599,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, helper shares parent's sound channels. Setting it to 2 does the same thing but for root instead of parent. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, helper's attacks also update parent's target list and add to the parent's juggle points. Also, the helper will inherit its parent's juggle points against attacked enemy. Setting it to 2 does the same thing but for root instead of parent. Defaults to 0.",
 					"key": "inheritjuggle",
 					"name": "InheritJuggle",
 					"placeholder": "",
@@ -4614,11 +4614,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, helper's attacks also update parent's target list and add to the parent's juggle points. Also, the helper will inherit its parent's juggle points against attacked enemy. Setting it to 2 does the same thing but for root instead of parent. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the helper will be affected by increased KO Velocity (defeated character flying across the screen), just like normal player. Defaults to 0.",
 					"key": "kovelocity",
 					"name": "KOVelocity",
 					"placeholder": "",
@@ -4629,11 +4629,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, the helper will be affected by increased KO Velocity (defeated character flying across the screen), just like normal player. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "A helper's maps can be set immediately upon its creation via `map.<mapname>` syntax.",
 					"key": "map",
 					"name": "Map",
 					"placeholder": "",
@@ -4644,11 +4644,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "A helper's maps can be set immediately upon its creation via `map.<mapname>` syntax."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "A helper with this parameter will have its collision box scale be based on its own `size.xscale` and `size.yscale` constants rather than its root's.",
 					"key": "ownclsnscale",
 					"name": "OwnClsnScale",
 					"placeholder": "",
@@ -4659,11 +4659,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "A helper with this parameter will have its collision box scale be based on its own `size.xscale` and `size.yscale` constants rather than its root's."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "A helper with this parameter can own its own projectiles instead of the root player. Note: If a helper is destroyed while a projectile is still active, the orphaned projectile loses its ability to interact with other players.",
 					"key": "ownprojectile",
 					"name": "OwnProjectile",
 					"placeholder": "",
@@ -4674,11 +4674,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "A helper with this parameter can own its own projectiles instead of the root player. Note: If a helper is destroyed while a projectile is still active, the orphaned projectile loses its ability to interact with other players."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the helper won't be destroyed after skipping round 1 intro and will move over to the next round, just like normal player. Defaults to 0.",
 					"key": "preserve",
 					"name": "Preserve",
 					"placeholder": "",
@@ -4689,11 +4689,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, the helper won't be destroyed after skipping round 1 intro and will move over to the next round, just like normal player. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "New size constants like `depth` and `weight` can also be attributed to helpers upon their creation, with the `size` prefix.",
 					"key": "size",
 					"name": "Size",
 					"placeholder": "",
@@ -4704,11 +4704,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "New size constants like `depth` and `weight` can also be attributed to helpers upon their creation, with the `size` prefix."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Helpers inherit standby flag from root characters. By using this parameter, a character can force a specific standby for its helper, regardless of the standby value of the character itself.",
 					"key": "standby",
 					"name": "Standby",
 					"placeholder": "",
@@ -4719,7 +4719,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Helpers inherit standby flag from root characters. By using this parameter, a character can force a specific standby for its helper, regardless of the standby value of the character itself."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -4818,7 +4818,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Determines the type of Clsn box that is affected. Valid values are `All`, `None`, `Clsn1`, `Clsn2`, `Size` and `Dummy`. Defaults to `All`.",
 					"key": "clsn.group",
 					"name": "clsn.group",
 					"placeholder": "box_type",
@@ -4829,11 +4829,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Determines the type of Clsn box that is affected. Valid values are `All`, `None`, `Clsn1`, `Clsn2`, `Size` and `Dummy`. Defaults to `All`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Determines the index of the Clsn box that is affected. Defaults to `-1` (all boxes).",
 					"key": "clsn.index",
 					"name": "clsn.index",
 					"placeholder": "box_index",
@@ -4844,11 +4844,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Determines the index of the Clsn box that is affected. Defaults to `-1` (all boxes)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Using this parameter makes a vulnerability slot stack with other slots. This allows setting vulnerability combinations not previously possible in Mugen.\n\nExample, make a player vulnerable to Standing Attacks and Air Projectiles:",
 					"key": "stack",
 					"name": "Stack",
 					"placeholder": "value",
@@ -4859,11 +4859,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Using this parameter makes a vulnerability slot stack with other slots. This allows setting vulnerability combinations not previously possible in Mugen.\n\nExample, make a player vulnerable to Standing Attacks and Air Projectiles:"
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Using this parameter limits vulnerability to a specific player number.",
 					"key": "playerno",
 					"name": "PlayerNo",
 					"placeholder": "player_number",
@@ -4874,11 +4874,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Using this parameter limits vulnerability to a specific player number."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Using this parameter limits vulnerability to a specific player ID.",
 					"key": "playerid",
 					"name": "PlayerID",
 					"placeholder": "player_id",
@@ -4889,7 +4889,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Using this parameter limits vulnerability to a specific player ID."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -4906,9 +4906,7 @@
 			"experimental": false,
 			"deprecated": false,
 			"description": "Defines a single hit of the player's attack. If the player's Clsn1 box (red) comes in contact with his opponent's Clsn2 box (blue), and the HitDef was define on or before that particular point in time, then the specified effect will be applied. This is one of the more complex, but most commonly-used controllers. A single HitDef is valid only for a single hit. To make a move hit several times, you must trigger more than one HitDef during the attack.",
-			"changeNotes": [
-				"See `ground.cornerpush.velmul`.\n\nSee `ground.cornerpush.velmul`.\n\nIn Mugen, the `air.juggle` parameter is only used by the `Projectile` state controller. Characters with `ikemenversion` can now use this parameter in a `Hitdef` to update their juggle points. This allows a move with multiple hits to have different juggle properties in every hit, for instance.\n\nThis parameter now takes a third value, It specifies the z velocity.\n\nThis parameter now takes a third value, It specifies the z velocity.\n\nSee `ground.cornerpush.velmul`.\n\nDetermines friction to apply to cornerpush. Setting to `-1` makes friction depend on the target's statetype. Defaults to -1 for Ikemen characters and 0.7 for Mugen characters.\n\nSee `ground.cornerpush.velmul`.\n\nThis parameter now takes a third value, It specifies the z velocity.\n\nThis parameter now takes a third value. It specifies the Z maxdist.\n\nThis parameter…"
-			],
+			"changeNotes": [],
 			"params": [
 				{
 					"since": "old",
@@ -5302,7 +5300,7 @@
 				},
 				{
 					"since": "old",
-					"changeNote": "",
+					"changeNote": "This parameter now takes a third value, It specifies the z velocity.",
 					"key": "ground.velocity",
 					"name": "ground.velocity",
 					"placeholder": "x_velocity, y_velocity",
@@ -5332,7 +5330,7 @@
 				},
 				{
 					"since": "old",
-					"changeNote": "",
+					"changeNote": "This parameter now takes a third value, It specifies the z velocity.",
 					"key": "air.velocity",
 					"name": "air.velocity",
 					"placeholder": "x_velocity, y_velocity",
@@ -5347,7 +5345,7 @@
 				},
 				{
 					"since": "old",
-					"changeNote": "",
+					"changeNote": "This parameter now takes a third value, It specifies the z velocity.",
 					"key": "airguard.velocity",
 					"name": "airguard.velocity",
 					"placeholder": "x_velocity, y_velocity",
@@ -5452,7 +5450,7 @@
 				},
 				{
 					"since": "old",
-					"changeNote": "",
+					"changeNote": "In Mugen, the `air.juggle` parameter is only used by the `Projectile` state controller. Characters with `ikemenversion` can now use this parameter in a `Hitdef` to update their juggle points. This allows a move with multiple hits to have different juggle properties in every hit, for instance.",
 					"key": "air.juggle",
 					"name": "air.juggle",
 					"placeholder": "juggle_points",
@@ -5467,7 +5465,7 @@
 				},
 				{
 					"since": "old",
-					"changeNote": "",
+					"changeNote": "This parameter now takes a third value. It specifies the Z mindist.",
 					"key": "mindist",
 					"name": "mindist",
 					"placeholder": "x_pos, y_pos",
@@ -5482,7 +5480,7 @@
 				},
 				{
 					"since": "old",
-					"changeNote": "",
+					"changeNote": "This parameter now takes a third value. It specifies the Z maxdist.",
 					"key": "maxdist",
 					"name": "maxdist",
 					"placeholder": "x_pos, y_pos",
@@ -5842,7 +5840,7 @@
 				},
 				{
 					"since": "old",
-					"changeNote": "",
+					"changeNote": "This parameter now accepts up to 8 values, up from 2.",
 					"key": "nochainid",
 					"name": "nochainID",
 					"placeholder": "nochain_1, nochain_2",
@@ -6127,7 +6125,37 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "See `ground.cornerpush.velmul`.",
+					"key": "air.cornerpush.velmul",
+					"name": "air.cornerpush.velmul",
+					"placeholder": "",
+					"type": "",
+					"required": false,
+					"deprecated": false,
+					"nightly": true,
+					"template": false,
+					"inferred": true,
+					"aliasOf": "",
+					"description": ""
+				},
+				{
+					"since": "changed",
+					"changeNote": "See `ground.cornerpush.velmul`.",
+					"key": "airguard.cornerpush.velmul",
+					"name": "airguard.cornerpush.velmul",
+					"placeholder": "",
+					"type": "",
+					"required": false,
+					"deprecated": false,
+					"nightly": true,
+					"template": false,
+					"inferred": true,
+					"aliasOf": "",
+					"description": ""
+				},
+				{
+					"since": "changed",
+					"changeNote": "Specifies the range of the attack in the Z plane. An attack with more depth reaches further into or out of the Z plane. Defaults to the character's `attack.depth` size constant.",
 					"key": "attack.depth",
 					"name": "attack.depth",
 					"placeholder": "z_dist_front, z_dist_back",
@@ -6138,11 +6166,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the range of the attack in the Z plane. An attack with more depth reaches further into or out of the Z plane. Defaults to the character's `attack.depth` size constant."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the amount of dizzy points to give P2 if this HitDef connects successfully. If omitted, it defaults to hit_damage (from \"damage\" parameter) multiplied by the value of `Default.LifeToDizzyPointsMul` / `Super.LifeToDizzyPointsMul` specified in data/common.const, scaled by the targets' defense multipliers if necessary.",
 					"key": "dizzypoints",
 					"name": "dizzypoints",
 					"placeholder": "hit_value",
@@ -6153,11 +6181,26 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the amount of dizzy points to give P2 if this HitDef connects successfully. If omitted, it defaults to hit_damage (from \"damage\" parameter) multiplied by the value of `Default.LifeToDizzyPointsMul` / `Super.LifeToDizzyPointsMul` specified in data/common.const, scaled by the targets' defense multipliers if necessary."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "See `ground.cornerpush.velmul`.",
+					"key": "down.cornerpush.velmul",
+					"name": "down.cornerpush.velmul",
+					"placeholder": "",
+					"type": "",
+					"required": false,
+					"deprecated": false,
+					"nightly": true,
+					"template": false,
+					"inferred": true,
+					"aliasOf": "",
+					"description": ""
+				},
+				{
+					"since": "changed",
+					"changeNote": "This parameter controls the enemy's ability to use \"fast recovery from lie down\" after being hit.",
 					"key": "down.recover",
 					"name": "down.recover",
 					"placeholder": "recover_flag",
@@ -6168,11 +6211,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter controls the enemy's ability to use \"fast recovery from lie down\" after being hit."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter determines how long the enemy will stay down (in state 5110) after being knocked down. Defaults to the enemy's `data.liedown.time` constant. Together with `down.recover`, this allows one to effectively apply \"hard knockdown\" states on the enemy.",
 					"key": "down.recovertime",
 					"name": "down.recovertime",
 					"placeholder": "recover_time",
@@ -6183,11 +6226,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter determines how long the enemy will stay down (in state 5110) after being knocked down. Defaults to the enemy's `data.liedown.time` constant. Together with `down.recover`, this allows one to effectively apply \"hard knockdown\" states on the enemy."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "For every envshake cycle, the envshake.ampl is multiplied by this value. Defaults to 1.",
 					"key": "envshake.mul",
 					"name": "envshake.mul",
 					"placeholder": "envshake_mul",
@@ -6198,11 +6241,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "For every envshake cycle, the envshake.ampl is multiplied by this value. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Changes the direction in degrees in which the shake is applied. Defaults to 0. For a negative amplitude, 90 will make the screen shake from left to right.",
 					"key": "envshake.dir",
 					"name": "envshake.dir",
 					"placeholder": "angle",
@@ -6213,11 +6256,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Changes the direction in degrees in which the shake is applied. Defaults to 0. For a negative amplitude, 90 will make the screen shake from left to right."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "For every fall.envshake cycle, the fall.envshake.ampl is multiplied by this value. Defaults to 1.",
 					"key": "fall.envshake.mul",
 					"name": "fall.envshake.mul",
 					"placeholder": "fall_envshake_mul",
@@ -6228,11 +6271,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "For every fall.envshake cycle, the fall.envshake.ampl is multiplied by this value. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Changes the direction in degrees in which the shake is applied. Defaults to 0. For a negative amplitude, 90 will make the screen shake from left to right.",
 					"key": "fall.envshake.dir",
 					"name": "fall.envshake.dir",
 					"placeholder": "angle",
@@ -6243,11 +6286,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Changes the direction in degrees in which the shake is applied. Defaults to 0. For a negative amplitude, 90 will make the screen shake from left to right."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This is the z-velocity that P2 gets when bouncing off the ground in the \"fall\" state. Defaults to no change if omitted.",
 					"key": "fall.zvelocity",
 					"name": "fall.zvelocity",
 					"placeholder": "fall_zvelocity",
@@ -6258,11 +6301,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This is the z-velocity that P2 gets when bouncing off the ground in the \"fall\" state. Defaults to no change if omitted."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Forces a standing opponent to crouch upon hit. Similar to ForceStand. Defaults to 0.",
 					"key": "forcecrouch",
 					"name": "forcecrouch",
 					"placeholder": "bvalue",
@@ -6273,11 +6316,41 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Forces a standing opponent to crouch upon hit. Similar to ForceStand. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Determines friction to apply to cornerpush. Setting to `-1` makes friction depend on the target's statetype. Defaults to -1 for Ikemen characters and 0.7 for Mugen characters.",
+					"key": "ground.cornerpush.velmul",
+					"name": "ground.cornerpush.velmul",
+					"placeholder": "",
+					"type": "",
+					"required": false,
+					"deprecated": false,
+					"nightly": true,
+					"template": false,
+					"inferred": true,
+					"aliasOf": "",
+					"description": ""
+				},
+				{
+					"since": "changed",
+					"changeNote": "See `ground.cornerpush.velmul`.",
+					"key": "guard.cornerpush.velmul",
+					"name": "guard.cornerpush.velmul",
+					"placeholder": "",
+					"type": "",
+					"required": false,
+					"deprecated": false,
+					"nightly": true,
+					"template": false,
+					"inferred": true,
+					"aliasOf": "",
+					"description": ""
+				},
+				{
+					"since": "changed",
+					"changeNote": "Specifies the amount of guard points to give P2 if this HitDef is guarded. If omitted, it defaults to hit_damage (from \"damage\" parameter) multiplied by the value of `Default.LifeToGuardPointsMul` / `Super.LifeToGuardPointsMul` specified in data/common.const, scaled by the targets' defense multipliers if necessary.",
 					"key": "guardpoints",
 					"name": "guardpoints",
 					"placeholder": "hit_value",
@@ -6288,11 +6361,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the amount of guard points to give P2 if this HitDef is guarded. If omitted, it defaults to hit_damage (from \"damage\" parameter) multiplied by the value of `Default.LifeToGuardPointsMul` / `Super.LifeToGuardPointsMul` specified in data/common.const, scaled by the targets' defense multipliers if necessary."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Alternative syntax for guard.dist, for consistency with `guard.dist.height` and `guard.dist.depth`.",
 					"key": "guard.dist.width",
 					"name": "guard.dist.width",
 					"placeholder": "x_dist_front, x_dist_back",
@@ -6303,11 +6376,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Alternative syntax for guard.dist, for consistency with `guard.dist.height` and `guard.dist.depth`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the vertical distance (height) within which a player's attack can trigger the enemy's proximity guard. The default value is 1000, 1000.",
 					"key": "guard.dist.height",
 					"name": "guard.dist.height",
 					"placeholder": "y_dist_top, y_dist_bottom",
@@ -6318,11 +6391,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the vertical distance (height) within which a player's attack can trigger the enemy's proximity guard. The default value is 1000, 1000."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the depth range (along the Z-axis) within which a player's attack can trigger the enemy's proximity guard. The default value is 4, 4.",
 					"key": "guard.dist.depth",
 					"name": "guard.dist.depth",
 					"placeholder": "z_dist_top, z_dist_bottom",
@@ -6333,11 +6406,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the depth range (along the Z-axis) within which a player's attack can trigger the enemy's proximity guard. The default value is 4, 4."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the guard spark rotation directly from a Hitdef. Defaults to 0.",
 					"key": "guard.sparkangle",
 					"name": "guard.sparkangle",
 					"placeholder": "angle_value",
@@ -6348,11 +6421,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the guard spark rotation directly from a Hitdef. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the guard spark's scale directly from a Hitdef. Defaults to 1, 1 (no change).",
 					"key": "guard.sparkscale",
 					"name": "guard.sparkscale",
 					"placeholder": "x_scale, y_scale",
@@ -6363,11 +6436,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the guard spark's scale directly from a Hitdef. Defaults to 1, 1 (no change)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Overrides the opponent's Movement.Stand.Friction constants while they are in the gethit state caused by this HitDef.",
 					"key": "stand.friction",
 					"name": "stand.friction",
 					"placeholder": "friction_value",
@@ -6378,11 +6451,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Overrides the opponent's Movement.Stand.Friction constants while they are in the gethit state caused by this HitDef."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Overrides the opponent's Movement.Crouch.Friction constants while they are in the gethit state caused by this HitDef.",
 					"key": "crouch.friction",
 					"name": "crouch.friction",
 					"placeholder": "friction_value",
@@ -6393,11 +6466,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Overrides the opponent's Movement.Crouch.Friction constants while they are in the gethit state caused by this HitDef."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies which of the player's sound channels the guardsound should play on. If omitted, channel_no defaults to -1, meaning the sound will play on any free channel.",
 					"key": "guardsound.channel",
 					"name": "guardsound.channel",
 					"placeholder": "channel_no",
@@ -6408,11 +6481,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies which of the player's sound channels the guardsound should play on. If omitted, channel_no defaults to -1, meaning the sound will play on any free channel."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies which of the player's sound channels the hitsound should play on. If omitted, channel_no defaults to -1, meaning the sound will play on any free channel.",
 					"key": "hitsound.channel",
 					"name": "hitsound.channel",
 					"placeholder": "channel_no",
@@ -6423,11 +6496,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies which of the player's sound channels the hitsound should play on. If omitted, channel_no defaults to -1, meaning the sound will play on any free channel."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, this HitDef will ignore any active ReversalDef on the opponent, hitting them normally. Defaults to 0.",
 					"key": "ignorereversaldef",
 					"name": "ignorereversaldef",
 					"placeholder": "value",
@@ -6438,11 +6511,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "If set to 1, this HitDef will ignore any active ReversalDef on the opponent, hitting them normally. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the hit will apply effects (damage, hitpause, etc.) but the opponent will not change to a gethit state. Defaults to 0.",
 					"key": "keepstate",
 					"name": "keepstate",
 					"placeholder": "value",
@@ -6453,11 +6526,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "If set to 1, the hit will apply effects (damage, hitpause, etc.) but the opponent will not change to a gethit state. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter allows you to choose whether or not a HitDef will miss if it would be overridden(HitOverride), by default, it missing only if P1StateNo, P2StateNo, or P2GetP1State is specified. P1StateNo and P2StateNo both do not apply if the hit is overridden.",
 					"key": "missonoverride",
 					"name": "missonoverride",
 					"placeholder": "bvalue",
@@ -6468,11 +6541,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter allows you to choose whether or not a HitDef will miss if it would be overridden(HitOverride), by default, it missing only if P1StateNo, P2StateNo, or P2GetP1State is specified. P1StateNo and P2StateNo both do not apply if the hit is overridden."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter makes a hit be checked against a specific type of collision box. Valid values are `None`, `Clsn1`, `Clsn2`, `Size` and `Dummy` (nightly build only). Traditionally, fighting games check throws with the `Size` box.",
 					"key": "p2clsncheck",
 					"name": "p2clsncheck",
 					"placeholder": "clsn_type",
@@ -6483,11 +6556,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter makes a hit be checked against a specific type of collision box. Valid values are `None`, `Clsn1`, `Clsn2`, `Size` and `Dummy` (nightly build only). Traditionally, fighting games check throws with the `Size` box."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter prevents a hit from happening if the enemy lacks a particular type of collision box, regardless of them overlapping or not with the player.\n\nNote: All Mugen characters were created on the assumption that lacking `Clsn2` makes them invulnerable. Therefore, if a character is designed for compatibility with other Mugen characters, this parameter should be used when checking hits against other types of collision boxes.",
 					"key": "p2clsnrequire",
 					"name": "p2clsnrequire",
 					"placeholder": "clsn_type",
@@ -6498,11 +6571,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter prevents a hit from happening if the enemy lacks a particular type of collision box, regardless of them overlapping or not with the player.\n\nNote: All Mugen characters were created on the assumption that lacking `Clsn2` makes them invulnerable. Therefore, if a character is designed for compatibility with other Mugen characters, this parameter should be used when checking hits against other types of collision boxes."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the amount of red life to give P2 if this HitDef connects successfully. If omitted, it defaults to hit_damage (from \"damage\" parameter) multiplied by the value of `Default.LifeToRedLifeMul` / `Super.LifeToRedLifeMul` specified in data/common.const, scaled by the targets' defense multipliers if necessary. Additional second value is optional and assigns an amount of guard red life to P2.",
 					"key": "redlife",
 					"name": "redlife",
 					"placeholder": "hit_value, guard_value",
@@ -6513,11 +6586,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the amount of red life to give P2 if this HitDef connects successfully. If omitted, it defaults to hit_damage (from \"damage\" parameter) multiplied by the value of `Default.LifeToRedLifeMul` / `Super.LifeToRedLifeMul` specified in data/common.const, scaled by the targets' defense multipliers if necessary. Additional second value is optional and assigns an amount of guard red life to P2."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the score value added to P1 and P2 score count.",
 					"key": "score",
 					"name": "score",
 					"placeholder": "p1_value, p2_value",
@@ -6528,11 +6601,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the score value added to P1 and P2 score count."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the hitspark rotation directly from a Hitdef. Defaults to 0.",
 					"key": "sparkangle",
 					"name": "sparkangle",
 					"placeholder": "angle_value",
@@ -6543,11 +6616,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the hitspark rotation directly from a Hitdef. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the hit spark's scale directly from a Hitdef. Defaults to 1, 1 (no change).",
 					"key": "sparkscale",
 					"name": "sparkscale",
 					"placeholder": "x_scale, y_scale",
@@ -6558,11 +6631,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the hit spark's scale directly from a Hitdef. Defaults to 1, 1 (no change)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Makes the HitDef be treated as an attack from the TeamSide you specify (similar to the trigger of TeamSide).\n\nWhen used with `Projectile`, setting a teamside different from the player's will allow the projectile to hit its owner and interact with other projectiles from the same player.",
 					"key": "teamside",
 					"name": "teamside",
 					"placeholder": "",
@@ -6573,11 +6646,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Makes the HitDef be treated as an attack from the TeamSide you specify (similar to the trigger of TeamSide).\n\nWhen used with `Projectile`, setting a teamside different from the player's will allow the projectile to hit its owner and interact with other projectiles from the same player."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Makes the player or the enemy invincible for the specified number of the frames after the hit. Use -1 for no change. Defaults to `p1_pausetime + 1, p1_pausetime + 1` for throw attribute attacks, `0, p1_pausetime + 1` for ReversalDef, or `-1, -1` otherwise.",
 					"key": "unhittabletime",
 					"name": "unhittabletime",
 					"placeholder": "p1_time, p2_time",
@@ -6588,11 +6661,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Makes the player or the enemy invincible for the specified number of the frames after the hit. Use -1 for no change. Defaults to `p1_pausetime + 1, p1_pausetime + 1` for throw attribute attacks, `0, p1_pausetime + 1` for ReversalDef, or `-1, -1` otherwise."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the x acceleration to impart to P2 if the hit connects. Defaults to 0. For backwards compatibility reasons, this acceleration is not used by default, as it is not called by `common1.cns`.",
 					"key": "xaccel",
 					"name": "xaccel",
 					"placeholder": "accel",
@@ -6603,11 +6676,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the x acceleration to impart to P2 if the hit connects. Defaults to 0. For backwards compatibility reasons, this acceleration is not used by default, as it is not called by `common1.cns`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the z acceleration to impart to P2 if the hit connects. Defaults to 0. For backwards compatibility reasons, this acceleration is not used by default, as it is not called by `common1.cns`.",
 					"key": "zaccel",
 					"name": "zaccel",
 					"placeholder": "accel",
@@ -6618,7 +6691,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the z acceleration to impart to P2 if the hit connects. Defaults to 0. For backwards compatibility reasons, this acceleration is not used by default, as it is not called by `common1.cns`."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -6805,7 +6878,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, a successful override will be considered a guarded attack.",
 					"key": "forceguard",
 					"name": "forceguard",
 					"placeholder": "value",
@@ -6816,11 +6889,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "If set to 1, a successful override will be considered a guarded attack."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Only hits containing the specified flags in their `guardflag` will be overridden.",
 					"key": "guardflag",
 					"name": "guardflag",
 					"placeholder": "hit_flags",
@@ -6831,11 +6904,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Only hits containing the specified flags in their `guardflag` will be overridden."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Hits containing the specified flags in their `guardflag` will not be overridden.",
 					"key": "guardflag.not",
 					"name": "guardflag.not",
 					"placeholder": "hit_flags",
@@ -6846,11 +6919,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Hits containing the specified flags in their `guardflag` will not be overridden."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the character will override a hit without changing states at all.",
 					"key": "keepstate",
 					"name": "keepstate",
 					"placeholder": "value",
@@ -6861,7 +6934,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "If set to 1, the character will override a hit without changing states at all."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -6912,7 +6985,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "A nonzero flag means to change that z-component of the player's velocity to the gethit velocity.",
 					"key": "z",
 					"name": "Z",
 					"placeholder": "z_flag",
@@ -6923,7 +6996,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "A nonzero flag means to change that z-component of the player's velocity to the gethit velocity."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -7736,7 +7809,7 @@
 			"params": [
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Modifies the `anim` parameter of an existing Explod. Requires `ikemenversion`.",
 					"key": "anim",
 					"name": "anim",
 					"placeholder": "[F]anim_no",
@@ -7747,11 +7820,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Modifies the `anim` parameter of an existing Explod. Requires `ikemenversion`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Modifies the `animelem` parameter of an existing Explod.",
 					"key": "animelem",
 					"name": "animelem",
 					"placeholder": "elem_no",
@@ -7762,11 +7835,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Modifies the `animelem` parameter of an existing Explod."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Modifies the `animelemtime` parameter of an existing Explod.",
 					"key": "animelemtime",
 					"name": "animelemtime",
 					"placeholder": "time",
@@ -7777,11 +7850,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Modifies the `animelemtime` parameter of an existing Explod."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Modifies the `ignorehitpause` parameter of an existing Explod. Requires `ikemenversion`.",
 					"key": "ignorehitpause",
 					"name": "ignorehitpause",
 					"placeholder": "bvalue",
@@ -7792,11 +7865,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Modifies the `ignorehitpause` parameter of an existing Explod. Requires `ikemenversion`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the explod to be affected. Defaults to -1 (all).",
 					"key": "index",
 					"name": "index",
 					"placeholder": "",
@@ -7807,11 +7880,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the explod to be affected. Defaults to -1 (all)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Modifies the `space` parameter of an existing Explod. Requires `ikemenversion`.",
 					"key": "space",
 					"name": "space",
 					"placeholder": "space",
@@ -7822,11 +7895,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Modifies the `space` parameter of an existing Explod. Requires `ikemenversion`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Modifies the `under` parameter of an existing Explod.",
 					"key": "under",
 					"name": "under",
 					"placeholder": "",
@@ -7837,7 +7910,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Modifies the `under` parameter of an existing Explod."
+					"description": ""
 				},
 				{
 					"since": "old",
@@ -8216,7 +8289,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Explods now support AfterImage parameters (e.g. afterimage.time, afterimage.length, afterimage.trans). Usage is identical to Projectile's AfterImage.",
 					"key": "afterimage",
 					"name": "AfterImage",
 					"placeholder": "",
@@ -8227,11 +8300,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Explods now support AfterImage parameters (e.g. afterimage.time, afterimage.length, afterimage.trans). Usage is identical to Projectile's AfterImage."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter lets a explod use the specified animation from another character. Defaults to own playerno.",
 					"key": "animplayerno",
 					"name": "AnimPlayerNo",
 					"placeholder": "playerno",
@@ -8242,11 +8315,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter lets a explod use the specified animation from another character. Defaults to own playerno."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter hides the explod automatically when the fight screen is hidden. Defaults to 0.",
 					"key": "hidewithbars",
 					"name": "HideWithBars",
 					"placeholder": "bvalue",
@@ -8257,11 +8330,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter hides the explod automatically when the fight screen is hidden. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter lets a explod use the specified sprites from another character. Defaults to own playerno.\n\nThis parameter lets a explod use the specified sprites from another character. Defaults to own playerno.",
 					"key": "spriteplayerno",
 					"name": "SpritePlayerNo",
 					"placeholder": "playerno",
@@ -8272,11 +8345,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter lets a explod use the specified sprites from another character. Defaults to own playerno.\n\nThis parameter lets a explod use the specified sprites from another character. Defaults to own playerno."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Freezes the explod's animation. Defaults to 0.",
 					"key": "animfreeze",
 					"name": "AnimFreeze",
 					"placeholder": "bvalue",
@@ -8287,11 +8360,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Freezes the explod's animation. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Focal Length of the projection. Does nothing when `projection` is not perspective or perspective2. This value is fixed in Mugen 1.1, the explods will look differently under different different resolution/loaclcoord/camera zoom. In Ikemen, this value scales internally like xy scales so that the explods will always look the same. Default value is 2048.",
 					"key": "focallength",
 					"name": "FocalLength",
 					"placeholder": "",
@@ -8302,11 +8375,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Focal Length of the projection. Does nothing when `projection` is not perspective or perspective2. This value is fixed in Mugen 1.1, the explods will look differently under different different resolution/loaclcoord/camera zoom. In Ikemen, this value scales internally like xy scales so that the explods will always look the same. Default value is 2048."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Applies friction to explod on the defined axis (Friction value example: 0.95).",
 					"key": "friction",
 					"name": "Friction",
 					"placeholder": "friction_x, friction_y, friction_z",
@@ -8317,11 +8390,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Applies friction to explod on the defined axis (Friction value example: 0.95)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the time period of the animation (if omitted, defaults to 0).",
 					"key": "interpolation.time",
 					"name": "interpolation.time",
 					"placeholder": "value",
@@ -8332,11 +8405,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the time period of the animation (if omitted, defaults to 0)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target animelem for the interpolation. If animelem is omitted, defaults to 1. animfreeze will stop the animation from going further than interpolation.animelem.",
 					"key": "interpolation.animelem",
 					"name": "interpolation.animelem",
 					"placeholder": "elem_no",
@@ -8347,11 +8420,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target animelem for the interpolation. If animelem is omitted, defaults to 1. animfreeze will stop the animation from going further than interpolation.animelem."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the source and destination alpha values for the interpolation. sub and add1 are not supported.",
 					"key": "interpolation.alpha",
 					"name": "interpolation.alpha",
 					"placeholder": "alpha_source, alpha_dest",
@@ -8362,11 +8435,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the source and destination alpha values for the interpolation. sub and add1 are not supported."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target angle, xangle, and yangle values for the interpolation.\n\nNote: For the nightly build, these have been separated into individual parameters.",
 					"key": "interpolation.angle",
 					"name": "interpolation.angle",
 					"placeholder": "angle, xangle, yangle",
@@ -8377,11 +8450,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target angle, xangle, and yangle values for the interpolation.\n\nNote: For the nightly build, these have been separated into individual parameters."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target x and y offset values for the interpolation.",
 					"key": "interpolation.offset",
 					"name": "interpolation.offset",
 					"placeholder": "offset_x, offset_y",
@@ -8392,11 +8465,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target x and y offset values for the interpolation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target x and y scale values for the interpolation.",
 					"key": "interpolation.scale",
 					"name": "interpolation.scale",
 					"placeholder": "scale_x, scale_y",
@@ -8407,11 +8480,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target x and y scale values for the interpolation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target xshear value.",
 					"key": "interpolation.xshear",
 					"name": "interpolation.xshear",
 					"placeholder": "value",
@@ -8422,11 +8495,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target xshear value."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target focallength value.\n\nPalFX is also compatible with the syntax. **interpolation.palfx.time** and **ownppal = 1** are required for any of the parameters to work.",
 					"key": "interpolation.focallength",
 					"name": "interpolation.focallength",
 					"placeholder": "value",
@@ -8437,11 +8510,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target focallength value.\n\nPalFX is also compatible with the syntax. **interpolation.palfx.time** and **ownppal = 1** are required for any of the parameters to work."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target red, green, and blue multiplication values. If palfx.mul is omitted, defaults to 256, 256, 256.",
 					"key": "interpolation.palfx.mul",
 					"name": "interpolation.palfx.mul",
 					"placeholder": "mul_r, mul_g, mul_b",
@@ -8452,11 +8525,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target red, green, and blue multiplication values. If palfx.mul is omitted, defaults to 256, 256, 256."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target red, green, and blue addition values. If palfx.add is omitted, defaults to 0, 0, 0.",
 					"key": "interpolation.palfx.add",
 					"name": "interpolation.palfx.add",
 					"placeholder": "add_r, add_g, add_b",
@@ -8467,11 +8540,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target red, green, and blue addition values. If palfx.add is omitted, defaults to 0, 0, 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target hue value. If palfx.hue is omitted, defaults to 0.",
 					"key": "interpolation.palfx.hue",
 					"name": "interpolation.palfx.hue",
 					"placeholder": "value",
@@ -8482,11 +8555,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target hue value. If palfx.hue is omitted, defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the target color value. If palfx.color is omitted, defaults to 256.\n\nThese parameters can be used interchangeably.",
 					"key": "interpolation.palfx.color",
 					"name": "interpolation.palfx.color",
 					"placeholder": "value",
@@ -8497,11 +8570,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the target color value. If palfx.color is omitted, defaults to 256.\n\nThese parameters can be used interchangeably."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specify on which layer the explod should be drawn. Valid values are -1, 0 and 1. Defaults to the same layer as the player. Layer number 1 is effectively the same as the legacy `ontop` parameter.",
 					"key": "layerno",
 					"name": "LayerNo",
 					"placeholder": "",
@@ -8512,11 +8585,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Specify on which layer the explod should be drawn. Valid values are -1, 0 and 1. Defaults to the same layer as the player. Layer number 1 is effectively the same as the legacy `ontop` parameter."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Apply palette effects on explods. The parameters are the same as in the HitDef controller. Requires `ownpal` to be a nonzero value.",
 					"key": "palfx",
 					"name": "PalFx",
 					"placeholder": "",
@@ -8527,11 +8600,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Apply palette effects on explods. The parameters are the same as in the HitDef controller. Requires `ownpal` to be a nonzero value."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Affect how the explod is drawn when `xangle` or `yangle` is not zero.\n- orthographic: The default value when Mugen version is not 1.1 or Ikemen version is not 0. The explod is drawn using orthographic projection.\n- perspective: The default value when Mugen version is 1.1 and Ikemen version is 0. The explod is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the screen.\n- perspective2: The explod is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the animation.",
 					"key": "projection",
 					"name": "Projection",
 					"placeholder": "",
@@ -8542,11 +8615,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Affect how the explod is drawn when `xangle` or `yangle` is not zero.\n- orthographic: The default value when Mugen version is not 1.1 or Ikemen version is not 0. The explod is drawn using orthographic projection.\n- perspective: The default value when Mugen version is 1.1 and Ikemen version is 0. The explod is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the screen.\n- perspective2: The explod is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the animation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If 0, disables reflection on the explod regardless of its shadow color. If 1, enables reflection on the explod regardless of its shadow color. Defaults to showing a reflection if the explod's shadow is not 0, 0, 0.",
 					"key": "reflection",
 					"name": "Reflection",
 					"placeholder": "",
@@ -8557,11 +8630,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If 0, disables reflection on the explod regardless of its shadow color. If 1, enables reflection on the explod regardless of its shadow color. Defaults to showing a reflection if the explod's shadow is not 0, 0, 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the Explod will be removed if the character changes state. Defaults to 0.",
 					"key": "removeonchangestate",
 					"name": "RemoveOnChangeState",
 					"placeholder": "",
@@ -8572,11 +8645,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, the Explod will be removed if the character changes state. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifying the name of the currently loaded custom shader will apply that shader to Explod.\n\nNote: In the nightly build the syntax changed to `shader.name`.",
 					"key": "shader",
 					"name": "Shader",
 					"placeholder": "shader_name",
@@ -8587,11 +8660,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifying the name of the currently loaded custom shader will apply that shader to Explod.\n\nNote: In the nightly build the syntax changed to `shader.name`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifying this parameter will remove the custom shader after it has been displayed for the specified number of ticks. The default value is -1.\n\nNote: In the nightly build the syntax changed to `shader.time`.",
 					"key": "shadertime",
 					"name": "ShaderTime",
 					"placeholder": "time",
@@ -8602,11 +8675,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifying this parameter will remove the custom shader after it has been displayed for the specified number of ticks. The default value is -1.\n\nNote: In the nightly build the syntax changed to `shader.time`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the value to send to the custom shader. The value specified here can be used as a variable within the custom shader. X is limited to 0 to 15, and a maximum of 16 values ​​can be sent.\n\nNote: In the nightly build the syntax changed to `shader.paramX`.",
 					"key": "shaderparam.px",
 					"name": "ShaderParam.pX",
 					"placeholder": "value",
@@ -8617,11 +8690,11 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the value to send to the custom shader. The value specified here can be used as a variable within the custom shader. X is limited to 0 to 15, and a maximum of 16 values ​​can be sent.\n\nNote: In the nightly build the syntax changed to `shader.paramX`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Note: In the nightly build the syntax changed to `shader.texX.spr`.",
 					"key": "shadertexx.spr",
 					"name": "ShaderTexX.spr",
 					"placeholder": "group, image",
@@ -8632,11 +8705,11 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Note: In the nightly build the syntax changed to `shader.texX.spr`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the texture to send to the custom shader. The sprites specified here can be used as textures within the custom shader. You can specify 1 or 2 for X, and send up to two sprites. Each tex can be assigned either a sprite number (spr) or an anim number. It is not possible to assign both sprite and anim numbers to the same tex number simultaneously. Note that since textures are loaded as raw data, images with palettes may not display correctly as is.\n\nNote: In the nightly build the syntax changed to `shader.texX.anim`.",
 					"key": "shadertexx.anim",
 					"name": "ShaderTexX.anim",
 					"placeholder": "anim_no",
@@ -8647,11 +8720,11 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the texture to send to the custom shader. The sprites specified here can be used as textures within the custom shader. You can specify 1 or 2 for X, and send up to two sprites. Each tex can be assigned either a sprite number (spr) or an anim number. It is not possible to assign both sprite and anim numbers to the same tex number simultaneously. Note that since textures are loaded as raw data, images with palettes may not display correctly as is.\n\nNote: In the nightly build the syntax changed to `shader.texX.anim`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the player number who owns the shader to be used. Defaults to own player number.",
 					"key": "shader.playerno",
 					"name": "shader.playerno",
 					"placeholder": "player_number",
@@ -8662,11 +8735,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the player number who owns the shader to be used. Defaults to own player number."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies if the explod shadow is affected by the shader. Defaults to 1.",
 					"key": "shader.shadow",
 					"name": "shader.shadow",
 					"placeholder": "shadow_flag",
@@ -8677,11 +8750,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies if the explod shadow is affected by the shader. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies if the explod reflection is affected by the shader. Defaults to 1.",
 					"key": "shader.reflection",
 					"name": "shader.reflection",
 					"placeholder": "reflection_flag",
@@ -8692,11 +8765,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies if the explod reflection is affected by the shader. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies if the explod afterimage is affected by the shader. Defaults to 1.",
 					"key": "shader.afterimage",
 					"name": "shader.afterimage",
 					"placeholder": "afterimage_flag",
@@ -8707,11 +8780,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies if the explod afterimage is affected by the shader. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the ID of a character to synchronize with. The Explod will group with the target in the draw order. If syncparams is 1, it also copies the target's drawing properties (Position, Scale, Angle, Trans, etc.).",
 					"key": "syncid",
 					"name": "syncid",
 					"placeholder": "id",
@@ -8722,11 +8795,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the ID of a character to synchronize with. The Explod will group with the target in the draw order. If syncparams is 1, it also copies the target's drawing properties (Position, Scale, Angle, Trans, etc.)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Adjusts the drawing order relative to the character specified in syncid.\n* 0: Same layer as the character (default).\n* \\> 0: Drawn in front of the character.\n* < 0: Drawn behind the character.",
 					"key": "synclayer",
 					"name": "synclayer",
 					"placeholder": "layer",
@@ -8737,11 +8810,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Adjusts the drawing order relative to the character specified in syncid.\n* 0: Same layer as the character (default).\n* \\> 0: Drawn in front of the character.\n* < 0: Drawn behind the character."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, visual parameters (Scale, Angle, Trans, etc.) are continuously copied from the character specified in syncid. If set to 0, only the draw order is synchronized. Defaults to 1.",
 					"key": "syncparams",
 					"name": "syncparams",
 					"placeholder": "value",
@@ -8752,11 +8825,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "If set to 1, visual parameters (Scale, Angle, Trans, etc.) are continuously copied from the character specified in syncid. If set to 0, only the draw order is synchronized. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter takes four numbers (similar to the format of a Clsn box) which forms a rectangle outside of which the pixels will not be rendered.",
 					"key": "window",
 					"name": "window",
 					"placeholder": "x1, y1, x2, y2",
@@ -8767,11 +8840,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter takes four numbers (similar to the format of a Clsn box) which forms a rectangle outside of which the pixels will not be rendered."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the amount of horizontal shearing to apply to the explod. Defaults to 0.",
 					"key": "xshear",
 					"name": "xshear",
 					"placeholder": "xshear",
@@ -8782,7 +8855,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the amount of horizontal shearing to apply to the explod. Defaults to 0."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -12435,7 +12508,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Inverts current blend mode if enabled so Sub becomes Add and Add becomes Sub.\n\nFor PalFx it accepts 4 values:\n* 0 = Disabled (Mugen 1.0 blending behavior)\n* 1 = Enabled (Mugen 1.0 blending behavior)\n* -1 = Disabled (Mugen 1.1 blending behavior)\n* 2 = Enabled (Mugen 1.1 blending behavior)\n\nIf character MugenVersion is 1.1 and invertall = 1 and if invertblend param is omitted, it inverts blend by default. For all other MugenVersion invertblend is 0 if omitted.",
 					"key": "invertblend",
 					"name": "invertblend",
 					"placeholder": "blend_mode",
@@ -12446,11 +12519,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Inverts current blend mode if enabled so Sub becomes Add and Add becomes Sub.\n\nFor PalFx it accepts 4 values:\n* 0 = Disabled (Mugen 1.0 blending behavior)\n* 1 = Enabled (Mugen 1.0 blending behavior)\n* -1 = Disabled (Mugen 1.1 blending behavior)\n* 2 = Enabled (Mugen 1.1 blending behavior)\n\nIf character MugenVersion is 1.1 and invertall = 1 and if invertblend param is omitted, it inverts blend by default. For all other MugenVersion invertblend is 0 if omitted."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This affects the hue level of the palette. Avaiable range is -256 to 256.",
 					"key": "hue",
 					"name": "hue",
 					"placeholder": "value",
@@ -12461,11 +12534,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This affects the hue level of the palette. Avaiable range is -256 to 256."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Similliar to \"sinadd\" parameter but instead it creates effect related to \"mul\" parameter.",
 					"key": "sinmul",
 					"name": "sinmul",
 					"placeholder": "ampl_r, ampl_g, ampl_b, period",
@@ -12476,11 +12549,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Similliar to \"sinadd\" parameter but instead it creates effect related to \"mul\" parameter."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Similliar to \"sinadd\" parameter but instead it creates effect related to \"color\" parameter.",
 					"key": "sincolor",
 					"name": "sincolor",
 					"placeholder": "ampl, period",
@@ -12491,11 +12564,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Similliar to \"sinadd\" parameter but instead it creates effect related to \"color\" parameter."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Similliar to \"sinadd\" parameter but instead it creates effect related to \"hue\" parameter.",
 					"key": "sinhue",
 					"name": "sinhue",
 					"placeholder": "ampl, period",
@@ -12506,7 +12579,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Similliar to \"sinadd\" parameter but instead it creates effect related to \"hue\" parameter."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -12983,7 +13056,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "`PlayerPush` now accepts a `priority` parameter. A player with a higher priority can't be pushed by a player with a lower priority and will also push them out of a stage corner. Priority is reset to 0 every frame.",
 					"key": "priority",
 					"name": "Priority",
 					"placeholder": "",
@@ -12994,11 +13067,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "`PlayerPush` now accepts a `priority` parameter. A player with a higher priority can't be pushed by a player with a lower priority and will also push them out of a stage corner. Priority is reset to 0 every frame."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "specifies which team's players can be push.\n\n- F : Allows only allies to be pushed out (enemies will pass through)\n- B : Pushes both allies and enemies\n- E : Pushes only enemies (default)",
 					"key": "affectteam",
 					"name": "AffectTeam",
 					"placeholder": "team_type",
@@ -13009,7 +13082,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "specifies which team's players can be push.\n\n- F : Allows only allies to be pushed out (enemies will pass through)\n- B : Pushes both allies and enemies\n- E : Pushes only enemies (default)"
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -13150,7 +13223,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets the priority of the sound. Does nothing when channel is not specified. A sound with higher priority will not be interrupted by sounds with lower priority. Defaults to 0.",
 					"key": "priority",
 					"name": "Priority",
 					"placeholder": "snd_priority",
@@ -13161,11 +13234,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Sets the priority of the sound. Does nothing when channel is not specified. A sound with higher priority will not be interrupted by sounds with lower priority. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets the sample to begin looping from.",
 					"key": "loopstart",
 					"name": "LoopStart",
 					"placeholder": "loop_start_sample",
@@ -13176,11 +13249,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Sets the sample to begin looping from."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets the sample to end looping at.",
 					"key": "loopend",
 					"name": "LoopEnd",
 					"placeholder": "loop_end_sample",
@@ -13191,11 +13264,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Sets the sample to end looping at."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Sets the sample to begin playing from.",
 					"key": "startposition",
 					"name": "StartPosition",
 					"placeholder": "start_sample",
@@ -13206,11 +13279,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Sets the sample to begin playing from."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set, will play the sound *loop_count* number of times before stopping. Nonzero values take precedence over the `loop` parameter.",
 					"key": "loopcount",
 					"name": "LoopCount",
 					"placeholder": "loop_count",
@@ -13221,11 +13294,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "If set, will play the sound *loop_count* number of times before stopping. Nonzero values take precedence over the `loop` parameter."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter makes the sound be interrupted if the player gets hit. Defaults to 1 if channel is set to 0.",
 					"key": "stopongethit",
 					"name": "StopOnGetHit",
 					"placeholder": "stop",
@@ -13236,11 +13309,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter makes the sound be interrupted if the player gets hit. Defaults to 1 if channel is set to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter makes the sound be interrupted if the player changes states.",
 					"key": "stoponchangestate",
 					"name": "StopOnChangeState",
 					"placeholder": "stop",
@@ -13251,7 +13324,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "This parameter makes the sound be interrupted if the player changes states."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -13910,7 +13983,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the angle to rotate the Projectile animation.",
 					"key": "projangle",
 					"name": "ProjAngle",
 					"placeholder": "",
@@ -13921,11 +13994,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Specifies the angle to rotate the Projectile animation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the Xangle of the Projectile animation.",
 					"key": "projxangle",
 					"name": "ProjXAngle",
 					"placeholder": "",
@@ -13936,11 +14009,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Specifies the Xangle of the Projectile animation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the Yangle of the Projectile animation.",
 					"key": "projyangle",
 					"name": "ProjYAngle",
 					"placeholder": "",
@@ -13951,11 +14024,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Specifies the Yangle of the Projectile animation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Defines the angle for the projectile's collision boxes. In degrees.",
 					"key": "projclsnangle",
 					"name": "ProjClsnAngle",
 					"placeholder": "",
@@ -13966,11 +14039,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Defines the angle for the projectile's collision boxes. In degrees."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Defines the collision box scale for the projectile.",
 					"key": "projclsnscale",
 					"name": "ProjClsnScale",
 					"placeholder": "",
@@ -13981,11 +14054,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Defines the collision box scale for the projectile."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Like `projedgebound` but for the Z space. Determines how far out of the Z boundaries the projectile can travel before being removed.",
 					"key": "projdepthbound",
 					"name": "ProjDepthBound",
 					"placeholder": "",
@@ -13996,11 +14069,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Like `projedgebound` but for the Z space. Determines how far out of the Z boundaries the projectile can travel before being removed."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specify on which layer the projectile should be drawn. Valid values are -1, 0 and 1. Defaults to the same layer as the player.",
 					"key": "projlayerno",
 					"name": "ProjLayerNo",
 					"placeholder": "",
@@ -14011,11 +14084,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Specify on which layer the projectile should be drawn. Valid values are -1, 0 and 1. Defaults to the same layer as the player."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Focal Length of the projection. Does nothing when projection is not perspective or perspective2.",
 					"key": "projfocallength",
 					"name": "ProjFocalLength",
 					"placeholder": "",
@@ -14026,11 +14099,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Focal Length of the projection. Does nothing when projection is not perspective or perspective2."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Affect how the projectile is drawn when xangle or yangle is not zero.\n\n- orthographic: The default value, the projectile is drawn using orthographic projection.\n- perspective: The projectile is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the screen.\n- perspective2: The projectile is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the animation.",
 					"key": "projprojection",
 					"name": "ProjProjection",
 					"placeholder": "",
@@ -14041,11 +14114,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Affect how the projectile is drawn when xangle or yangle is not zero.\n\n- orthographic: The default value, the projectile is drawn using orthographic projection.\n- perspective: The projectile is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the screen.\n- perspective2: The projectile is drawn using perspective projection. Distortion is affected by the position of the sprite relative to the center of the animation."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If 0, disables reflection on the projectile regardless of its shadow color. If 1, enables reflection on the projectile regardless of its shadow color. Defaults to showing a reflection if the projectile's shadow is not 0, 0, 0.",
 					"key": "projreflection",
 					"name": "ProjReflection",
 					"placeholder": "",
@@ -14056,11 +14129,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If 0, disables reflection on the projectile regardless of its shadow color. If 1, enables reflection on the projectile regardless of its shadow color. Defaults to showing a reflection if the projectile's shadow is not 0, 0, 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "This parameter takes four numbers (similar to the format of a Clsn box) which forms a rectangle outside of which the pixels will not be rendered.",
 					"key": "projwindow",
 					"name": "ProjWindow",
 					"placeholder": "",
@@ -14071,11 +14144,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "This parameter takes four numbers (similar to the format of a Clsn box) which forms a rectangle outside of which the pixels will not be rendered."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the amount of horizontal shearing to apply to the projectile. Defaults to 0.",
 					"key": "projxshear",
 					"name": "ProjXshear",
 					"placeholder": "",
@@ -14086,11 +14159,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Specifies the amount of horizontal shearing to apply to the projectile. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifying the name of the currently loaded custom shader will apply that shader to Projectile.\n\nNote: In the nightly build the syntax changed to `shader.name`.",
 					"key": "shader",
 					"name": "Shader",
 					"placeholder": "shader_name",
@@ -14101,11 +14174,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifying the name of the currently loaded custom shader will apply that shader to Projectile.\n\nNote: In the nightly build the syntax changed to `shader.name`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifying this parameter will remove the custom shader after it has been displayed for the specified number of ticks. The default value is -1.\n\nNote: In the nightly build the syntax changed to `shader.time`.",
 					"key": "shadertime",
 					"name": "ShaderTime",
 					"placeholder": "time",
@@ -14116,11 +14189,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifying this parameter will remove the custom shader after it has been displayed for the specified number of ticks. The default value is -1.\n\nNote: In the nightly build the syntax changed to `shader.time`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the value to send to the custom shader. The value specified here can be used as a variable within the custom shader. X is limited to 0 to 15, and a maximum of 16 values ​​can be sent.\n\nNote: In the nightly build the syntax changed to `shader.paramX`.",
 					"key": "shaderparam.px",
 					"name": "ShaderParam.pX",
 					"placeholder": "value",
@@ -14131,11 +14204,11 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the value to send to the custom shader. The value specified here can be used as a variable within the custom shader. X is limited to 0 to 15, and a maximum of 16 values ​​can be sent.\n\nNote: In the nightly build the syntax changed to `shader.paramX`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Note: In the nightly build the syntax changed to `shader.texX.spr`.",
 					"key": "shadertexx.spr",
 					"name": "ShaderTexX.spr",
 					"placeholder": "group, image",
@@ -14146,11 +14219,11 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Note: In the nightly build the syntax changed to `shader.texX.spr`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the texture to send to the custom shader. The sprites specified here can be used as textures within the custom shader. You can specify 1 or 2 for X, and send up to two sprites. Each tex can be assigned either a sprite number (spr) or an anim number. It is not possible to assign both sprite and anim numbers to the same tex number simultaneously. Note that since textures are loaded as raw data, images with palettes may not display correctly as is.\n\nNote: In the nightly build the syntax changed to `shader.texX.anim`.",
 					"key": "shadertexx.anim",
 					"name": "ShaderTexX.anim",
 					"placeholder": "anim_no",
@@ -14161,11 +14234,11 @@
 					"template": true,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the texture to send to the custom shader. The sprites specified here can be used as textures within the custom shader. You can specify 1 or 2 for X, and send up to two sprites. Each tex can be assigned either a sprite number (spr) or an anim number. It is not possible to assign both sprite and anim numbers to the same tex number simultaneously. Note that since textures are loaded as raw data, images with palettes may not display correctly as is.\n\nNote: In the nightly build the syntax changed to `shader.texX.anim`."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the player number who owns the shader to be used. Defaults to own player number.",
 					"key": "shader.playerno",
 					"name": "shader.playerno",
 					"placeholder": "player_number",
@@ -14176,11 +14249,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the player number who owns the shader to be used. Defaults to own player number."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies if the projectile shadow is affected by the shader. Defaults to 1.",
 					"key": "shader.shadow",
 					"name": "shader.shadow",
 					"placeholder": "shadow_flag",
@@ -14191,11 +14264,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies if the projectile shadow is affected by the shader. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies if the projectile reflection is affected by the shader. Defaults to 1.",
 					"key": "shader.reflection",
 					"name": "shader.reflection",
 					"placeholder": "reflection_flag",
@@ -14206,11 +14279,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies if the projectile reflection is affected by the shader. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies if the projectile afterimage is affected by the shader. Defaults to 1.",
 					"key": "shader.afterimage",
 					"name": "shader.afterimage",
 					"placeholder": "afterimage_flag",
@@ -14221,7 +14294,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies if the projectile afterimage is affected by the shader. Defaults to 1."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -14456,7 +14529,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the explod to be affected. Defaults to -1 (all).",
 					"key": "index",
 					"name": "index",
 					"placeholder": "",
@@ -14467,7 +14540,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the explod to be affected. Defaults to -1 (all)."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -14567,7 +14640,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Only hits containing the specified flags in their `guardflag` will be countered.",
 					"key": "reversal.guardflag",
 					"name": "reversal.guardflag",
 					"placeholder": "hit_flags",
@@ -14578,11 +14651,11 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Only hits containing the specified flags in their `guardflag` will be countered."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Hits containing the specified flags in their `guardflag` will not be countered.",
 					"key": "reversal.guardflag.not",
 					"name": "reversal.guardflag.not",
 					"placeholder": "hit_flags",
@@ -14593,7 +14666,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Hits containing the specified flags in their `guardflag` will not be countered."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -15133,7 +15206,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Lets a character bypass leftbound and rightbound from stage.",
 					"key": "stagebound",
 					"name": "StageBound",
 					"placeholder": "",
@@ -15144,7 +15217,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Lets a character bypass leftbound and rightbound from stage."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -15180,7 +15253,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Change to the state of the character with the specified Player ID. If successful, it would take the character with the specified PlayerID to the selected state.\n\nSee also [ChangeState](sctrl#changed_changestate).",
 					"key": "readplayerid",
 					"name": "ReadPlayerID",
 					"placeholder": "",
@@ -15191,7 +15264,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Change to the state of the character with the specified Player ID. If successful, it would take the character with the specified PlayerID to the selected state.\n\nSee also [ChangeState](sctrl#changed_changestate)."
+					"description": ""
 				},
 				{
 					"since": "old",
@@ -15225,7 +15298,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Due to the way State -1 is normally used to read inputs and change states, Mugen had it so that using a `ChangeState` in a negative state would stop the execution of the rest of the code in that state. Setting `Continue` to 1 will disable this behavior. When a `ChangeState` is redirected, `Continue` will default to 1.",
 					"key": "continue",
 					"name": "Continue",
 					"placeholder": "",
@@ -15236,7 +15309,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Due to the way State -1 is normally used to read inputs and change states, Mugen had it so that using a `ChangeState` in a negative state would stop the execution of the rest of the code in that state. Setting `Continue` to 1 will disable this behavior. When a `ChangeState` is redirected, `Continue` will default to 1."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -15546,7 +15619,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Change the layer number on which the player is drawn on. Valid values are -1, 0 and 1. Defaults to 0. [TODO - Link to explanation on layer drawing order]",
 					"key": "layerno",
 					"name": "LayerNo",
 					"placeholder": "layer_number",
@@ -15557,7 +15630,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Change the layer number on which the player is drawn on. Valid values are -1, 0 and 1. Defaults to 0. [TODO - Link to explanation on layer drawing order]"
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -15930,7 +16003,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Determines how much the screen should darken during the pause. Valid values are between 0 (pitch black) and 255 (no change). Defaults to 128 (same as old `darken` parameter).",
 					"key": "brightness",
 					"name": "Brightness",
 					"placeholder": "",
@@ -15941,7 +16014,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Determines how much the screen should darken during the pause. Valid values are between 0 (pitch black) and 255 (no change). Defaults to 128 (same as old `darken` parameter)."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -16205,7 +16278,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the target to be affected. Defaults to -1 (all).",
 					"key": "index",
 					"name": "Index",
 					"placeholder": "",
@@ -16216,7 +16289,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the target to be affected. Defaults to -1 (all)."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -16359,7 +16432,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the target to be affected. Defaults to -1 (all).",
 					"key": "index",
 					"name": "Index",
 					"placeholder": "",
@@ -16370,7 +16443,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the target to be affected. Defaults to -1 (all)."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -16497,7 +16570,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, enables life to dizzy points conversion support using `Default.LifeToDizzyPointsMul` / `Super.LifeToDizzyPointsMul` const. Defaults to 1.",
 					"key": "dizzy",
 					"name": "Dizzy",
 					"placeholder": "",
@@ -16508,11 +16581,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, enables life to dizzy points conversion support using `Default.LifeToDizzyPointsMul` / `Super.LifeToDizzyPointsMul` const. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the target to be affected. Defaults to -1 (all).",
 					"key": "index",
 					"name": "Index",
 					"placeholder": "",
@@ -16523,7 +16596,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the target to be affected. Defaults to -1 (all)."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -16574,7 +16647,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the target to be affected. Defaults to -1 (all).",
 					"key": "index",
 					"name": "Index",
 					"placeholder": "",
@@ -16585,7 +16658,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the target to be affected. Defaults to -1 (all)."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -16743,7 +16816,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the target to be affected. Defaults to -1 (all).",
 					"key": "index",
 					"name": "Index",
 					"placeholder": "",
@@ -16754,7 +16827,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the target to be affected. Defaults to -1 (all)."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -16820,7 +16893,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the target to be affected. Defaults to -1 (all).",
 					"key": "index",
 					"name": "Index",
 					"placeholder": "",
@@ -16831,11 +16904,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the target to be affected. Defaults to -1 (all)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the value to add to the target's z-velocity.",
 					"key": "z",
 					"name": "Z",
 					"placeholder": "z_value",
@@ -16846,7 +16919,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the value to add to the target's z-velocity."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -16912,7 +16985,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The index of the target to be affected. Defaults to -1 (all).",
 					"key": "index",
 					"name": "Index",
 					"placeholder": "",
@@ -16923,11 +16996,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The index of the target to be affected. Defaults to -1 (all)."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Specifies the value to set the target's z-velocity to.",
 					"key": "z",
 					"name": "Z",
 					"placeholder": "z_value",
@@ -16938,7 +17011,7 @@
 					"template": false,
 					"inferred": false,
 					"aliasOf": "",
-					"description": "Specifies the value to set the target's z-velocity to."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -17414,7 +17487,7 @@
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The `sub` transparency now also supports alpha values.",
 					"key": "sub",
 					"name": "Sub",
 					"placeholder": "",
@@ -17425,11 +17498,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The `sub` transparency now also supports alpha values."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The `subadd` transparency mode was added. It draws the sprite in grayscale subtractive transparency, then draws it again in full color additive transparency. The result is a transparent effect that looks more solid and is easier to see against bright backgrounds. The `alpha` source parameter controls the intensity of the additive layer, while destination controls the subtractive layer. Native implementation of a classic Mugen trick.",
 					"key": "subadd",
 					"name": "SubAdd",
 					"placeholder": "",
@@ -17440,7 +17513,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The `subadd` transparency mode was added. It draws the sprite in grayscale subtractive transparency, then draws it again in full color additive transparency. The result is a transparent effect that looks more solid and is easier to see against bright backgrounds. The `alpha` source parameter controls the intensity of the additive layer, while destination controls the subtractive layer. Native implementation of a classic Mugen trick."
+					"description": ""
 				}
 			],
 			"flags": [],
@@ -18118,7 +18191,7 @@
 			"params": [
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the zoom position is restricted to the current camera position. Defaults to 1.",
 					"key": "camerabound",
 					"name": "CameraBound",
 					"placeholder": "",
@@ -18129,11 +18202,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, the zoom position is restricted to the current camera position. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Like the `lag` parameter, but it applies after the Zoom effect ends.",
 					"key": "endlag",
 					"name": "EndLag",
 					"placeholder": "",
@@ -18144,11 +18217,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Like the `lag` parameter, but it applies after the Zoom effect ends."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Controls the smoothing effect for camera position and scale transitions during zoom, with smaller values leading to quicker adjustments and larger values causing more gradual changes. Valid values are between 0 and 1, where 0 snaps the camera instantly and 1 delays the zoom effect indefinitely. Defaults to 0.",
 					"key": "lag",
 					"name": "Lag",
 					"placeholder": "",
@@ -18159,11 +18232,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Controls the smoothing effect for camera position and scale transitions during zoom, with smaller values leading to quicker adjustments and larger values causing more gradual changes. Valid values are between 0 and 1, where 0 snaps the camera instantly and 1 delays the zoom effect indefinitely. Defaults to 0."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The position on screen to bind the zoom, relative to the center of the screen. A value of Pos X, Pos Y will zoom in on P1.",
 					"key": "pos",
 					"name": "Pos",
 					"placeholder": "",
@@ -18174,11 +18247,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The position on screen to bind the zoom, relative to the center of the screen. A value of Pos X, Pos Y will zoom in on P1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "The camera zoom factor as a float. Values greater than 1 zoom in, while values between 0 and 1 zoom out. For example, a value of 2 doubles the size of the sprites.",
 					"key": "scale",
 					"name": "Scale",
 					"placeholder": "",
@@ -18189,11 +18262,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "The camera zoom factor as a float. Values greater than 1 zoom in, while values between 0 and 1 zoom out. For example, a value of 2 doubles the size of the sprites."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "If set to 1, the zoom position is restricted to the stage boundaries. Defaults to 1.",
 					"key": "stagebound",
 					"name": "StageBound",
 					"placeholder": "",
@@ -18204,11 +18277,11 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "If set to 1, the zoom position is restricted to the stage boundaries. Defaults to 1."
+					"description": ""
 				},
 				{
 					"since": "changed",
-					"changeNote": "",
+					"changeNote": "Countdown timer that controls how long zoom effects are applied, decreasing by 1 every frame. Once it reaches 0, the zoom stops, and the camera resets to its default behavior without any smoothing or zoom effects. Defaults to 1.",
 					"key": "time",
 					"name": "Time",
 					"placeholder": "",
@@ -18219,7 +18292,7 @@
 					"template": false,
 					"inferred": true,
 					"aliasOf": "",
-					"description": "Countdown timer that controls how long zoom effects are applied, decreasing by 1 every frame. Once it reaches 0, the zoom stops, and the camera resets to its default behavior without any smoothing or zoom effects. Defaults to 1."
+					"description": ""
 				}
 			],
 			"flags": [],

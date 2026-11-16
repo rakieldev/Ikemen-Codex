@@ -228,7 +228,7 @@ function parseBody(lines, names) {
 		const h3 = /^###\s+(.+)$/.exec(line);
 		if (h3) {
 			const nightly = /nightly/i.test(h3[1]);
-			const t = h3[1].replace(/\(nightly build only\)/ig, '').trim();
+			const t = h3[1].replace(/\((?:old|changed|new|nightly build only)\)/ig, '').trim();
 			if (/^[A-Za-z_][\w.]*$/.test(t) && !IGNORE_HEADINGS.has(t.toLowerCase())) {
 				const p = upsert(info.params, t);
 				if (nightly) p.nightly = true;
@@ -376,12 +376,17 @@ function parseSctrls(text) {
 				let ex = e.params.find(x => x.key === p.key);
 				if (!ex) {
 					ex = Object.assign({ since: sec.tag, changeNote: '' }, p);
+					if (sec.tag === 'changed') {
+						ex.changeNote = ex.description;
+						ex.description = '';
+					}
 					e.params.push(ex);
 				} else {
 					if (sec.tag === 'old') ex.since = 'old';
 					if (sec.tag === 'changed') {
-						if (p.description && ex.description) ex.changeNote = p.description;
-						else if (p.description) ex.description = p.description;
+						if (p.description && p.description !== ex.changeNote) {
+							ex.changeNote = [ex.changeNote, p.description].filter(Boolean).join('\n\n');
+						}
 					} else if (p.description) {
 						ex.description = p.description;
 					}

@@ -34,8 +34,11 @@ function paramDoc(p) {
 	if (p.deprecated) head += ' · deprecated';
 	let md = head;
 	if (p.placeholder) md += '\n\n`' + p.name + ' = ' + p.placeholder + '`';
-	if (p.description) md += '\n\n' + p.description;
-	if (p.changeNote) md += '\n\n**Ikemen GO:** ' + p.changeNote;
+	if (p.changeNote) md += '\n\n**Ikemen GO changes:**\n\n' + p.changeNote;
+	if (p.description) {
+		if (p.changeNote) md += '\n\n**Original description:**';
+		md += '\n\n' + p.description;
+	}
 	return md;
 }
 

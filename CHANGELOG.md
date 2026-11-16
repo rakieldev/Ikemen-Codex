@@ -3,6 +3,17 @@
 All notable changes to this extension are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.0] - 2026-11-15
+
+### Changed
+- Mark the extension as stable with release 1.0.0.
+
+### Added
+- A Ko-fi link in the README for supporting development.
+
+### Fixed
+- Recognize parameter headings tagged old, changed or new, including HitDef.nochainID. Parameter tooltips show Ikemen GO changes alongside the original description, preserving both regardless of section order. Existing documentation caches are rebuilt with the corrected parser.
+
 ## [0.3.1] - 2026-10-30
 
 ### Fixed
